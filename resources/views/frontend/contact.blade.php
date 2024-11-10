@@ -76,7 +76,7 @@
                                     <p class="mb-0">
                                         Found a persistent bug, or need help setting a new team member up? Can’t crack a
                                         feature?
-                                        <a href="tel:08060508628" class="text-primary">Let us know!</a>
+                                        <a href="tel:07081943867" class="text-primary">Let us know!</a>
                                     </p>
                                 </div>
                             </div>
@@ -131,7 +131,7 @@
                         Can’t find any answer for your question?
                         <br />
                         Ask our
-                        <a href="https://wa.me/2348060508628" class="text-primary">customer
+                        <a href="https://wa.me/2347081943867" class="text-primary">customer
                             support</a>
                     </p>
                 </div>
