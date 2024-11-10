@@ -29,7 +29,7 @@
                         <div class="position-relative">
                             <img src="assets/images/hero2.jpeg" alt="video" class="img-fluid rounded-3" width="837" />
                             <a
-                                href="https://www.youtube.com/watch?v=CivuutI6lXY"
+                                href="https://www.youtube.com/"
                                 class="play-btn glightbox position-absolute top-50 start-50 translate-middle icon-shape icon-xl rounded-circle text-primary">
                                 <i class="bi bi-play-fill"></i>
                             </a>
