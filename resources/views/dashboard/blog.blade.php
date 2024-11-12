@@ -54,6 +54,7 @@
                      </div>
                   </div>
                   <div class="ms-3"><span class="fs-6">{{Date('d-m-Y', strtotime($blog->created_at))}}</span></div>
+                  <a class='btn btn-danger' href='/admin/delete-blog/{id}' onclick='return confirm("Are you sure you want to delete this blog");'>Delete Blog</a>
                </div>
             </article>
             @endforeach

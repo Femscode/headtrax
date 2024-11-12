@@ -137,6 +137,12 @@ class HomeController extends Controller
         
     }
 
+    public function deleteblog($id) {
+        $blog = Blog::find($id);
+        $blog->delete();
+        return redirect()->back()->with('message', 'Blogs deleted successfully!');
+    }
+
 
     public function notifications()
     {
