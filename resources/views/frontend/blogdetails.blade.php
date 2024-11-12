@@ -31,7 +31,7 @@
                   </div>
 
                   <figure class="my-6">
-                     <img  src="{{ url('blog_images/' . $blog->image) }}" alt="blog" class="rounded-3 img-fluid w-100">
+                     <img  src="{{ url('headtrax_files/public/blog_images/' . $blog->image) }}" alt="blog" class="rounded-3 img-fluid w-100">
                   </figure>
                   <p>
                     {!! $blog->details !!}

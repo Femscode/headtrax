@@ -103,7 +103,7 @@
         <article class="col-lg-4 col-md-6 col-12">
             <figure class="mb-4 zoom-img">
                 <a href="/blog/{{$blog->id}}/{{Str::slug($blog->title)}}">
-                <img src="{{ url('blog_images/' . $blog->image) }}" style="height:200px;width:250px" alt="blog" class="img-fluid rounded-3">
+                <img src="{{ url('headtrax_files/public/blog_images/' . $blog->image) }}" style="height:200px;width:250px" alt="blog" class="img-fluid rounded-3">
 
                 </a>
             </figure>
