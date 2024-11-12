@@ -32,7 +32,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/contact-us', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact-us');
     Route::get('/admin/create-blog', [App\Http\Controllers\HomeController::class, 'createblog'])->name('create-blog');
     Route::post('/admin/save-blog', [App\Http\Controllers\HomeController::class, 'saveblog'])->name('save-blog');
-    Route::post('/admin/delete-blog/{id}', [App\Http\Controllers\HomeController::class, 'deleteblog'])->name('delete-blog');
+    Route::get('/admin/delete-blog/{id}', [App\Http\Controllers\HomeController::class, 'deleteblog'])->name('delete-blog');
    
     //subscription routes
 
