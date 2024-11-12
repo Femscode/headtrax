@@ -123,7 +123,7 @@
                         <div class="card border-0 card-primary">
                             <div class="card-body p-5">
                                 <div class="position-relative d-inline-block mb-5">
-                                    <img src="assets/images/hero2.jpeg" alt="feature" class="avatar avatar-xl rounded-circle border-2 border border-white shadow-sm" />
+                                    <img src="assets/images/local-language.jpeg" alt="feature" class="avatar avatar-xl rounded-circle border-2 border border-white shadow-sm" />
 
                                     <div class="position-absolute bottom-0 end-0">
                                         <div class="icon-md icon-shape rounded-circle bg-white me-n2 mb-n2 shadow-sm">
@@ -170,7 +170,7 @@
                         <div class="card border-0 card-primary">
                             <div class="card-body p-5">
                                 <div class="position-relative d-inline-block mb-5">
-                                    <img src="assets/images/hero2.jpeg" alt="feature" class="avatar avatar-xl rounded-circle border-2 border border-white shadow-sm" />
+                                    <img src="assets/images/mobile-device2.jpeg" alt="feature" class="avatar avatar-xl rounded-circle border-2 border border-white shadow-sm" />
 
                                     <div class="position-absolute bottom-0 end-0">
                                         <div class="icon-md icon-shape rounded-circle bg-white me-n2 mb-n2 shadow-sm">
@@ -377,7 +377,7 @@
                     <div class="tab-content" id="v-pills-tabContent">
                         <div class="tab-pane fade show active" id="v-pills-small-business" role="tabpanel" aria-labelledby="v-pills-small-business-tab" tabindex="0">
                             <div class="position-relative scene" data-relative-input="true">
-                                <figure><img src="assets/images/hero1.jpeg" alt="finance" class="img-fluid rounded-3" data-cue="fadeIn" /></figure>
+                                <figure><img src="assets/images/mobile-device-sms.jpeg" alt="finance" class="img-fluid rounded-3" data-cue="fadeIn" /></figure>
 
                                 <div class="position-relative" data-depth="0.05">
                                     <img src="assets/images/landings/finance/card.svg" alt="" class="position-absolute bottom-0 end-0 px-4" />
@@ -386,7 +386,7 @@
                         </div>
                         <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabindex="0">
                             <div class="position-relative scene" data-relative-input="true">
-                                <figure><img src="assets/images/hero2.jpeg" alt="finance" class="img-fluid rounded-3" data-cue="fadeIn" /></figure>
+                                <figure><img src="assets/images/robot.jpeg" alt="finance" class="img-fluid rounded-3" data-cue="fadeIn" /></figure>
 
                                 <div class="position-relative" data-depth="0.05">
                                     <img src="assets/images/landings/finance/card.svg" alt="" class="position-absolute bottom-0 start-0 px-4" />
@@ -396,7 +396,7 @@
 
                         <div class="tab-pane fade" id="v-pills-enterprises" role="tabpanel" aria-labelledby="v-pills-enterprises-tab" tabindex="0">
                             <div class="position-relative scene" data-relative-input="true">
-                                <figure><img src="assets/images/hero1.jpeg" alt="finance" class="img-fluid rounded-3" /></figure>
+                                <figure><img src="assets/images/social-media.jpeg" alt="finance" class="img-fluid rounded-3" /></figure>
 
                                 <div class="position-relative" data-depth="0.05">
                                     <img src="assets/images/landings/finance/card.svg" alt="" class="position-absolute bottom-0 start-50 translate-middle-x" />
