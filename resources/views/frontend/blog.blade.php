@@ -64,7 +64,7 @@
                <h3 class="my-3 lh-base h4">
                   <a href="/blog/{{$blog->id}}/{{Str::slug($blog->title)}}" class="text-reset">{{$blog->title}}</a>
                </h3>
-               <p>{!! Str::limit($blog->details,100) !!}</p>
+               <p>{{ Str::limit(strip_tags($blog->details), 100) }}</p>
                <div class="d-flex align-items-center justify-content-between mb-3 mb-md-0">
                   <div class="d-flex align-items-center">
                      <img src='{{url("assets/images/avatar/fallback.jpg")}}' style='width:30px;height:30px;border-radius:50%' />
