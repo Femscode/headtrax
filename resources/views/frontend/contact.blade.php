@@ -76,8 +76,8 @@
                                     <p class="mb-0">
                                         Found a persistent bug, or need help setting a new team member up? Can’t crack a
                                         feature?
-                                        <a href="tel:07081943867" class="text-primary">Let us know!</a>
-                                    </p>
+                                        <h6>Contacts :  <a href="tel:07081943867" class="text-primary">+234 708 1943 867</a> ,  <a href="tel:+447867250155" class="text-primary">+44 7867 250155</a></h6>
+                                     </p>
                                 </div>
                             </div>
                             <div class="mb-7">

@@ -131,7 +131,7 @@
     </header>
     @yield('content')
     <footer class="pt-7">
-        <!-- <div class="container">
+        <div class="container">
             <div class="row">
                 <div class="col-lg-9 col-12">
                     <div class="row" id="ft-links">
@@ -201,7 +201,7 @@
                         </div>
                         <div class="col-lg-3 col-12">
                             <div class="mb-3 pb-2 d-flex justify-content-between border-bottom border-bottom-lg-0 position-relative">
-                                <h4>Technology</h4>
+                                <h4>Quick Links</h4>
                                 <a
                                     class="d-block d-lg-none stretched-link text-body collapsed"
                                     data-bs-toggle="collapse"
@@ -232,46 +232,18 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-12">
-                            <div class="mb-3 pb-2 d-flex justify-content-between border-bottom border-bottom-lg-0 position-relative">
-                                <h4>Locations</h4>
-                                <a
-                                    class="d-block d-lg-none stretched-link text-body collapsed"
-                                    data-bs-toggle="collapse"
-                                    href="#collapseLocations"
-                                    role="button"
-                                    aria-expanded="false"
-                                    aria-controls="collapseLocations">
-                                    <i class="bi bi-chevron-down"></i>
-                                </a>
-                            </div>
-                            <div class="collapse d-lg-block" id="collapseLocations" data-bs-parent="#ft-links">
-                                <ul class="list-unstyled mb-0 py-3 py-lg-0">
-                                    <li class="mb-2">
-                                        <a href="docs//" class="text-decoration-none text-reset">India</a>
-                                    </li>
-                                    <li class="mb-2">
-                                        <a href="#!" class="text-decoration-none text-reset">Australia</a>
-                                    </li>
-                                    <li class="mb-2">
-                                        <a href="changelog.html" class="text-decoration-none text-reset">Brazil</a>
-                                    </li>
-                                    <li class="mb-2">
-                                        <a href="#!" class="text-decoration-none text-reset">Canada</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                       
                     </div>
                 </div>
                 <div class="col-lg-3 col-12">
                     <div class="me-7">
-                        <h4 class="mb-4">Headquarters</h4>
-                        <p class="text-body-secondary">Codescandy, 412, Residency Rd, Shanthala Nagar, Ashok Nagar, Bengaluru, Karnataka, India 560025</p>
+                        <h4 class="mb-4">Office Address</h4>
+                        <p class="text-body-secondary">Lagos : The Waterside, 5, Admiralty Road off Admiralty Way, Lagos, 101224</p>
+                        <p class="text-body-secondary">United Kingdom: 4 Princess Mary Avenue, Chatham, ME44UT</p>
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
         <div class="container mt-7 pt-lg-7 pb-4">
             <div class="row align-items-center">
                 <div class="col-md-3">
