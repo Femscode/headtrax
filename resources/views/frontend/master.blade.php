@@ -133,12 +133,12 @@
     <footer class="pt-7">
         <div class="container">
             <div class="row">
-                <div class="col-lg-9 col-12">
+                <div class="col-lg-12 col-12">
                     <div class="row" id="ft-links">
                         <div class="col-lg-3 col-12">
                             <div class="position-relative">
                                 <div class="mb-3 pb-2 d-flex justify-content-between border-bottom border-bottom-lg-0">
-                                    <h4>Service</h4>
+                                    <h4>Services</h4>
                                     <a class="d-block d-lg-none stretched-link text-body" data-bs-toggle="collapse" href="#collapseLanding" role="button" aria-expanded="true" aria-controls="collapseLanding">
                                         <i class="bi bi-chevron-down"></i>
                                     </a>
@@ -146,20 +146,18 @@
                                 <div class="d-lg-block collapse show" id="collapseLanding" data-bs-parent="#ft-links" style="">
                                     <ul class="list-unstyled mb-0 py-3 py-lg-0">
                                         <li class="mb-2">
-                                            <a href="/" class="text-decoration-none text-reset">Web App Development</a>
+                                            <a href="#" class="text-decoration-none text-reset">Customer Support Solutions</a>
                                         </li>
                                         <li class="mb-2">
-                                            <a href="#!" class="text-decoration-none text-reset">Front End Development</a>
+                                            <a href="#!" class="text-decoration-none text-reset">Localized Communication Support</a>
                                         </li>
                                         <li class="mb-2">
-                                            <a href="#!" class="text-decoration-none text-reset">MVP Development</a>
+                                            <a href="#!" class="text-decoration-none text-reset">Affordable Pricing for SMEs</a>
                                         </li>
                                         <li class="mb-2">
-                                            <a href="#!" class="text-decoration-none text-reset">Digital Marketing</a>
+                                            <a href="#!" class="text-decoration-none text-reset">Mobile Integration for Nigeria’s Mobile-Centric Market</a>
                                         </li>
-                                        <li class="mb-2">
-                                            <a href="#!" class="text-decoration-none text-reset">Content Writing</a>
-                                        </li>
+                                      
                                     </ul>
                                 </div>
                             </div>
@@ -167,7 +165,7 @@
                         <div class="col-lg-3 col-12">
                             <div>
                                 <div class="mb-3 pb-2 d-flex justify-content-between border-bottom border-bottom-lg-0 position-relative">
-                                    <h4>About us</h4>
+                                    <h4>Quick Links</h4>
                                     <a
                                         class="d-block d-lg-none stretched-link text-body collapsed"
                                         data-bs-toggle="collapse"
@@ -181,67 +179,34 @@
                                 <div class="collapse d-lg-block" id="collapseAccounts" data-bs-parent="#ft-links">
                                     <ul class="list-unstyled mb-0 py-3 py-lg-0">
                                         <li class="mb-2">
-                                            <a href="#!" class="text-decoration-none text-reset">Case Studies</a>
+                                            <a href="/about-us" class="text-decoration-none text-reset">About Us</a>
                                         </li>
                                         <li class="mb-2">
-                                            <a href="#!" class="text-decoration-none text-reset">Blog</a>
+                                            <a href="/blogs" class="text-decoration-none text-reset">Blog</a>
                                         </li>
                                         <li class="mb-2">
-                                            <a href="#!" class="text-decoration-none text-reset">Services</a>
+                                            <a href="/our-services" class="text-decoration-none text-reset">Services</a>
                                         </li>
+                                       
                                         <li class="mb-2">
-                                            <a href="#!" class="text-decoration-none text-reset">About</a>
-                                        </li>
-                                        <li class="mb-2">
-                                            <a href="#!" class="text-decoration-none text-reset">Career</a>
+                                            <a href="/contact-us" class="text-decoration-none text-reset">Contact Us</a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-12">
-                            <div class="mb-3 pb-2 d-flex justify-content-between border-bottom border-bottom-lg-0 position-relative">
-                                <h4>Quick Links</h4>
-                                <a
-                                    class="d-block d-lg-none stretched-link text-body collapsed"
-                                    data-bs-toggle="collapse"
-                                    href="#collapseResources"
-                                    role="button"
-                                    aria-expanded="false"
-                                    aria-controls="collapseResources">
-                                    <i class="bi bi-chevron-down"></i>
-                                </a>
-                            </div>
-                            <div class="collapse d-lg-block" id="collapseResources" data-bs-parent="#ft-links">
-                                <ul class="list-unstyled mb-0 py-3 py-lg-0">
-                                    <li class="mb-2">
-                                        <a href="docs//" class="text-decoration-none text-reset">Next.js</a>
-                                    </li>
-                                    <li class="mb-2">
-                                        <a href="#!" class="text-decoration-none text-reset">Sanity</a>
-                                    </li>
-                                    <li class="mb-2">
-                                        <a href="changelog.html" class="text-decoration-none text-reset">Content ful</a>
-                                    </li>
-                                    <li class="mb-2">
-                                        <a href="#!" class="text-decoration-none text-reset">Vercel</a>
-                                    </li>
-                                    <li class="mb-2">
-                                        <a href="#!" class="text-decoration-none text-reset">Netlify</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                       
-                    </div>
-                </div>
-                <div class="col-lg-3 col-12">
+                      
+                        <div class="col-lg-6 col-12">
                     <div class="me-7">
                         <h4 class="mb-4">Office Address</h4>
                         <p class="text-body-secondary">Lagos : The Waterside, 5, Admiralty Road off Admiralty Way, Lagos, 101224</p>
                         <p class="text-body-secondary">United Kingdom: 4 Princess Mary Avenue, Chatham, ME44UT</p>
                     </div>
                 </div>
+                       
+                    </div>
+                </div>
+                
             </div>
         </div>
         <div class="container mt-7 pt-lg-7 pb-4">
