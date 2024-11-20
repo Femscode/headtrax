@@ -135,8 +135,8 @@
                                     </div>
                                 </div>
                                 <div class="mb-5">
-                                    <h4 class="card-title">Local Language Support</h4>
-                                    <p class="mb-0 card-text">Comprehensive support for local languages, making communication more personal and effective.</p>
+                                    <h4 class="card-title">Intelligent Conversational AI Tool</h4>
+                                    <p class="mb-0 card-text">Effortlessly create engaging conversational experiences with generative AI that will elevate customer engagement, build loyalty, and drive meaningful business growth.</p>
                                 </div>
 
                             </div>
@@ -158,8 +158,8 @@
                                     </div>
                                 </div>
                                 <div class="mb-5">
-                                    <h4 class="card-title">Affordable Solutions</h4>
-                                    <p class="mb-0 card-text">Our flexible pricing ensures that small and medium-sized businesses can access top-quality communication tools without breaking the bank.</p>
+                                    <h4 class="card-title">Build customer relationships over 30+ Messaging channel.</h4>
+                                    <p class="mb-0 card-text">Effortlessly serve millions of customers globally through the most robust messaging platforms, including sms and Voice system.</p>
                                 </div>
 
                                
@@ -182,8 +182,8 @@
                                     </div>
                                 </div>
                                 <div class="mb-5">
-                                    <h4 class="card-title">Mobile Integration.</h4>
-                                    <p class="mb-0 card-text">Mobile App integration to cater to Nigeria's mobile-centric market.</p>
+                                    <h4 class="card-title">Personalized Interaction & Mobile Integration.</h4>
+                                    <p class="mb-0 card-text">Anticipate customer needs and deliver proactive solutions across all industries..</p>
                                 </div>
 
                                 
@@ -417,8 +417,8 @@
                 <div class="col-lg-5 col-md-12" data-cue="fadeIn">
                     <div class="mb-xl-7 mb-5">
                         <h2 class="mb-3">
-                            Ready to Transform Your
-                            <span class="text-primary">Business Communication?</span>
+                        Does you business Harness the 
+                            <span class="text-primary">Power of Conversational AI?</span>
                         </h2>
                         <p class="mb-0">Discover how Headtrax Solutions can elevate your customer interactions and help your business grow.</p>
                     </div>
