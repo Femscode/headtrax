@@ -439,7 +439,7 @@
                                 </span>
                             </div>
 
-                            <h3 class="h4">Get to know our services, and choose the most suitable for your need.</h3>
+                            <h3 class="h4">Get to know our solutions, and choose the most suitable for your need.</h3>
                             <!-- <p class="mb-0">Apply online on block website and fill the form by telling us your name, address, date of birth.</p> -->
                         </div>
                     </div>
