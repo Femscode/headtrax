@@ -84,7 +84,7 @@
 
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link" href="/our-services" role="button">Our Services</a>
+                                <a class="nav-link" href="/our-solutions" role="button">Our Solutions</a>
 
                             </li>
                             <li class="nav-item dropdown">
@@ -138,7 +138,7 @@
                         <div class="col-lg-3 col-12">
                             <div class="position-relative">
                                 <div class="mb-3 pb-2 d-flex justify-content-between border-bottom border-bottom-lg-0">
-                                    <h4>Services</h4>
+                                    <h4>Our Solutions</h4>
                                     <a class="d-block d-lg-none stretched-link text-body" data-bs-toggle="collapse" href="#collapseLanding" role="button" aria-expanded="true" aria-controls="collapseLanding">
                                         <i class="bi bi-chevron-down"></i>
                                     </a>
@@ -185,7 +185,7 @@
                                             <a href="/blogs" class="text-decoration-none text-reset">Blog</a>
                                         </li>
                                         <li class="mb-2">
-                                            <a href="/our-services" class="text-decoration-none text-reset">Services</a>
+                                            <a href="/our-solutions" class="text-decoration-none text-reset">Our Solutions</a>
                                         </li>
                                        
                                         <li class="mb-2">

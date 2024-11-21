@@ -12,7 +12,7 @@ use App\Http\Controllers\FrontendController;
 Route::get('/', [FrontendController::class, 'index'])->name('homepage');
 Route::get('/about-us', [FrontendController::class, 'about'])->name('about');
 Route::get('/contact-us', [FrontendController::class, 'contact'])->name('contact');
-Route::get('/our-services', [FrontendController::class, 'services'])->name('services');
+Route::get('/our-solutions', [FrontendController::class, 'services'])->name('services');
 Route::get('/blogs', [FrontendController::class, 'blogs'])->name('blogs');
 Route::get('/blog/{id}/{slug}', [FrontendController::class, 'blogdetails'])->name('blogdetails');
 Route::post('/savecontact-us', [FrontendController::class, 'savecontact'])->name('savecontact');

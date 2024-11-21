@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
                     <div class="text-center">
-                        <small class="text-uppercase ls-md fw-bold text-primary">Services</small>
+                        <small class="text-uppercase ls-md fw-bold text-primary">Our Solutions</small>
                         <h1 class="mt-4">We provide mind-blowing services</h1>
                         <p class="lead">At Headtrax Solutions Limited, we specialize in providing localized, customer-centric communication solutions that empower businesses across industries. Our suite of services is designed to enhance customer engagement, satisfaction, and loyalty while supporting seamless, flexible, and culturally relevant interactions.</p>
                     </div>
