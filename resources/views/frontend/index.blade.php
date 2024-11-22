@@ -13,8 +13,8 @@
                     <div class="text-center text-lg-start mb-7 mb-lg-0" data-cues="slideInDown">
                         <div class="mb-4">
                             <h1 class="mb-5 display-5 text-white-stable">
-                                Say Hi to
-                                <span class="text-pattern-line text-warning">Headtrax Solutions</span>
+                            Turn interactions into
+                                <span class="text-pattern-line text-warning">lasting memories.</span>
                             </h1>
                             <p class="mb-0 text-white-stable lead">Turn Interactions Into Lasting Relationships. Empower your business with AI-driven conversations that connect, convert, and delight customers effortlessly.</p>
                             <!-- <p class="mb-0 text-white-stable lead">We empower businesses by providing seamless, localized, and tailored communication solutions that drive growth and enhance customer service.</p> -->

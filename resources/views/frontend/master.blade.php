@@ -61,6 +61,7 @@
             <div class="container px-3">
                 <a class="navbar-brandii d-flex" href="/">
                     <img src="{{url('assets/images/logo3.jpeg')}}" style='width:50px;height:50px;border-radius:20px' alt />
+                    <h2>Head<span style='color:#ebab21'>trax</span></h2>
                     <!-- <h2 class='text-dark'>Headtrax Solutions</h2> -->
                 </a>
                 <button class="navbar-toggler offcanvas-nav-btn" type="button">
