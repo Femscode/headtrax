@@ -8,12 +8,12 @@
   <link rel="stylesheet" href="assets/libs/swiper/swiper-bundle.min.css" />
   <link rel="stylesheet" href="assets/libs/glightbox/dist/css/glightbox.min.css" />
   <!-- Favicon icon-->
-  <link rel="apple-touch-icon" sizes="180x180" href="{{url('assets/images/logo3.jpeg')}}" />
-  <link rel="icon" type="image/png" sizes="32x32" href="{{url('assets/images/logo3.jpeg')}}" />
-  <link rel="icon" type="image/png" sizes="16x16" href="{{url('assets/images/logo3.jpeg')}}" />
+  <link rel="apple-touch-icon" sizes="180x180" href="{{url('assets/images/width:70px;height:50px')}}" />
+  <link rel="icon" type="image/png" sizes="32x32" href="{{url('assets/images/width:70px;height:50px')}}" />
+  <link rel="icon" type="image/png" sizes="16x16" href="{{url('assets/images/width:70px;height:50px')}}" />
   <link rel="manifest" href="assets/images/favicon/site.html" />
   <link rel="mask-icon" href="assets/images/favicon/block-safari-pinned-tab.svg" color="#8b3dff" />
-  <link rel="shortcut icon" href="{{url('assets/images/logo3.jpeg')}}" />
+  <link rel="shortcut icon" href="{{url('assets/images/width:70px;height:50px')}}" />
   <meta name="msapplication-TileColor" content="#8b3dff" />
   <meta name="msapplication-config" content="assets/images/favicon/tile.xml" />
 
@@ -60,7 +60,7 @@
     <nav class="navbar navbar-expand-lg  transparent navbar-transparent navbar-dark">
       <div class="container px-3">
         <a class="navbar-brandii d-flex" href="/">
-          <img src="{{url('assets/images/logo3.jpeg')}}" style='width:50px;height:50px;border-radius:20px' alt />
+          <img src="{{url('assets/images/width:70px;height:50px')}}" style='width:70px;height:50px;border-radius:20px' alt />
           <!-- <h2 class='text-dark'>Headtrax Solutions</h2> -->
         </a>
         <button class="navbar-toggler offcanvas-nav-btn" type="button">
@@ -135,7 +135,7 @@
         <div class="row">
           <div class="col-lg-3 col-md-4">
             <div class="d-flex align-items-center mb-4 justify-content-center justify-content-md-start">
-              <img src='{{url("assets/images/avatar/fallback.jpg")}}' style='width:50px;height:50px;border-radius:50%' />
+              <img src='{{url("assets/images/avatar/fallback.jpg")}}' style='width:70px;height:50px;border-radius:50%' />
 
               <div class="ms-3">
                 <h5 class="mb-0">{{$user->name}}</h5>
@@ -341,7 +341,7 @@
       <div class="row align-items-center">
         <div class="col-md-3">
           <a class="mb-4 mb-lg-0 d-block text-inverse" href="/">
-            <img src="{{url('assets/images/logo3.jpeg')}}" style='width:50px;height:50px' alt="" />
+            <img src="{{url('assets/images/logo3.png')}}" style='width:70px;height:50px' alt="" />
           </a>
         </div>
         <div class="col-md-9 col-lg-6">

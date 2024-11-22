@@ -122,10 +122,10 @@
                         </div>
                     </div>
                     <div class="px-lg-4">
-                        <h2 class="mb-3 h3">Affordable Pricing for SMEs</h2>
+                        <h2 class="mb-3 h3">E-commerce Platform</h2>
                         <p class="mb-5">
-                            We believe that high-quality customer support tools should be accessible to all businesses, regardless of size.
-
+                            We offer premium e-c
+                           
 
                         </p>
 
@@ -153,7 +153,7 @@
                     </div>
 
                     <div class="mb-5">
-                        <h2 class="mb-3 h3">Mobile Integration for Nigeria’s Mobile-Centric Market</h2>
+                        <h2 class="mb-3 h3">Mobile App Integration for Nigeria’s Mobile-Centric Market</h2>
                         <p class="mb-5">
                             With an increasingly mobile-first audience, we ensure your customers can interact with your brand anytime, anywhere.
                         </p>

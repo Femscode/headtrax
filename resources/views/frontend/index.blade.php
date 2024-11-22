@@ -16,12 +16,12 @@
                             Turn interactions into
                                 <span class="text-pattern-line text-warning">lasting memories.</span>
                             </h1>
-                            <p class="mb-0 text-white-stable lead">Turn Interactions Into Lasting Relationships. Empower your business with AI-driven conversations that connect, convert, and delight customers effortlessly.</p>
+                            <p class="mb-0 text-white-stable lead" style='text-align:left'>Turn Interactions Into Lasting Relationships. Empower your business with AI-driven conversations that connect, convert, and delight customers effortlessly.</p>
                             <!-- <p class="mb-0 text-white-stable lead">We empower businesses by providing seamless, localized, and tailored communication solutions that drive growth and enhance customer service.</p> -->
                         </div>
                         <div data-cues="slideInDown">
                             <a href="#" class="btn btn-dark me-2">Get Started</a>
-                            <a href="#" class="btn btn-outline-warning">Contact Us</a>
+                            <a href="https://wa.me/+2347081943867" class="btn btn-outline-warning">Become A Client</a>
                         </div>
                     </div>
                 </div>
@@ -29,6 +29,8 @@
                     <div class="position-relative z-1 pt-lg-9" data-cue="slideInRight">
                         <div class="position-relative">
                             <img src="assets/images/hero2.jpeg" alt="video" class="img-fluid rounded-3" width="837" />
+                            <video src="assets/images/vid.mp4" alt="video" class="img-fluid rounded-3" width="837" autoplay muted loop></video>
+
                             <a
                                 href="https://www.youtube.com/"
                                 class="play-btn glightbox position-absolute top-50 start-50 translate-middle icon-shape icon-xl rounded-circle text-primary">
