@@ -16,7 +16,8 @@
                                 Say Hi to
                                 <span class="text-pattern-line text-warning">Headtrax Solutions</span>
                             </h1>
-                            <p class="mb-0 text-white-stable lead">We empower businesses by providing seamless, localized, and tailored communication solutions that drive growth and enhance customer service.</p>
+                            <p class="mb-0 text-white-stable lead">Turn Interactions Into Lasting Relationships. Empower your business with AI-driven conversations that connect, convert, and delight customers effortlessly.</p>
+                            <!-- <p class="mb-0 text-white-stable lead">We empower businesses by providing seamless, localized, and tailored communication solutions that drive growth and enhance customer service.</p> -->
                         </div>
                         <div data-cues="slideInDown">
                             <a href="#" class="btn btn-dark me-2">Get Started</a>
@@ -295,7 +296,7 @@
                     <div class="text-center mb-xl-7 mb-5" data-cue="fadeIn">
                         <h2 class="mb-3">
                             Communication Suite for
-                            <span class="text-primary">all sizes businesses.</span>
+                            <span class="text-primary">all business size.</span>
                         </h2>
                     </div>
                 </div>
