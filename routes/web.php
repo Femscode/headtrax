@@ -17,6 +17,10 @@ Route::get('/blogs', [FrontendController::class, 'blogs'])->name('blogs');
 Route::get('/blog/{id}/{slug}', [FrontendController::class, 'blogdetails'])->name('blogdetails');
 Route::post('/savecontact-us', [FrontendController::class, 'savecontact'])->name('savecontact');
 
+//Services section
+
+Route::get('/services/{slug}', [FrontendController::class, 'service_section'])->name('service_section');
+
 
 require __DIR__ . '/auth.php';
 // Auth::routes();

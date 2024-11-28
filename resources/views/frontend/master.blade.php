@@ -84,14 +84,96 @@
                                 <a class="nav-link" href="/about-us" role="button">About Us</a>
 
                             </li>
+                           
                             <li class="nav-item dropdown">
-                                <a class="nav-link" href="/our-solutions" role="button">Our Solutions</a>
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Our Solutions</a>
+                                <div class="dropdown-menu dropdown-menu-xxl">
+                                    <div class="row row-cols-lg-4 row-cols-1 g-0">
+                                        <div class="col">
+                                            <div>
+                                                <div>
+                                                    <div class="dropdown-header">Our <br> Solutions</div>
+                                                    <a class="dropdown-item" href="/our-solutions">Conversational <br> Solutions</a>
+                                                    <a class="dropdown-item" href="/our-solutions">B2B Platforms</a>
+                                                    <a class="dropdown-item" href="/our-solutions">B2C Platforms</a>
 
+                                                </div>
+                                                <div class="mt-3">
+                                                    <div class="dropdown-header">Departments</div>
+                                                    <a class="dropdown-item" href="/our-services">Conversional <br> Marketing</a>
+                                                    <a class="dropdown-item" href="/our-services">Conversional <br> Commerce</a>
+                                                    <a class="dropdown-item" href="/our-services">Conversional <br> Support</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="mt-3 mt-lg-0">
+                                                <div>
+                                                    <div class="dropdown-header">Industry <br> Verticals</div>
+                                                    <a class="dropdown-item" href="/services/bfsi">BFSI</a>
+                                                    <a class="dropdown-item" href="/services/food_and_beverages">Food & <br> Beverages</a>
+                                                    <a class="dropdown-item" href="/services/retail">Retail</a>
+                                                    <a class="dropdown-item" href="/services/healthcare">Healthcare</a>
+                                                    <a class="dropdown-item" href="/services/advertising">Advertising</a>
+                                                    <a class="dropdown-item" href="/services/real_estate">Real Estate</a>
+                                                    <a class="dropdown-item" href="/services/travel_and_hospitality">Travel & <br> Hosptality</a>
+                                                    <a class="dropdown-item" href="/services/education">Education</a>
+                                                    <a class="dropdown-item" href="/services/media">Media</a>
+                                                    <a class="dropdown-item" href="/services/government">Government</a>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="mt-3 mt-lg-0">
+                                            <div class="mt-3">
+                                                    <div class="dropdown-header">Why Choose Us?</div>
+
+                                                    <a class="dropdown-item" href="/">Why Choose Us?</a>
+                                                   
+                                                </div>
+                                                <div class="mt-3">
+                                                    <div class="dropdown-header">Contact</div>
+
+                                                    <a class="dropdown-item" href="/contact-us">Contact Us</a>
+                                                   
+                                                </div>
+                                        
+                                                <div class="mt-3">
+                                                    <div class="dropdown-header">Pricing</div>
+                                                    <a class="dropdown-item" href="/">Our Pricing</a>
+
+                                                </div>
+                                                <div class="mt-3">
+                                                    <div class="dropdown-header">Career</div>
+                                                    <a class="dropdown-item" href="/">Join Us<br> At Headtrax</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="mt-3 mt-lg-0">
+                                                <div>
+                                                    <div class="dropdown-header">Integration</div>
+                                                    <a class="dropdown-item" href="/">Mobile App <br> Integration</a>
+
+                                                </div>
+                                                <div class="mt-3">
+                                                    <div>
+                                                        <div class="dropdown-header">Private Policy</div>
+                                                        <a class="dropdown-item" href="/">Our Policy</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </li>
+
                             <li class="nav-item dropdown">
                                 <a class="nav-link" href="/blogs" role="button">Blogs</a>
 
                             </li>
+
 
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Docs</a>
@@ -158,7 +240,7 @@
                                         <li class="mb-2">
                                             <a href="#!" class="text-decoration-none text-reset">Mobile Integration for Nigeria’s Mobile-Centric Market</a>
                                         </li>
-                                      
+
                                     </ul>
                                 </div>
                             </div>
@@ -188,7 +270,7 @@
                                         <li class="mb-2">
                                             <a href="/our-solutions" class="text-decoration-none text-reset">Our Solutions</a>
                                         </li>
-                                       
+
                                         <li class="mb-2">
                                             <a href="/contact-us" class="text-decoration-none text-reset">Contact Us</a>
                                         </li>
@@ -196,18 +278,18 @@
                                 </div>
                             </div>
                         </div>
-                      
+
                         <div class="col-lg-6 col-12">
-                    <div class="me-7">
-                        <h4 class="mb-4">Office Address</h4>
-                        <p class="text-body-secondary">United Kingdom: 4 Princess Mary Avenue, Chatham, ME44UT</p>
-                        <p class="text-body-secondary">Lagos : The Waterside, 5, Admiralty Road off Admiralty Way, Lagos, 101224</p>
+                            <div class="me-7">
+                                <h4 class="mb-4">Office Address</h4>
+                                <p class="text-body-secondary">United Kingdom: 4 Princess Mary Avenue, Chatham, ME44UT</p>
+                                <p class="text-body-secondary">Lagos : The Waterside, 5, Admiralty Road off Admiralty Way, Lagos, 101224</p>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-                       
-                    </div>
-                </div>
-                
+
             </div>
         </div>
         <div class="container mt-7 pt-lg-7 pb-4">
