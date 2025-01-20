@@ -282,8 +282,9 @@
                         <div class="col-lg-6 col-12">
                             <div class="me-7">
                                 <h4 class="mb-4">Office Address</h4>
-                                <p class="text-body-secondary">United Kingdom: 4 Princess Mary Avenue, Chatham, ME44UT</p>
-                                <p class="text-body-secondary">Lagos : The Waterside, 5, Admiralty Road off Admiralty Way, Lagos, 101224</p>
+                                <p>Our operations extend across Nigeria and the United Kingdom, reflecting our commitment to serving diverse markets.</p>
+                                <!-- <p class="text-body-secondary">United Kingdom: 4 Princess Mary Avenue, Chatham, ME44UT</p>
+                                <p class="text-body-secondary">Lagos : The Waterside, 5, Admiralty Road off Admiralty Way, Lagos, 101224</p> -->
                             </div>
                         </div>
 

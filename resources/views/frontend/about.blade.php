@@ -87,7 +87,7 @@
             <div class="row g-5">
                <div class="col-md-3 col-6">
                   <div class="text-center">
-                     <h2 class="text-white-stable">2024</h2>
+                     <h2 class="text-white-stable">2018</h2>
                      <h5 class="text-white-stable mb-0">Founded</h5>
                   </div>
                </div>
@@ -298,7 +298,7 @@
       <!--Success stories-->
 
       <!--Save your time start-->
-      <section class="my-lg-9 my-5">
+      <!-- <section class="my-lg-9 my-5">
          <div class="container">
             <div class="row">
                <div class="col-lg-8 offset-lg-2 col-md-12">
@@ -365,7 +365,7 @@
                </div>
             </div>
          </div>
-      </section>
+      </section> -->
       <!--Save your time end-->
 
       <!--Our awards start-->
