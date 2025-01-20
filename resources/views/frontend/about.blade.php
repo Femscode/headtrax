@@ -298,7 +298,7 @@
       <!--Success stories-->
 
       <!--Save your time start-->
-      <!-- <section class="my-lg-9 my-5">
+       <section class="my-lg-9 my-5">
          <div class="container">
             <div class="row">
                <div class="col-lg-8 offset-lg-2 col-md-12">
@@ -315,7 +315,7 @@
                            <img src="assets/images/team/team-img-4.jpg" alt="avatar" class="avatar avatar-xxl rounded-circle">
                         </figure>
 
-                        <h5 class="mb-1">Mr Idowu Adetule</h5>
+                        <h5 class="mb-1">Mr David Sean</h5>
                         <small>Founder &amp; CEO</small>
                      </div>
                   </div>
@@ -339,7 +339,7 @@
                            <img src="assets/images/team/team-img-4.jpg" alt="avatar" class="avatar avatar-xxl rounded-circle">
                         </figure>
 
-                        <h5 class="mb-1">Idowu Micheal</h5>
+                        <h5 class="mb-1">Charles Adeoluwa</h5>
                         <small>Customer Support</small>
                      </div>
                   </div>
@@ -365,7 +365,7 @@
                </div>
             </div>
          </div>
-      </section> -->
+      </section> 
       <!--Save your time end-->
 
       <!--Our awards start-->
