@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="assets/libs/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="assets/libs/glightbox/dist/css/glightbox.min.css" />
     <!-- Favicon icon-->
-    <link rel="apple-touch-icon" sizes="180x180" href="{{url('assets/images/logo3.png')}}" />
-    <link rel="icon" type="image/png" sizes="32x32" href="{{url('assets/images/logo3.png')}}" />
-    <link rel="icon" type="image/png" sizes="16x16" href="{{url('assets/images/logo3.png')}}" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://headtraxsolutions.com/headtrax_files/public/assets/images/logo3.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="https://headtraxsolutions.com/headtrax_files/public/assets/images/logo3.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="https://headtraxsolutions.com/headtrax_files/public/assets/images/logo3.png" />
     <link rel="manifest" href="assets/images/favicon/site.html" />
     <link rel="mask-icon" href="assets/images/favicon/block-safari-pinned-tab.svg" color="#8b3dff" />
-    <link rel="shortcut icon" href="{{url('assets/images/logo3.png')}}" />
+    <link rel="shortcut icon" href="https://headtraxsolutions.com/headtrax_files/public/assets/images/logo3.png" />
     <meta name="msapplication-TileColor" content="#8b3dff" />
     <meta name="msapplication-config" content="assets/images/favicon/tile.xml" />
 
@@ -60,7 +60,7 @@
         <nav class="navbar navbar-expand-lg  transparent navbar-transparent navbar-dark">
             <div class="container px-3">
                 <a class="navbar-brandii d-flex" href="/">
-                    <img src="{{url('assets/images/logo3.png')}}" style='width:70px;height:50px;border-radius:20px' alt />
+                    <img src="https://headtraxsolutions.com/headtrax_files/public/assets/images/logo3.png" style='width:70px;height:50px;border-radius:20px' alt />
                     <h2>Head<span style='color:#ebab21'>trax</span></h2>
                     <!-- <h2 class='text-dark'>Headtrax Solutions</h2> -->
                 </a>
@@ -297,7 +297,7 @@
             <div class="row align-items-center">
                 <div class="col-md-3">
                     <a class="mb-4 mb-lg-0 d-block text-inverse" href="/">
-                        <img src="{{url('assets/images/logo3.png')}}" style='width:70px;height:50px' alt="" />
+                        <img src="https://headtraxsolutions.com/headtrax_files/public/assets/images/logo3.png" style='width:70px;height:50px' alt="" />
                     </a>
                 </div>
                 <div class="col-md-9 col-lg-6">
