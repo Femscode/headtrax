@@ -341,7 +341,7 @@
       <div class="row align-items-center">
         <div class="col-md-3">
           <a class="mb-4 mb-lg-0 d-block text-inverse" href="/">
-            <img src="{{url('assets/images/logo3.png')}}" style='width:70px;height:50px' alt="" />
+            <img src="{{url('public/assets/images/logo3.png')}}" style='width:70px;height:50px' alt="" />
           </a>
         </div>
         <div class="col-md-9 col-lg-6">
