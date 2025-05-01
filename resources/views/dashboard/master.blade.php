@@ -60,7 +60,7 @@
     <nav class="navbar navbar-expand-lg  transparent navbar-transparent navbar-dark">
       <div class="container px-3">
         <a class="navbar-brandii d-flex" href="/">
-          <img src="{{url('assets/images/width:70px;height:50px')}}" style='width:70px;height:50px;border-radius:20px' alt />
+          <img src="https://headtraxsolutions.com/headtrax_files/public/assets/images/logo3.png" style='width:70px;height:50px;border-radius:20px' alt />
           <!-- <h2 class='text-dark'>Headtrax Solutions</h2> -->
         </a>
         <button class="navbar-toggler offcanvas-nav-btn" type="button">
