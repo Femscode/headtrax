@@ -303,8 +303,8 @@
                         Copyright © <?php echo Date('Y'); ?>
 
                         <span class="text-primary"><a href="#">Headtrax Solutions</a></span>
-                        | Developed by
-                        <span class="text-primary"><a href="/">CareTech</a></span>
+                        <!-- | Developed by
+                        <span class="text-primary"><a href="/">CareTech</a></span> -->
                     </div>
                 </div>
                 <div class="col-lg-3">
