@@ -84,7 +84,7 @@
                                 <a class="nav-link" href="/about-us" role="button">About Us</a>
 
                             </li>
-                           
+
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Our Solutions</a>
                                 <div class="dropdown-menu dropdown-menu-xxl">
@@ -126,19 +126,19 @@
                                         </div>
                                         <div class="col">
                                             <div class="mt-3 mt-lg-0">
-                                            <div class="mt-3">
+                                                <div class="mt-3">
                                                     <div class="dropdown-header">Why Choose Us?</div>
 
                                                     <a class="dropdown-item" href="/">Why Choose Us?</a>
-                                                   
+
                                                 </div>
                                                 <div class="mt-3">
                                                     <div class="dropdown-header">Contact</div>
 
                                                     <a class="dropdown-item" href="/contact-us">Contact Us</a>
-                                                   
+
                                                 </div>
-                                        
+
                                                 <div class="mt-3">
                                                     <div class="dropdown-header">Pricing</div>
                                                     <a class="dropdown-item" href="/">Our Pricing</a>
@@ -214,7 +214,7 @@
     </header>
     @yield('content')
     <footer class="pt-7">
-        <div class="container">
+        <!-- <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-12">
                     <div class="row" id="ft-links">
@@ -283,8 +283,6 @@
                             <div class="me-7">
                                 <h4 class="mb-4">Office Address</h4>
                                 <p>Our operations extend across Nigeria and the United Kingdom, reflecting our commitment to serving diverse markets.</p>
-                                <!-- <p class="text-body-secondary">United Kingdom: 4 Princess Mary Avenue, Chatham, ME44UT</p>
-                                <p class="text-body-secondary">Lagos : The Waterside, 5, Admiralty Road off Admiralty Way, Lagos, 101224</p> -->
                             </div>
                         </div>
 
@@ -292,7 +290,7 @@
                 </div>
 
             </div>
-        </div>
+        </div> -->
         <div class="container mt-7 pt-lg-7 pb-4">
             <div class="row align-items-center">
                 <div class="col-md-3">
