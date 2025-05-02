@@ -116,7 +116,7 @@
                             What we do
                             <span class="text-primary">in a simple term.</span>
                         </h2>
-                        <p class="mb-0">We focus on building chatbot tailored for verticals across the market and Industry.</p>
+                        <p class="mb-0">We focus on building chatbot tailored for business across the market and Industry.</p>
                     </div>
                 </div>
             </div>
@@ -161,7 +161,7 @@
                                     </div>
                                 </div>
                                 <div class="mb-5">
-                                    <h4 class="card-title">Build customer relationships over 30+ Messaging channel.</h4>
+                                    <h4 class="card-title">Build customer relationships through over 30+ Messaging channel.</h4>
                                     <p class="mb-0 card-text">Effortlessly serve millions of customers globally through the most robust messaging platforms, including sms and Voice system.</p>
                                 </div>
 
@@ -234,55 +234,86 @@
     <!--Your finance end-->
 
     <!--5m member start-->
-    <section class="py-xl-9 py-5 bg-primary">
-        <div class="container" data-cue="fadeIn">
+    <section class="py-xl-9 py-5 bg-primary position-relative overflow-hidden">
+        <!-- Add decorative shapes -->
+        <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(45deg, rgba(0,0,0,0.1) 0%, rgba(255,255,255,0.05) 100%);"></div>
+        
+        <div class="container position-relative" data-cue="fadeIn">
             <div class="row">
                 <div class="col-xl-8 offset-xl-2 col-12">
                     <div class="text-center mb-xl-7 mb-5">
-                        <h2 class="text-white-stable mb-3">Why Choose Us?</h2>
-                        <!-- <p class="mb-0 text-white-50">
-                                We do this and that...
-                            </p> -->
+                        <span class="badge bg-warning text-dark mb-3">Why Choose Us?</span>
+                        <h2 class="text-white-stable mb-3 display-5">Empowering Your Business Communication</h2>
+                        <p class="text-white-50 lead">Transform your customer interactions with our cutting-edge solutions</p>
                     </div>
                 </div>
             </div>
+            
             <div class="row mb-7 pb-4 g-5 text-center text-lg-start">
                 <div class="col-md-4" data-cue="fadeIn">
-                    <h4 class="text-white-stable">Premium Communication Tools</h4>
-                    <p class="text-white-50 mb-0">Which include SMS, email, voice calls, Social Media Tags, and AI-powered chatbots.</p>
+                    <div class="p-4 rounded-3 bg-opacity-10 bg-white hover-shadow-lg transition-all">
+                        <div class="icon-lg bg-warning rounded-circle text-dark mb-4">
+                            <i class="bi bi-headset fs-4"></i>
+                        </div>
+                        <h4 class="text-white-stable">Premium Communication Tools</h4>
+                        <p class="text-white-50 mb-0">Which include SMS, email, voice calls, Social Media Tags, and AI-powered chatbots.</p>
+                    </div>
                 </div>
                 <div class="col-md-4" data-cue="fadeIn">
-                    <h4 class="text-white-stable">Multi Language Support</h4>
-                    <p class="text-white-50 mb-0">Find out in real time when they’re opened, viewed and signed.</p>
+                    <div class="p-4 rounded-3 bg-opacity-10 bg-white hover-shadow-lg transition-all">
+                        <div class="icon-lg bg-warning rounded-circle text-dark mb-4">
+                            <i class="bi bi-translate fs-4"></i>
+                        </div>
+                        <h4 class="text-white-stable">Multi Language Support</h4>
+                        <p class="text-white-50 mb-0">Find out in real time when they're opened, viewed and signed.</p>
+                    </div>
                 </div>
                 <div class="col-md-4" data-cue="fadeIn">
-                    <h4 class="text-white-stable">Mobile App Integration</h4>
-                    <p class="text-white-50 mb-0">Use our native CRM integrations to pull customer data into your Tools fast.</p>
+                    <div class="p-4 rounded-3 bg-opacity-10 bg-white hover-shadow-lg transition-all">
+                        <div class="icon-lg bg-warning rounded-circle text-dark mb-4">
+                            <i class="bi bi-phone fs-4"></i>
+                        </div>
+                        <h4 class="text-white-stable">Mobile App Integration</h4>
+                        <p class="text-white-50 mb-0">Use our native CRM integrations to pull customer data into your Tools fast.</p>
+                    </div>
                 </div>
             </div>
-            <div class="row border-primary border-top g-5 g-lg-0 text-center text-lg-start" data-cue="fadeIn">
-                <div class="col-lg-3 col-6 border-end-lg border-md-0 border-lg-primary" data-cue="fadeIn">
-                    <div class="p-lg-5">
-                        <h5 class="h1 text-white-stable mb-0">5M+</h5>
-                        <span class="text-white-50">Members</span>
+
+            <div class="row border-primary border-top g-5 g-lg-0 text-center" data-cue="fadeIn">
+                <div class="col-lg-3 col-6 border-end-lg border-md-0 border-lg-primary">
+                    <div class="p-lg-5 hover-lift">
+                        <div class="d-flex align-items-center justify-content-center mb-2">
+                            <h5 class="h1 text-white-stable mb-0 counter-value" data-count="5">5M+</h5>
+                            <span class="text-warning fs-4 ms-2">+</span>
+                        </div>
+                        <span class="text-white-50 text-uppercase letter-spacing-sm">Members</span>
                     </div>
                 </div>
-                <div class="col-lg-3 col-6 border-end-lg border-md-0 border-lg-primary" data-cue="fadeIn">
-                    <div class="p-lg-5">
-                        <h5 class="h1 text-white-stable mb-0">95%</h5>
-                        <span class="text-white-50">Customer satisfaction</span>
+                <div class="col-lg-3 col-6 border-end-lg border-md-0 border-lg-primary">
+                    <div class="p-lg-5 hover-lift">
+                        <div class="d-flex align-items-center justify-content-center mb-2">
+                            <h5 class="h1 text-white-stable mb-0 counter-value" data-count="95">95</h5>
+                            <span class="text-warning fs-4 ms-2">%</span>
+                        </div>
+                        <span class="text-white-50 text-uppercase letter-spacing-sm">Customer satisfaction</span>
                     </div>
                 </div>
-                <div class="col-lg-3 col-6 border-end-lg border-md-0 border-lg-primary" data-cue="fadeIn">
-                    <div class="p-lg-5">
-                        <h5 class="h1 text-white-stable mb-0">73%</h5>
-                        <span class="text-white-50">Over year growth</span>
+                <div class="col-lg-3 col-6 border-end-lg border-md-0 border-lg-primary">
+                    <div class="p-lg-5 hover-lift">
+                        <div class="d-flex align-items-center justify-content-center mb-2">
+                            <h5 class="h1 text-white-stable mb-0 counter-value" data-count="73">73</h5>
+                            <span class="text-warning fs-4 ms-2">%</span>
+                        </div>
+                        <span class="text-white-50 text-uppercase letter-spacing-sm">Over year growth</span>
                     </div>
                 </div>
-                <div class="col-lg-3 col-6" data-cue="fadeIn">
-                    <div class="p-lg-5">
-                        <h5 class="h1 text-white-stable mb-0">250B</h5>
-                        <span class="text-white-50">Money managed</span>
+                <div class="col-lg-3 col-6">
+                    <div class="p-lg-5 hover-lift">
+                        <div class="d-flex align-items-center justify-content-center mb-2">
+                            <h5 class="h1 text-white-stable mb-0 counter-value" data-count="250">250</h5>
+                            <span class="text-warning fs-4 ms-2">B</span>
+                        </div>
+                        <span class="text-white-50 text-uppercase letter-spacing-sm">Money managed</span>
                     </div>
                 </div>
             </div>
