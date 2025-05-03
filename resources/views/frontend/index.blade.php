@@ -116,7 +116,7 @@
                             What we do
                             <span class="text-primary">in a simple term.</span>
                         </h2>
-                        <p class="mb-0">We focus on building chatbot tailored for business across the market and Industry.</p>
+                        <p class="mb-0">We focus on building chatbots tailored for businesses across markets and industries.</p>
                     </div>
                 </div>
             </div>
@@ -451,7 +451,7 @@
                 <div class="col-lg-5 col-md-12" data-cue="fadeIn">
                     <div class="mb-xl-7 mb-5">
                         <h2 class="mb-3">
-                        Does you business Harness the 
+                        Does your business harness the 
                             <span class="text-primary">Power of Conversational AI?</span>
                         </h2>
                         <p class="mb-0">Discover how Headtrax Solutions can elevate your customer interactions and help your business grow.</p>
@@ -473,7 +473,7 @@
                                 </span>
                             </div>
 
-                            <h3 class="h4">Get to know our solutions, and choose the most suitable for your need.</h3>
+                            <h3 class="h4">Get to know our solutions, and choose the one that best suits your needs.</h3>
                             <!-- <p class="mb-0">Apply online on block website and fill the form by telling us your name, address, date of birth.</p> -->
                         </div>
                     </div>

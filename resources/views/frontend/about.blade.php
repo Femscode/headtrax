@@ -14,7 +14,7 @@
                   <div class="me-xl-8">
                      <h1 class="mb-3">Who are we?</h1>
                       <p class="mb-6 me-xl-6">
-                     At Headtrax Solutions Limited, we are dedicated to empowering businesses by providing seamless, localized, and tailored communication solutions. Our services are designed to enhance customer engagement, satisfaction, and loyalty, helping businesses grow and succeed in the Nigerian market.
+                     We are dedicated to empowering businesses by providing seamless, localized, and tailored communication solutions. Our services are designed to enhance customer engagement, satisfaction, and loyalty, helping businesses grow and succeed in the Nigerian market.
                      </p>
                     
                   </div>
