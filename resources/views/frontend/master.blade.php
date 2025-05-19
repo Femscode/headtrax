@@ -60,7 +60,7 @@
         <nav class="navbar navbar-expand-lg  transparent navbar-transparent navbar-dark">
             <div class="container px-3">
                 <a class="navbar-brandii d-flex" href="/">
-                    <img src="https://headtraxsolutions.com/headtrax_files/public/assets/images/logo34.png" style='width:70px;height:50px;border-radius:20px' alt />
+                    <img src="https://headtraxsolutions.com/headtrax_files/public/assets/images/logo3.png" style='width:70px;height:50px;border-radius:20px' alt />
                     <h2>Head<span style='color:#ebab21'>trax</span></h2>
                     <!-- <h2 class='text-dark'>Headtrax Solutions</h2> -->
                 </a>
