@@ -1,5 +1,239 @@
 @extends('frontend.master')
 @section('header')
+<style>
+    .hover-lift {
+        transition: all 0.3s ease;
+    }
+
+    .hover-lift:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15);
+    }
+
+    .avatar {
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .avatar-lg {
+        width: 56px;
+        height: 56px;
+    }
+
+    .transition-all {
+        transition: all 0.3s ease;
+    }
+
+    .shadow-hover {
+        transition: all 0.3s ease;
+    }
+
+    .shadow-hover:hover {
+        box-shadow: 0 1rem 3rem rgba(var(--bs-primary-rgb), 0.175) !important;
+    }
+
+    .hover-lift {
+        transition: transform 0.2s ease;
+    }
+
+    .hover-lift:hover {
+        transform: translateY(-5px);
+    }
+
+    .text-gradient-primary {
+        background: linear-gradient(45deg, var(--bs-primary), var(--bs-info));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .icon-sm {
+        width: 32px;
+        height: 32px;
+    }
+
+    .section-why-choose-us {
+        overflow: hidden;
+    }
+
+    .bg-shapes {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+    }
+
+    .shape {
+        position: absolute;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        animation: float 15s infinite linear;
+    }
+
+    .shape-1 {
+        width: 300px;
+        height: 300px;
+        top: 10%;
+        left: 5%;
+        opacity: 0.3;
+    }
+
+    .shape-2 {
+        width: 200px;
+        height: 200px;
+        bottom: 20%;
+        right: 10%;
+        opacity: 0.2;
+    }
+
+    @keyframes float {
+        0% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-20px);
+        }
+
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    .spotlight-card {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .spotlight-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .icon-wrapper {
+        width: 60px;
+        height: 60px;
+        background: #ffc107;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .icon {
+        width: 32px;
+        height: 32px;
+        stroke: #1a1a1a;
+    }
+
+    .text-white-75 {
+        color: rgba(255, 255, 255, 0.75);
+    }
+
+    .fs-sm {
+        font-size: 0.85rem;
+    }
+
+    .h1 {
+        line-height: 1.2;
+    }
+
+    .border-end {
+        border-color: rgba(255, 255, 255, 0.2) !important;
+    }
+
+    .hover-lift:hover {
+        transform: translateY(-5px);
+        transition: transform 0.3s ease;
+    }
+
+    @media (max-width: 767px) {
+        .border-end {
+            border-right: none !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+        }
+    }
+
+    .icon-lg {
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hover-lift {
+        transition: all 0.2s ease;
+    }
+
+    .hover-lift:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08) !important;
+    }
+
+    .text-gradient-primary {
+        background: linear-gradient(45deg, var(--bs-primary), #2196f3);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .nav-pills .nav-link {
+        transition: all 0.3s ease;
+    }
+
+    .nav-pills .nav-link.active {
+        background: linear-gradient(45deg, var(--bs-primary), #2196f3);
+        color: white;
+    }
+
+    .nav-pills .nav-link.active .text-secondary {
+        color: rgba(255, 255, 255, 0.8) !important;
+    }
+
+    .nav-pills .nav-link.active .icon-lg {
+        background: rgba(255, 255, 255, 0.2) !important;
+    }
+
+    .nav-pills .nav-link.active i {
+        color: white !important;
+    }
+
+    .shadow-hover {
+        transition: all 0.3s ease;
+    }
+
+    .shadow-hover:hover {
+        box-shadow: 0 1rem 3rem rgba(var(--bs-primary-rgb), 0.15) !important;
+    }
+
+    .hover-lift {
+        transition: transform 0.2s ease;
+    }
+
+    .hover-lift:hover {
+        transform: translateY(-5px);
+    }
+
+    .text-gradient-primary {
+        background: linear-gradient(45deg, var(--bs-primary), #2196f3);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .icon-xl {
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
 @endsection
 
 @section('content')
@@ -13,7 +247,7 @@
                     <div class="text-center text-lg-start mb-7 mb-lg-0" data-cues="slideInDown">
                         <div class="mb-4">
                             <h1 class="mb-5 display-5 text-white-stable">
-                            Turn interactions into
+                                Turn interactions into
                                 <span class="text-pattern-line text-warning">lasting relationships.</span>
                             </h1>
                             <p class="mb-0 text-white-stable lead" style='text-align:left'>Empower your business with AI-driven conversations that connect, convert, and delight customers effortlessly.</p>
@@ -107,333 +341,392 @@
     <!--Featured in end-->
 
     <!--Your finance start-->
-    <section class="my-xl-9 my-5">
-        <div class="container" data-cue="fadeIn">
+    <section class="section-what-we-do py-7 py-xl-9 bg-light position-relative overflow-hidden">
+        <!-- Background decoration -->
+        <div class="position-absolute top-0 start-0 w-100 h-100" style="background: radial-gradient(circle at 0% 0%, rgba(var(--bs-primary-rgb), 0.03) 0%, transparent 50%);"></div>
+
+        <div  class="container  position-relative" data-cue="fadeIn">
+            <!-- Header -->
+            <div class="row mb-7">
+                <div class="col-xl-8 col-lg-10 mx-auto text-center">
+                    <span class="badge bg-primary-subtle text-primary px-3 py-2 mb-3">Our Expertise</span>
+                    <h2 class="display-4 mb-3 fw-bold">
+                        What We Do
+                        <span class="text-gradient-primary">In A Simple Term.</span>
+                    </h2>
+                    <p class="lead text-dark mb-0">We focus on building chatbots tailored for businesses across markets and industries.</p>
+                </div>
+            </div>
+
+            <!-- Features -->
+            <div class="row g-4 mb-7">
+                <div class="col-lg-4 col-md-6" data-cue="fadeInUp" data-delay="100">
+                    <div class="card border-0 bg-white shadow-hover h-100 transition-all hover-lift">
+                        <div class="card-body p-5">
+                            <div class="feature-icon-box mb-4">
+                                <div class="icon-wrapper rounded-4 bg-primary bg-opacity-10 p-3 d-inline-flex position-relative">
+                                    <img src="assets/images/local-language.jpeg" alt="Intelligent AI" class="rounded-3 img-fluid" style="width: 48px; height: 48px; object-fit: cover;">
+                                    <div class="position-absolute top-0 end-0 mt-n2 me-n2">
+                                        <span class="badge rounded-pill bg-primary"><i class="bi bi-robot"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <h4 class="card-title h3 mb-3">Intelligent Conversational AI</h4>
+                            <p class="card-text text-dark mb-4">Create engaging conversational experiences with generative AI to boost customer engagement, loyalty, and business growth.</p>
+                            <a href="#" class="btn btn-link text-primary p-0">
+                                Learn More <i class="bi bi-arrow-right ms-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-cue="fadeInUp" data-delay="200">
+                    <div class="card border-0 bg-white shadow-hover h-100 transition-all hover-lift">
+                        <div class="card-body p-5">
+                            <div class="feature-icon-box mb-4">
+                                <div class="icon-wrapper rounded-4 bg-warning bg-opacity-10 p-3 d-inline-flex position-relative">
+                                    <img src="assets/images/hero1.jpeg" alt="Messaging Channels" class="rounded-3 img-fluid" style="width: 48px; height: 48px; object-fit: cover;">
+                                    <div class="position-absolute top-0 end-0 mt-n2 me-n2">
+                                        <span class="badge rounded-pill bg-warning"><i class="bi bi-chat-dots"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <h4 class="card-title h3 mb-3">30+ Messaging Channels</h4>
+                            <p class="card-text text-dark mb-4">Seamlessly connect with millions of customers worldwide via robust platforms, including SMS and voice systems.</p>
+                            <a href="#" class="btn btn-link text-primary p-0">
+                                Learn More <i class="bi bi-arrow-right ms-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-cue="fadeInUp" data-delay="300">
+                    <div class="card border-0 bg-white shadow-hover h-100 transition-all hover-lift">
+                        <div class="card-body p-5">
+                            <div class="feature-icon-box mb-4">
+                                <div class="icon-wrapper rounded-4 bg-success bg-opacity-10 p-3 d-inline-flex position-relative">
+                                    <img src="assets/images/mobile-device2.jpeg" alt="Personalized Interaction" class="rounded-3 img-fluid" style="width: 48px; height: 48px; object-fit: cover;">
+                                    <div class="position-absolute top-0 end-0 mt-n2 me-n2">
+                                        <span class="badge rounded-pill bg-success"><i class="bi bi-phone"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <h4 class="card-title h3 mb-3">Personalized Mobile Integration</h4>
+                            <p class="card-text text-dark mb-4">Anticipate customer needs and deliver proactive, tailored solutions across all industries.</p>
+                            <a href="#" class="btn btn-link text-primary p-0">
+                                Learn More <i class="bi bi-arrow-right ms-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Benefits -->
             <div class="row">
-                <div class="col-xl-8 offset-xl-2">
-                    <div class="text-center mb-xl-7 mb-5">
-                        <h2 class="mb-3">
-                            What we do
-                            <span class="text-primary">in a simple term.</span>
-                        </h2>
-                        <p class="mb-0">We focus on building chatbots tailored for businesses across markets and industries.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="table-responsive-lg">
-                <div class="row flex-nowrap pb-4 pb-lg-0 me-5 me-lg-0">
-                    <div class="col-lg-4 col-md-6" data-cue="zoomIn">
-                        <div class="card border-0 card-primary">
-                            <div class="card-body p-5">
-                                <div class="position-relative d-inline-block mb-5">
-                                    <img src="assets/images/local-language.jpeg" alt="feature" class="avatar avatar-xl rounded-circle border-2 border border-white shadow-sm" />
-
-                                    <div class="position-absolute bottom-0 end-0">
-                                        <div class="icon-md icon-shape rounded-circle bg-white me-n2 mb-n2 shadow-sm">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-bank2 text-primary" viewBox="0 0 16 16">
-                                                <path
-                                                    d="M8.277.084a.5.5 0 0 0-.554 0l-7.5 5A.5.5 0 0 0 .5 6h1.875v7H1.5a.5.5 0 0 0 0 1h13a.5.5 0 1 0 0-1h-.875V6H15.5a.5.5 0 0 0 .277-.916l-7.5-5zM12.375 6v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zM8 4a1 1 0 1 1 0-2 1 1 0 0 1 0 2zM.5 15a.5.5 0 0 0 0 1h15a.5.5 0 1 0 0-1H.5z" />
-                                            </svg>
-                                        </div>
+                <div class="col-12">
+                    <div class="bg-white rounded-4 p-4 p-sm-5 shadow-sm">
+                        <ul class="row row-cols-2 row-cols-lg-4 g-3 g-lg-4 mb-0 list-unstyled">
+                            <li class="col">
+                                <div class="d-flex align-items-center">
+                                    <div class="icon-sm bg-success bg-opacity-10 rounded-circle me-3 d-flex align-items-center justify-content-center flex-shrink-0">
+                                        <i class="bi bi-shield-check text-success"></i>
                                     </div>
+                                    <span class="fw-medium small">24/7 Monitoring</span>
                                 </div>
-                                <div class="mb-5">
-                                    <h4 class="card-title">Intelligent Conversational AI Tool</h4>
-                                    <p class="mb-0 card-text">Effortlessly create engaging conversational experiences with generative AI that will elevate customer engagement, build loyalty, and drive meaningful business growth.</p>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6" data-cue="zoomIn">
-                        <div class="card border-0 card-primary">
-                            <div class="card-body p-5">
-                                <div class="position-relative d-inline-block mb-5">
-                                    <img src="assets/images/hero1.jpeg" alt="feature" class="avatar avatar-xl rounded-circle border-2 border border-white shadow-sm" />
-
-                                    <div class="position-absolute bottom-0 end-0">
-                                        <div class="icon-md icon-shape rounded-circle bg-white me-n2 mb-n2 shadow-sm">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-credit-card-2-front-fill text-primary" viewBox="0 0 16 16">
-                                                <path
-                                                    d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2.5 1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-2zm0 3a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 2a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1zm3 0a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1zm3 0a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1zm3 0a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z" />
-                                            </svg>
-                                        </div>
+                            </li>
+                            <li class="col">
+                                <div class="d-flex align-items-center">
+                                    <div class="icon-sm bg-success bg-opacity-10 rounded-circle me-3 d-flex align-items-center justify-content-center flex-shrink-0">
+                                        <i class="bi bi-lock text-success"></i>
                                     </div>
+                                    <span class="fw-medium small">Enterprise Security</span>
                                 </div>
-                                <div class="mb-5">
-                                    <h4 class="card-title">Build customer relationships through over 30+ Messaging channel.</h4>
-                                    <p class="mb-0 card-text">Effortlessly serve millions of customers globally through the most robust messaging platforms, including sms and Voice system.</p>
-                                </div>
-
-                               
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6" data-cue="zoomIn">
-                        <div class="card border-0 card-primary">
-                            <div class="card-body p-5">
-                                <div class="position-relative d-inline-block mb-5">
-                                    <img src="assets/images/mobile-device2.jpeg" alt="feature" class="avatar avatar-xl rounded-circle border-2 border border-white shadow-sm" />
-
-                                    <div class="position-absolute bottom-0 end-0">
-                                        <div class="icon-md icon-shape rounded-circle bg-white me-n2 mb-n2 shadow-sm">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-cash-stack text-primary" viewBox="0 0 16 16">
-                                                <path d="M1 3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1H1zm7 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" />
-                                                <path d="M0 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V5zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V7a2 2 0 0 1-2-2H3z" />
-                                            </svg>
-                                        </div>
+                            </li>
+                            <li class="col">
+                                <div class="d-flex align-items-center">
+                                    <div class="icon-sm bg-success bg-opacity-10 rounded-circle me-3 d-flex align-items-center justify-content-center flex-shrink-0">
+                                        <i class="bi bi-headset text-success"></i>
                                     </div>
+                                    <span class="fw-medium small">24/7 Support</span>
                                 </div>
-                                <div class="mb-5">
-                                    <h4 class="card-title">Personalized Interaction & Mobile Integration.</h4>
-                                    <p class="mb-0 card-text">Anticipate customer needs and deliver proactive solutions across all industries..</p>
+                            </li>
+                            <li class="col">
+                                <div class="d-flex align-items-center">
+                                    <div class="icon-sm bg-success bg-opacity-10 rounded-circle me-3 d-flex align-items-center justify-content-center flex-shrink-0">
+                                        <i class="bi bi-graph-up-arrow text-success"></i>
+                                    </div>
+                                    <span class="fw-medium small">99.9% Uptime</span>
                                 </div>
-
-                                
-                            </div>
-                        </div>
+                            </li>
+                        </ul>
                     </div>
-                </div>
-            </div>
-            <div class="row mt-6" data-cue="fadeIn">
-                <div class="col-xl-10 offset-xl-1">
-                    <ul class="list-inline">
-                        <li class="list-inline-item d-inline-flex align-items-center me-3 mb-2 mb-lg-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                                <path
-                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-                            </svg>
-                            <span class="ms-2">24/7 account monitoring</span>
-                        </li>
-                        <li class="list-inline-item d-inline-flex align-items-center me-3 mb-2 mb-lg-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                                <path
-                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-                            </svg>
-                            <span class="ms-2 me-3">Protection & peace of mind</span>
-                        </li>
-                        <li class="list-inline-item d-inline-flex align-items-center me-3 mb-2 mb-lg-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                                <path
-                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-                            </svg>
-                            <span class="ms-2">Anytime, anywhere support</span>
-                        </li>
-                        <li class="list-inline-item d-inline-flex align-items-center me-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                                <path
-                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-                            </svg>
-                            <span class="ms-2">Serious security</span>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </div>
     </section>
+
+
+
+
+
+
+
     <!--Your finance end-->
 
     <!--5m member start-->
-    <section class="py-xl-9 py-5 bg-primary position-relative overflow-hidden">
-        <!-- Add decorative shapes -->
-        <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(45deg, rgba(0,0,0,0.1) 0%, rgba(255,255,255,0.05) 100%);"></div>
-        
+    <section class="section-why-choose-us py-5 py-xl-9 position-relative overflow-hidden text-white" style="background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%);">
+        <!-- Decorative Background Shapes -->
+        <div class="bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+        </div>
+
         <div class="container position-relative" data-cue="fadeIn">
-            <div class="row">
-                <div class="col-xl-8 offset-xl-2 col-12">
-                    <div class="text-center mb-xl-7 mb-5">
-                        <span class="badge bg-warning text-dark mb-3">Why Choose Us?</span>
-                        <h2 class="text-white-stable mb-3 display-5">Empowering Your Business Communication</h2>
-                        <p class="text-white-50 lead">Transform your customer interactions with our cutting-edge solutions</p>
-                    </div>
+            <!-- Header -->
+            <div class="row mb-5 mb-xl-7">
+                <div class="col-xl-8 col-lg-10 mx-auto text-center">
+                    <span class="badge bg-warning text-dark mb-3 px-3 py-2">Why Choose Us?</span>
+                    <h2 style="color:#ffc107" class="display-4 fw-bold mb-3">Empower Your Business Communication</h2>
+                    <p class="lead text-white-75">Transform your customer interactions with our cutting-edge solutions.</p>
                 </div>
             </div>
-            
-            <div class="row mb-7 pb-4 g-5 text-center text-lg-start">
-                <div class="col-md-4" data-cue="fadeIn">
-                    <div class="p-4 rounded-3 bg-opacity-10 bg-white hover-shadow-lg transition-all">
-                        <div class="icon-lg bg-warning rounded-circle text-dark mb-4">
-                            <i class="bi bi-headset fs-4"></i>
+
+            <!-- Features -->
+            <div class="row g-4 mb-7">
+                <div class="col-md-4" data-cue="fadeIn" data-delay="100">
+                    <div class="spotlight-card p-5 rounded-4 h-100 transition-all">
+                        <div class="icon-wrapper mb-4">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                <path d="M8 12h8" />
+                                <path d="M12 8v8" />
+                            </svg>
                         </div>
-                        <h4 class="text-white-stable">Premium Communication Tools</h4>
-                        <p class="text-white-50 mb-0">Which include SMS, email, voice calls, Social Media Tags, and AI-powered chatbots.</p>
+                        <h4 style="color:#fff" class="fw-semibold mb-3">Premium Communication Tools</h4>
+                        <p class="text-white-75 mb-0">Leverage SMS, email, voice, social media, and AI-powered chatbots for seamless customer engagement.</p>
                     </div>
                 </div>
-                <div class="col-md-4" data-cue="fadeIn">
-                    <div class="p-4 rounded-3 bg-opacity-10 bg-white hover-shadow-lg transition-all">
-                        <div class="icon-lg bg-warning rounded-circle text-dark mb-4">
-                            <i class="bi bi-translate fs-4"></i>
+                <div class="col-md-4" data-cue="fadeIn" data-delay="200">
+                    <div class="spotlight-card p-5 rounded-4 h-100 transition-all">
+                        <div class="icon-wrapper mb-4">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 3h18v18H3z" />
+                                <path d="M9 7h6" />
+                                <path d="M9 11h6" />
+                                <path d="M9 15h6" />
+                            </svg>
                         </div>
-                        <h4 class="text-white-stable">Multi Language Support</h4>
-                        <p class="text-white-50 mb-0">Find out in real time when they're opened, viewed and signed.</p>
+                        <h4 style="color:#fff" class="fw-semibold mb-3">Multi-Language Support</h4>
+                        <p class="text-white-75 mb-0">Engage customers globally with real-time, multi-language communication capabilities.</p>
                     </div>
                 </div>
-                <div class="col-md-4" data-cue="fadeIn">
-                    <div class="p-4 rounded-3 bg-opacity-10 bg-white hover-shadow-lg transition-all">
-                        <div class="icon-lg bg-warning rounded-circle text-dark mb-4">
-                            <i class="bi bi-phone fs-4"></i>
+                <div class="col-md-4" data-cue="fadeIn" data-delay="300">
+                    <div class="spotlight-card p-5 rounded-4 h-100 transition-all">
+                        <div class="icon-wrapper mb-4">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M7 3h10a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" />
+                                <path d="M10 17h4" />
+                            </svg>
                         </div>
-                        <h4 class="text-white-stable">Mobile App Integration</h4>
-                        <p class="text-white-50 mb-0">Use our native CRM integrations to pull customer data into your Tools fast.</p>
+                        <h4 style="color:#fff" class="fw-semibold mb-3">Mobile App Integration</h4>
+                        <p class="text-white-75 mb-0">Integrate with native CRM systems to streamline customer data and enhance interactions.</p>
                     </div>
                 </div>
             </div>
 
-            <div class="row border-primary border-top g-5 g-lg-0 text-center" data-cue="fadeIn">
-                <div class="col-lg-3 col-6 border-end-lg border-md-0 border-lg-primary">
-                    <div class="p-lg-5 hover-lift">
-                        <div class="d-flex align-items-center justify-content-center mb-2">
-                            <h5 class="h1 text-white-stable mb-0 counter-value" data-count="5">5M+</h5>
-                            <span class="text-warning fs-4 ms-2">+</span>
+            <!-- Metrics -->
+            <div class="row g-0 border-top border-primary text-center" data-cue="fadeIn">
+                <div class="col-lg-3 col-6 border-end border-primary">
+                    <div class="p-5 hover-lift">
+                        <div class="d-flex align-items-center justify-content-center mb-3">
+                            <h3 class="h1 fw-bold text-white mb-0 counter-value" data-count="5000000">0</h3>
+                            <span class="text-warning fs-3 ms-2">+</span>
                         </div>
-                        <span class="text-white-50 text-uppercase letter-spacing-sm">Members</span>
+                        <span class="text-white-75 text-uppercase fs-sm">Members</span>
                     </div>
                 </div>
-                <div class="col-lg-3 col-6 border-end-lg border-md-0 border-lg-primary">
-                    <div class="p-lg-5 hover-lift">
-                        <div class="d-flex align-items-center justify-content-center mb-2">
-                            <h5 class="h1 text-white-stable mb-0 counter-value" data-count="95">95</h5>
-                            <span class="text-warning fs-4 ms-2">%</span>
+                <div class="col-lg-3 col-6 border-end border-primary">
+                    <div class="p-5 hover-lift">
+                        <div class="d-flex align-items-center justify-content-center mb-3">
+                            <h3 class="h1 fw-bold text-white mb-0 counter-value" data-count="95">0</h3>
+                            <span class="text-warning fs-3 ms-2">%</span>
                         </div>
-                        <span class="text-white-50 text-uppercase letter-spacing-sm">Customer satisfaction</span>
+                        <span class="text-white-75 text-uppercase fs-sm">Customer Satisfaction</span>
                     </div>
                 </div>
-                <div class="col-lg-3 col-6 border-end-lg border-md-0 border-lg-primary">
-                    <div class="p-lg-5 hover-lift">
-                        <div class="d-flex align-items-center justify-content-center mb-2">
-                            <h5 class="h1 text-white-stable mb-0 counter-value" data-count="73">73</h5>
-                            <span class="text-warning fs-4 ms-2">%</span>
+                <div class="col-lg-3 col-6 border-end border-primary">
+                    <div class="p-5 hover-lift">
+                        <div class="d-flex align-items-center justify-content-center mb-3">
+                            <h3 class="h1 fw-bold text-white mb-0 counter-value" data-count="73">0</h3>
+                            <span class="text-warning fs-3 ms-2">%</span>
                         </div>
-                        <span class="text-white-50 text-uppercase letter-spacing-sm">Over year growth</span>
+                        <span class="text-white-75 text-uppercase fs-sm">Yearly Growth</span>
                     </div>
                 </div>
                 <div class="col-lg-3 col-6">
-                    <div class="p-lg-5 hover-lift">
-                        <div class="d-flex align-items-center justify-content-center mb-2">
-                            <h5 class="h1 text-white-stable mb-0 counter-value" data-count="250">250</h5>
-                            <span class="text-warning fs-4 ms-2">B</span>
+                    <div class="p-5 hover-lift">
+                        <div class="d-flex align-items-center justify-content-center mb-3">
+                            <h3 class="h1 fw-bold text-white mb-0 counter-value" data-count="250">0</h3>
+                            <span class="text-warning fs-3 ms-2">B</span>
                         </div>
-                        <span class="text-white-50 text-uppercase letter-spacing-sm">Money managed</span>
+                        <span class="text-white-75 text-uppercase fs-sm">Money Managed</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+
+
+    <script>
+        // Counter Animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const counters = document.querySelectorAll('.counter-value');
+            const animateCounter = (counter) => {
+                const target = +counter.getAttribute('data-count');
+                const duration = 2000;
+                const increment = target / (duration / 16);
+                let current = 0;
+
+                const updateCounter = () => {
+                    current += increment;
+                    if (current < target) {
+                        counter.textContent = Math.round(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target.toLocaleString();
+                    }
+                };
+                updateCounter();
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounter(entry.target);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.5
+            });
+
+            counters.forEach(counter => observer.observe(counter));
+        });
+    </script>
     <!--5m member end-->
 
     <!--Product designer start-->
-    <section class="my-xl-9 my-5">
-        <div class="container">
+    <section class="section-communication-suite py-7 py-xl-9 bg-light position-relative overflow-hidden">
+        <!-- Background decoration -->
+        <div class="position-absolute top-0 end-0 w-100 h-100" style="background: radial-gradient(circle at 100% 0%, rgba(var(--bs-primary-rgb), 0.03) 0%, transparent 50%);"></div>
+
+        <div class="container position-relative">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
                     <div class="text-center mb-xl-7 mb-5" data-cue="fadeIn">
-                        <h2 class="mb-3">
-                            Communication Suite for
-                            <span class="text-primary">all business size.</span>
+                        <span class="badge bg-primary-subtle text-primary px-3 py-2 mb-3">Communication Suite</span>
+                        <h2 class="display-4 mb-3 fw-bold">
+                            Powerful Solutions for
+                            <span class="text-gradient-primary">Every Business Size</span>
                         </h2>
+                        <p class="lead text-dark mb-0">Discover our comprehensive communication tools designed to scale with your business needs</p>
                     </div>
                 </div>
             </div>
-            <div class="row align-items-center">
-                <div class="col-xl-5 col-md-6 col-12">
-                    <div class="nav flex-column nav-pills mb-5 mb-lg-0" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <a
-                            href="#"
-                            class="nav-link active d-flex text-start align-items-center align-items-lg-start p-xl-4 p-3"
-                            id="v-pills-small-business-tab"
-                            data-bs-toggle="pill"
-                            data-bs-target="#v-pills-small-business"
-                            role="tab"
-                            aria-controls="v-pills-small-business"
-                            aria-selected="true">
-                            <div class="d-flex">
-                                <div class="icon-md icon-shape rounded-circle bg-white shadow-sm">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-bank2 text-primary" viewBox="0 0 16 16">
-                                        <path
-                                            d="M8.277.084a.5.5 0 0 0-.554 0l-7.5 5A.5.5 0 0 0 .5 6h1.875v7H1.5a.5.5 0 0 0 0 1h13a.5.5 0 1 0 0-1h-.875V6H15.5a.5.5 0 0 0 .277-.916l-7.5-5zM12.375 6v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zM8 4a1 1 0 1 1 0-2 1 1 0 0 1 0 2zM.5 15a.5.5 0 0 0 0 1h15a.5.5 0 1 0 0-1H.5z" />
-                                    </svg>
+
+            <div class="row align-items-center g-5">
+                <div class="col-xl-5 col-lg-6 col-12">
+                    <div class="nav flex-column nav-pills gap-3" id="v-pills-tab" role="tablist">
+                        <button class="nav-link active p-4 rounded-4 border-0 bg-white shadow-sm hover-lift" id="v-pills-sms-tab" data-bs-toggle="pill" data-bs-target="#v-pills-small-business">
+                            <div class="d-flex align-items-center">
+                                <div class="icon-lg rounded-3 bg-primary bg-opacity-10 p-3 flex-shrink-0">
+                                    <i class="bi bi-chat-dots fs-4 text-primary"></i>
+                                </div>
+                                <div class="ms-4">
+                                    <h4 class="mb-1">SMS, Email & Voice Calls</h4>
+                                    <p class="mb-0 text-dark">Reliable, high-quality messaging across multiple channels with global reach.</p>
                                 </div>
                             </div>
-                            <div class="ms-4">
-                                <h4 class="mb-0">SMS, Email & Voice Calls</h4>
-                                <p class="mb-0 mt-lg-3 d-none d-lg-block">Reliable, high-quality messaging across multiple channels.</p>
-                            </div>
-                        </a>
-                        <a
-                            href="#"
-                            class="nav-link d-flex text-start align-items-center align-items-lg-start p-xl-4 p-3"
-                            id="v-pills-profile-tab"
-                            data-bs-toggle="pill"
-                            data-bs-target="#v-pills-profile"
-                            role="tab"
-                            aria-controls="v-pills-profile"
-                            aria-selected="false">
-                            <div class="d-flex">
-                                <div class="icon-md icon-shape rounded-circle bg-white shadow-sm">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-credit-card-2-front-fill text-primary" viewBox="0 0 16 16">
-                                        <path
-                                            d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2.5 1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-2zm0 3a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 2a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1zm3 0a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1zm3 0a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1zm3 0a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z" />
-                                    </svg>
+                        </button>
+
+                        <button class="nav-link p-4 rounded-4 border-0 bg-white shadow-sm hover-lift" id="v-pills-chatbot-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile">
+                            <div class="d-flex align-items-center">
+                                <div class="icon-lg rounded-3 bg-warning bg-opacity-10 p-3 flex-shrink-0">
+                                    <i class="bi bi-robot fs-4 text-warning"></i>
+                                </div>
+                                <div class="ms-4">
+                                    <h4 class="mb-1">AI-powered Chatbots</h4>
+                                    <p class="mb-0 text-dark">Intelligent customer support with 24/7 automated responses and learning capabilities.</p>
                                 </div>
                             </div>
-                            <div class="ms-4">
-                                <h4 class="mb-0">AI-powered Chatbots</h4>
-                                <p class="mb-0 mt-lg-3 d-none d-lg-block">Intelligent customer support tailored to various industry needs.</p>
-                            </div>
-                        </a>
-                        <a
-                            href="#"
-                            class="nav-link d-flex text-start p-xl-4 p-3 align-items-center align-items-lg-start"
-                            id="v-pills-enterprises-tab"
-                            data-bs-toggle="pill"
-                            data-bs-target="#v-pills-enterprises"
-                            role="tab"
-                            aria-controls="v-pills-enterprises"
-                            aria-selected="false">
-                            <div class="d-flex">
-                                <div class="icon-md icon-shape rounded-circle bg-white shadow-sm">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-cash-stack text-primary" viewBox="0 0 16 16">
-                                        <path d="M1 3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1H1zm7 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" />
-                                        <path d="M0 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V5zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V7a2 2 0 0 1-2-2H3z" />
-                                    </svg>
+                        </button>
+
+                        <button class="nav-link p-4 rounded-4 border-0 bg-white shadow-sm hover-lift" id="v-pills-social-tab" data-bs-toggle="pill" data-bs-target="#v-pills-enterprises">
+                            <div class="d-flex align-items-center">
+                                <div class="icon-lg rounded-3 bg-success bg-opacity-10 p-3 flex-shrink-0">
+                                    <i class="bi bi-share fs-4 text-success"></i>
+                                </div>
+                                <div class="ms-4">
+                                    <h4 class="mb-1">Social Media Integration</h4>
+                                    <p class="mb-0 text-dark">Seamlessly manage all your social media interactions from one unified platform.</p>
                                 </div>
                             </div>
-                            <div class="ms-4">
-                                <h4 class="mb-0">Social Media Integration</h4>
-                                <p class="mb-0 mt-lg-3 d-none d-lg-block">
-                                    Automatically respond to mentions and tags to stay engaged with your audience.
-                                </p>
-                            </div>
-                        </a>
+                        </button>
                     </div>
                 </div>
-                <div class="col-xl-6 offset-xl-1 col-md-6 col-12">
+
+                <div class="col-xl-6 offset-xl-1 col-lg-6 col-12">
                     <div class="tab-content" id="v-pills-tabContent">
-                        <div class="tab-pane fade show active" id="v-pills-small-business" role="tabpanel" aria-labelledby="v-pills-small-business-tab" tabindex="0">
-                            <div class="position-relative scene" data-relative-input="true">
-                                <figure><img src="assets/images/mobile-device-sms.jpeg" alt="finance" class="img-fluid rounded-3" data-cue="fadeIn" /></figure>
-
-                                <div class="position-relative" data-depth="0.05">
-                                    <img src="assets/images/landings/finance/card.svg" alt="" class="position-absolute bottom-0 end-0 px-4" />
+                        <div class="tab-pane fade show active" id="v-pills-small-business" role="tabpanel">
+                            <div class="position-relative">
+                                <div class="card border-0 shadow-lg rounded-4 p-2 mb-4">
+                                    <img src="assets/images/mobile-device-sms.jpeg" alt="SMS & Voice Solutions" class="img-fluid rounded-4" data-cue="fadeIn">
+                                    <div class="position-absolute top-0 end-0 mt-3 me-3">
+                                        <span class="badge bg-primary rounded-pill px-3 py-2">
+                                            <i class="bi bi-check2-circle me-1"></i>Enterprise Ready
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="row g-4 mt-2">
+                                    <div class="col-6">
+                                        <div class="d-flex align-items-center p-3 rounded-3 bg-white shadow-sm">
+                                            <i class="bi bi-shield-check text-primary me-3 fs-4"></i>
+                                            <span class="fw-medium">Secure Delivery</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="d-flex align-items-center p-3 rounded-3 bg-white shadow-sm">
+                                            <i class="bi bi-graph-up text-success me-3 fs-4"></i>
+                                            <span class="fw-medium">99.9% Uptime</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabindex="0">
-                            <div class="position-relative scene" data-relative-input="true">
-                                <figure><img src="assets/images/robot.jpeg" alt="finance" class="img-fluid rounded-3" data-cue="fadeIn" /></figure>
 
-                                <div class="position-relative" data-depth="0.05">
-                                    <img src="assets/images/landings/finance/card.svg" alt="" class="position-absolute bottom-0 start-0 px-4" />
+                        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel">
+                            <div class="position-relative">
+                                <div class="card border-0 shadow-lg rounded-4 p-2 mb-4">
+                                    <img src="assets/images/robot.jpeg" alt="AI Chatbot" class="img-fluid rounded-4" data-cue="fadeIn">
+                                    <div class="position-absolute top-0 end-0 mt-3 me-3">
+                                        <span class="badge bg-warning text-dark rounded-pill px-3 py-2">
+                                            <i class="bi bi-stars me-1"></i>AI Powered
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="tab-pane fade" id="v-pills-enterprises" role="tabpanel" aria-labelledby="v-pills-enterprises-tab" tabindex="0">
-                            <div class="position-relative scene" data-relative-input="true">
-                                <figure><img src="assets/images/social-media.jpeg" alt="finance" class="img-fluid rounded-3" /></figure>
-
-                                <div class="position-relative" data-depth="0.05">
-                                    <img src="assets/images/landings/finance/card.svg" alt="" class="position-absolute bottom-0 start-50 translate-middle-x" />
+                        <div class="tab-pane fade" id="v-pills-enterprises" role="tabpanel">
+                            <div class="position-relative">
+                                <div class="card border-0 shadow-lg rounded-4 p-2 mb-4">
+                                    <img src="assets/images/social-media.jpeg" alt="Social Media" class="img-fluid rounded-4">
+                                    <div class="position-absolute top-0 end-0 mt-3 me-3">
+                                        <span class="badge bg-success rounded-pill px-3 py-2">
+                                            <i class="bi bi-lightning-charge me-1"></i>Real-time
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -442,262 +735,180 @@
             </div>
         </div>
     </section>
+
+
     <!--Product designer end-->
 
     <!--Get block card start-->
-    <section class="my-xl-7 py-5">
-        <div class="container" data-cue="fadeIn">
-            <div class="row">
-                <div class="col-lg-5 col-md-12" data-cue="fadeIn">
-                    <div class="mb-xl-7 mb-5">
-                        <h2 class="mb-3">
-                        Does your business harness the 
-                            <span class="text-primary">Power of Conversational AI?</span>
+    <section class="my-xl-7 py-5 position-relative bg-light">
+        <!-- Background decoration -->
+        <div class="position-absolute top-0 start-0 w-100 h-100" style="background: radial-gradient(circle at 100% 0%, rgba(var(--bs-primary-rgb), 0.03) 0%, transparent 50%);"></div>
+
+        <div class="container position-relative" data-cue="fadeIn">
+            <div class="row align-items-center mb-7">
+                <div class="col-lg-7 col-md-12" data-cue="fadeIn">
+                    <div class="mb-xl-0">
+                        <span class="badge bg-primary-subtle text-primary px-3 py-2 mb-3">Get Started</span>
+                        <h2 class="display-5 mb-3 fw-bold">
+                            Does your business harness the
+                            <span class="text-gradient-primary">Power of Conversational AI?</span>
                         </h2>
-                        <p class="mb-0">Discover how Headtrax Solutions can elevate your customer interactions and help your business grow.</p>
+                        <p class="lead text-dark mb-0">Discover how Headtrax Solutions can elevate your customer interactions and help your business grow with our intelligent communication platform.</p>
                     </div>
                 </div>
+                <div class="col-lg-5 d-none d-lg-block">
+                    <img src="assets/images/robot.jpeg" alt="AI Assistant" class="img-fluid rounded-4 shadow-lg">
+                </div>
             </div>
-            <div class="table-responsive-xl">
-                <div class="row flex-nowrap pb-4 pb-lg-0 me-5 me-lg-0">
-                    <div class="col-lg-4 col-md-6 col-12" data-cue="slideInLeft">
-                        <div class="p-xl-5">
-                            <div class="d-flex align-items-center justify-content-between mb-5">
-                                <div class="icon-xl icon-shape rounded-circle bg-primary border border-primary-subtle border-4 text-white-stable fw-semibold fs-3">1</div>
-                                <span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-right text-body-tertiary" viewBox="0 0 16 16">
-                                        <path
-                                            fill-rule="evenodd"
-                                            d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
-                                    </svg>
-                                </span>
-                            </div>
 
-                            <h3 class="h4">Get to know our solutions, and choose the one that best suits your needs.</h3>
-                            <!-- <p class="mb-0">Apply online on block website and fill the form by telling us your name, address, date of birth.</p> -->
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-cue="slideInUp" data-delay="100">
+                    <div class="card border-0 shadow-hover hover-lift h-100 p-4">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="icon-xl icon-shape rounded-circle bg-primary bg-opacity-10 text-primary fw-semibold fs-3 me-3 flex-shrink-0">1</div>
+                                <h3 class="h4 mb-0">Explore Solutions</h3>
+                            </div>
+                            <p class="mb-4">Get to know our comprehensive suite of AI-powered communication tools and choose the perfect solution for your business needs.</p>
+                            <a href="#solutions" class="btn btn-outline-primary rounded-pill">
+                                View Solutions <i class="bi bi-arrow-right ms-2"></i>
+                            </a>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-12" data-cue="slideInLeft">
-                        <div class="p-xl-5">
-                            <div class="d-flex align-items-center justify-content-between mb-5">
-                                <div class="icon-xl icon-shape rounded-circle bg-primary border border-primary-subtle border-4 text-white-stable fw-semibold fs-3">2</div>
-                                <span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-right text-body-tertiary" viewBox="0 0 16 16">
-                                        <path
-                                            fill-rule="evenodd"
-                                            d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
-                                    </svg>
-                                </span>
-                            </div>
+                </div>
 
-                            <h3 class="h4">Check our pricing plan</h3>
-                            <p class="mb-0"><a href='#pricing'>Click here</a> to check our pricing plan.</p>
+                <div class="col-lg-4 col-md-6" data-cue="slideInUp" data-delay="200">
+                    <div class="card border-0 shadow-hover hover-lift h-100 p-4">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="icon-xl icon-shape rounded-circle bg-warning bg-opacity-10 text-warning fw-semibold fs-3 me-3 flex-shrink-0">2</div>
+                                <h3 class="h4 mb-0">Select Plan</h3>
+                            </div>
+                            <p class="mb-4">Choose from our flexible pricing plans designed to scale with your business growth and communication needs.</p>
+                            <a href="#pricing" class="btn btn-outline-primary rounded-pill">
+                                View Pricing <i class="bi bi-arrow-right ms-2"></i>
+                            </a>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-12" data-cue="slideInLeft">
-                        <div class="p-xl-5">
-                            <div class="d-flex align-items-center justify-content-between mb-5">
-                                <div class="icon-xl icon-shape rounded-circle bg-primary border border-primary-subtle border-4 text-white-stable fw-semibold fs-3">3</div>
-                                <span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                                        <path
-                                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-                                    </svg>
-                                </span>
-                            </div>
+                </div>
 
-                            <h3 class="h4">Contact us!</h3>
-                            <p class="mb-0"><a href='#pricing'>Click here</a> to contact us.</p>
+                <div class="col-lg-4 col-md-6" data-cue="slideInUp" data-delay="300">
+                    <div class="card border-0 shadow-hover hover-lift h-100 p-4">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="icon-xl icon-shape rounded-circle bg-success bg-opacity-10 text-success fw-semibold fs-3 me-3 flex-shrink-0">3</div>
+                                <h3 class="h4 mb-0">Get Started</h3>
+                            </div>
+                            <p class="mb-4">Connect with our team to implement your customized communication solution and transform your business.</p>
+                            <a href="#contact" class="btn btn-outline-primary rounded-pill">
+                                Contact Us <i class="bi bi-arrow-right ms-2"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
+
+
     <!--Get block card end-->
 
     <!--Customer stories start-->
-    <section class="py-xl-9 py-5 bg-gray-100">
-        <div class="container" data-cue="fadeIn">
+    <section class="testimonials-section py-xl-9 py-5 position-relative overflow-hidden" style="background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%);">
+        <!-- Background decoration -->
+        <div class="position-absolute top-0 start-0 w-100 h-100" style="background: radial-gradient(circle at 0% 100%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);"></div>
 
-            <div class="row">
-                <div class="tab-content border mt-3 p-3 rounded-3" id="pills-tabTwoContent">
-                    <div class="tab-pane tab-example-preview fade show active" id="pills-testmonial-one-preview" role="tabpanel" aria-labelledby="pills-testmonial-one-preview-tab">
-                        <!--success stories-->
-                        <section class="py-xl-9 py-5 bg-light">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-xl-8 offset-xl-2 col-md-8 offset-md-2">
-                                        <div class="text-center mx-xl-7 mb-5">
-                                            <h2 class="mb-3">Read the real-life success stories of the companies and industries.</h2>
-                                            <a href="#!" class="icon-link icon-link-hover fw-semicold">
-                                                Browse all customer stories
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                                                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                                                </svg>
-                                            </a>
-                                        </div>
-                                    </div>
+        <div class="container position-relative" data-cue="fadeIn">
+            <div class="row mb-7">
+                <div class="col-xl-8 offset-xl-2 col-md-8 offset-md-2">
+                    <div class="text-center mb-5">
+                        <span class="badge bg-warning text-dark px-3 py-2 mb-3">Success Stories</span>
+                        <h2 class="display-4 mb-3 text-white fw-bold">
+                            Real Stories from
+                            <span class="text-warning">Real Customers</span>
+                        </h2>
+                        <p class="lead text-white-75 mb-0">Discover how businesses are transforming their communication with Headtrax Solutions</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-cue="slideInUp" data-delay="100">
+                    <div class="card bg-white bg-opacity-10 border-0 h-100 transition-all hover-lift">
+                        <div class="card-body p-5">
+                            <div class="mb-4">
+                                <span class="text-warning fs-1">
+                                    <i class="bi bi-quote"></i>
+                                </span>
+                            </div>
+                            <p class="text-white mb-4 lead">
+                                "The team at Headtrax Solutions made integration effortless. Their platform has streamlined our processes and allowed us to focus on core business tasks. Highly recommended!"
+                            </p>
+                            <div class="d-flex align-items-center mt-4 pt-3 border-top border-white border-opacity-10">
+                                <div class="avatar avatar-lg rounded-circle bg-primary">
+                                    <span class="text-white fw-bold">FO</span>
                                 </div>
-                                <div class="table-responsive-lg">
-                                    <div class="row flex-nowrap pb-5 me-5 me-lg-0">
-                                        <div class="col-lg-4 col-md-6">
-                                            <div class="card shadow-sm h-100">
-                                                <div class="card-body p-lg-5">
-                                                    <figure class="mb-5">
-                                                        <img src="../assets/images/client-logo/clients-logo-2.svg" alt="logo">
-                                                    </figure>
-                                                    <p class="mb-0">
-                                                        “The team at Headtrax Solutions made integration effortless. Their platform has streamlined our processes and allowed us to focus on core business tasks. Highly recommended!”
-                                                    </p>
-                                                    <div class="mt-4">
-                                                        <h5 class="mb-0">Fasanya Oluwapelumi</h5>
-                                                        <small>Content Producer</small>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-6">
-                                            <div class="card shadow-sm h-100">
-                                                <div class="card-body p-lg-5">
-                                                    <figure class="mb-5">
-                                                        <img src="../assets/images/client-logo/clients-logo-1.svg" alt="logo">
-                                                    </figure>
-                                                    <p class="mb-0">
-                                                        “The language options are perfect for reaching our diverse client base. Headtrax Solutions has been a game-changer for our customer engagement strategies”
-                                                    </p>
-                                                    <div class="mt-4">
-                                                        <h5 class="mb-0">Awe Alexander</h5>
-                                                        <small>Social Media Manager</small>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-6">
-                                            <div class="card shadow-sm h-100">
-                                                <div class="card-body p-lg-5">
-                                                    <figure class="mb-5">
-                                                        <img src="../assets/images/client-logo/clients-logo-3.svg" alt="logo">
-                                                    </figure>
-                                                    <p class="mb-0">
-                                                        “Headtrax Solutions transformed our communication approach. Their platform is robust, easy to use, and has significantly increased our operational efficiency.”
-                                                    </p>
-                                                    <div class="mt-4">
-                                                        <h5 class="mb-0">Soleye Alexander</h5>
-                                                        <small>Senior Research Program Manager</small>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="ms-3">
+                                    <h5 class="text-white mb-1">Fasanya Oluwapelumi</h5>
+                                    <p class="text-white-75 mb-0 small">Content Producer</p>
                                 </div>
                             </div>
-                        </section>
-                        <!--success stories-->
+                        </div>
                     </div>
-                    <div class="tab-pane tab-example-code fade" id="pills-testmonial-one-code" role="tabpanel" aria-labelledby="pills-testmonial-one-code-tab">
-                        <div class="code-toolbar">
-                            <pre class="language-markup" tabindex="0"><code class="language-markup"><span class="token comment">&lt;!--success stories--&gt;</span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>py-xl-9 py-5 bg-light<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>row<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>col-xl-8 offset-xl-2 col-md-8 offset-md-2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text-center mx-xl-7 mb-5<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-3<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Read the real-life success stories of
-                        the companies and industries.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
-                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#!<span class="token punctuation">"</span></span>
-                        <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>icon-link icon-link-hover fw-semicold<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-                        Browse all customer stories
-                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>svg</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.w3.org/2000/svg<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>14<span class="token punctuation">"</span></span>
-                            <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>14<span class="token punctuation">"</span></span> <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>currentColor<span class="token punctuation">"</span></span>
-                            <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bi bi-arrow-right<span class="token punctuation">"</span></span> <span class="token attr-name">viewBox</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0 0 16 16<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>path</span> <span class="token attr-name">fill-rule</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>evenodd<span class="token punctuation">"</span></span>
-                                <span class="token attr-name">d</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>path</span><span class="token punctuation">&gt;</span></span>
-                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>svg</span><span class="token punctuation">&gt;</span></span>
-                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
-                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>table-responsive-lg<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>row flex-nowrap pb-5 me-5 me-lg-0<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>col-lg-4 col-md-6<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>card shadow-sm h-100<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>card-body p-lg-5<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-5<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>../assets/images/client-logo/clients-logo-2.svg<span class="token punctuation">"</span></span>
-                                    <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>logo<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
-                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">&gt;</span></span>
-                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-0<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-                                “Lorem ipsum dolor sit amet cons ectetur
-                                adipiscing elit uisque sagittis risus sed
-                                dolor lobortis, non rutrum massa ultricies
-                                aecenas tempor, nisi nec
-                                tempus lobortis”
-                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
-                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mt-4<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h5</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-0<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Anita parmar<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h5</span><span class="token punctuation">&gt;</span></span>
-                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>small</span><span class="token punctuation">&gt;</span></span>Content Producer<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>small</span><span class="token punctuation">&gt;</span></span>
-                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>col-lg-4 col-md-6<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>card shadow-sm h-100<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>card-body p-lg-5<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-5<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>../assets/images/client-logo/clients-logo-1.svg<span class="token punctuation">"</span></span>
-                                    <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>logo<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
-                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">&gt;</span></span>
-                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-0<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-                                “Aenean pharetra finibus mauris a porttitor.
-                                Nam dui tortor, finibus sit amet feugiat
-                                porta, tempus in odio. Interdum et malesuada
-                                fames ac ante ipsum
-                                primis in faucibus.”
-                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
-                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mt-4<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h5</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-0<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Jitu Chauhan<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h5</span><span class="token punctuation">&gt;</span></span>
-                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>small</span><span class="token punctuation">&gt;</span></span>Studio Manager<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>small</span><span class="token punctuation">&gt;</span></span>
-                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>col-lg-4 col-md-6<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>card shadow-sm h-100<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>card-body p-lg-5<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-5<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>../assets/images/client-logo/clients-logo-3.svg<span class="token punctuation">"</span></span>
-                                    <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>logo<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
-                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">&gt;</span></span>
-                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-0<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>“Pellentesque sit amet turpis
-                                porta augue pretium dictum. Pellentesque
-                                commodo bitur ut massa cursus, congue augue
-                                vitae, efficitur metus.”<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
-                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mt-4<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h5</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-0<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Sandip Chauhan<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h5</span><span class="token punctuation">&gt;</span></span>
-                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>small</span><span class="token punctuation">&gt;</span></span>Senior Research Program
-                                    Manager<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>small</span><span class="token punctuation">&gt;</span></span>
-                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">&gt;</span></span>
-<span class="token comment">&lt;!--success stories--&gt;</span></code></pre>
-                            <div class="toolbar">
-                                <div class="toolbar-item"><button class="copy-to-clipboard-button" type="button" data-copy-state="copy"><span>Copy</span></button></div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-cue="slideInUp" data-delay="200">
+                    <div class="card bg-white bg-opacity-10 border-0 h-100 transition-all hover-lift">
+                        <div class="card-body p-5">
+                            <div class="mb-4">
+                                <span class="text-warning fs-1">
+                                    <i class="bi bi-quote"></i>
+                                </span>
+                            </div>
+                            <p class="text-white mb-4 lead">
+                                "The language options are perfect for reaching our diverse client base. Headtrax Solutions has been a game-changer for our customer engagement strategies"
+                            </p>
+                            <div class="d-flex align-items-center mt-4 pt-3 border-top border-white border-opacity-10">
+                                <div class="avatar avatar-lg rounded-circle bg-success">
+                                    <span class="text-white fw-bold">AA</span>
+                                </div>
+                                <div class="ms-3">
+                                    <h5 class="text-white mb-1">Awe Alexander</h5>
+                                    <p class="text-white-75 mb-0 small">Social Media Manager</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-cue="slideInUp" data-delay="300">
+                    <div class="card bg-white bg-opacity-10 border-0 h-100 transition-all hover-lift">
+                        <div class="card-body p-5">
+                            <div class="mb-4">
+                                <span class="text-warning fs-1">
+                                    <i class="bi bi-quote"></i>
+                                </span>
+                            </div>
+                            <p class="text-white mb-4 lead">
+                                "Headtrax Solutions transformed our communication approach. Their platform is robust, easy to use, and has significantly increased our operational efficiency."
+                            </p>
+                            <div class="d-flex align-items-center mt-4 pt-3 border-top border-white border-opacity-10">
+                                <div class="avatar avatar-lg rounded-circle bg-warning">
+                                    <span class="text-dark fw-bold">SA</span>
+                                </div>
+                                <div class="ms-3">
+                                    <h5 class="text-white mb-1">Soleye Alexander</h5>
+                                    <p class="text-white-75 mb-0 small">Senior Research Program Manager</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
+
+
     <!--Customer stories end-->
 
     <!--Call to action start-->
@@ -726,7 +937,7 @@
                     <div class="d-flex flex-column gap-3 mx-lg-8">
                         <h1 class="mb-0">Plan to unlock a new level of productivity</h1>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -738,7 +949,7 @@
                             <div class="card-body d-flex flex-column gap-4">
                                 <div>
                                     <h3>Basic</h3>
-                                    
+
                                 </div>
                                 <h2 class="mb-0 d-flex align-items-center">
                                     <span>$100</span>
@@ -748,7 +959,7 @@
                                 <div>
                                     <h5 class="mb-3">What’s included</h5>
                                     <ul class="list-unstyled flex-column d-flex gap-2">
-                                      
+
                                         <li class="d-flex align-items-start">
                                             <span>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
@@ -797,7 +1008,7 @@
                                             </span>
                                             <span class="ms-2">Auto Response to Social Media Tags</span>
                                         </li>
-                                       
+
                                     </ul>
                                 </div>
                                 <div class="d-grid">
@@ -811,7 +1022,7 @@
                             <div class="card-body d-flex flex-column gap-4 text-white-stable">
                                 <div>
                                     <h3 class="text-white-stable">Premium</h3>
-                                  
+
                                 </div>
                                 <h2 class="d-flex align-items-center text-white-stable">
                                     <div class="price-text">
@@ -820,10 +1031,10 @@
                                             <span>150</span>
                                             <span class="price-duration fs-6 ms-3">/month</span>
                                         </div>
-                                       
+
                                     </div>
                                 </h2>
-                               
+
                                 <div class="text-white-stable">
                                     <h5 class="mb-3 text-white-stable">What’s included</h5>
                                     <ul class="list-unstyled flex-column d-flex gap-2">
@@ -923,7 +1134,7 @@
                                             </span>
                                             <span class="ms-2">24/7 Customer Support</span>
                                         </li>
-                                      
+
                                     </ul>
                                 </div>
                                 <div class="d-grid">
@@ -943,7 +1154,7 @@
                     <div class="col-lg-8 offset-lg-2">
                         <div class="text-center mb-5">
                             <h2 class="text-white-stable mb-3">Experience the future of customer engagement with Headtrax Solutions Limited.</h2>
-                           
+
                         </div>
                     </div>
                     <div class="col-lg-12">

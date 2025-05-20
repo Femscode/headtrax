@@ -25,6 +25,10 @@
     <link rel="stylesheet" href="{{url('assets/fonts/css/boxicons.min.css')}}" />
     <link rel="stylesheet" href="{{url('assets/css/theme.min.css')}}">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8S4MT3EYG"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -51,6 +55,14 @@
     </script>
 
     <title>Headtrax Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
     @yield('header')
 </head>
 
@@ -60,7 +72,7 @@
         <nav class="navbar navbar-expand-lg  transparent navbar-transparent navbar-dark">
             <div class="container px-3">
                 <a class="navbar-brandii d-flex" href="/">
-                    <img src="https://headtraxsolutions.com/headtrax_files/public/assets/images/logo3.png" style='width:70px;height:50px;border-radius:20px' alt />
+                    <img src="https://headtraxsolutions.com/headtrax_files/public/assets/images/oldlogo3.png" style='width:70px;height:50px;border-radius:20px' alt />
                     <h2>Head<span style='color:#ebab21'>trax</span></h2>
                     <!-- <h2 class='text-dark'>Headtrax Solutions</h2> -->
                 </a>
@@ -295,7 +307,7 @@
             <div class="row align-items-center">
                 <div class="col-md-3">
                     <a class="mb-4 mb-lg-0 d-block text-inverse" href="/">
-                        <img src="https://headtraxsolutions.com/headtrax_files/public/assets/images/logo3.png" style='width:70px;height:50px' alt="" />
+                        <img src="https://headtraxsolutions.com/headtrax_files/public/assets/images/oldlogo3.png" style='width:70px;height:50px' alt="" />
                     </a>
                 </div>
                 <div class="col-md-9 col-lg-6">
