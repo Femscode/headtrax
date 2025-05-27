@@ -486,7 +486,7 @@
             <div class="row mb-5 mb-xl-7">
                 <div class="col-xl-8 col-lg-10 mx-auto text-center">
                     <span class="badge bg-warning text-dark mb-3 px-3 py-2">Why Choose Us?</span>
-                    <h2 style="color:#ffc107" class="display-4 fw-bold mb-3">Empower Your Business Communication</h2>
+                    <h2 style="color:black" class="display-4 fw-bold mb-3">Empower Your Business Communication</h2>
                     <p class="lead text-white-75">Transform your customer interactions with our cutting-edge solutions.</p>
                 </div>
             </div>
