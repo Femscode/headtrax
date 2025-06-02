@@ -1,426 +1,6 @@
 @extends('frontend.master')
 @section('header')
 <style>
-    .testimonials-section {
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(200, 200, 200, 0.1) 100%);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        padding: 4rem 0;
-        position: relative;
-        overflow: hidden;
-        border-radius: 20px;
-        margin: 2rem 0;
-    }
-
-    .testimonials-section .bg-decoration {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: radial-gradient(circle at 0% 100%, rgba(255, 255, 255, 0.2) 0%, transparent 50%);
-    }
-
-    .testimonials-section .badge {
-        background: rgba(255, 193, 7, 0.95);
-        color: #1a1a1a;
-        padding: 0.6rem 1.8rem;
-        border-radius: 50px;
-        font-weight: 700;
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-
-    .testimonials-section h2 {
-        color: #1a1a1a;
-        text-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-        font-weight: 800;
-        letter-spacing: -1px;
-    }
-
-    .testimonials-section .text-warning {
-        color: #ffc107 !important;
-    }
-
-    .testimonials-section .lead {
-        color: #333333;
-        font-size: 1.3rem;
-        line-height: 1.6;
-    }
-
-    .testimonials-section .card {
-        background: rgba(255, 255, 255, 0.12);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.25);
-        border-radius: 20px;
-        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
-        transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-
-    .testimonials-section .card:hover {
-        transform: translateY(-12px);
-        box-shadow: 0 15px 45px rgba(0, 0, 0, 0.35);
-    }
-
-    .testimonials-section .card-body {
-        padding: 2.5rem;
-    }
-
-    .testimonials-section .bi-quote {
-        font-size: 2.5rem;
-        color: #ffc107;
-    }
-
-    .testimonials-section .card p.lead {
-        color: #333333;
-        font-size: 1.1rem;
-        line-height: 1.5;
-    }
-
-    .testimonials-section .border-white {
-        border-color: rgba(255, 193, 7, 0.4) !important;
-    }
-
-    .testimonials-section .avatar {
-        width: 60px;
-        height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-    }
-
-    .testimonials-section .avatar.bg-primary {
-        background: rgba(66, 133, 244, 0.3);
-    }
-
-    .testimonials-section .avatar.bg-success {
-        background: rgba(40, 167, 69, 0.3);
-    }
-
-    .testimonials-section .avatar.bg-warning {
-        background: rgba(255, 193, 7, 0.3);
-    }
-
-    .testimonials-section .avatar span {
-        color: #1a1a1a;
-        font-weight: 700;
-    }
-
-    .testimonials-section h5 {
-        color: #1a1a1a;
-        font-weight: 600;
-        font-size: 1.2rem;
-    }
-
-    .testimonials-section .text-white-75 {
-        color: #333333;
-        font-size: 0.9rem;
-    }
-
-    /* Spotlight Card Styles */
-    .spotlight-card {
-        background: radial-gradient(circle at center, rgba(79, 70, 229, 0.15) 0%, rgba(255, 255, 255, 0.1) 100%);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 16px;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-        transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .spotlight-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
-        border-color: rgba(79, 70, 229, 0.5);
-    }
-
-    .spotlight-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(45deg, rgba(79, 70, 229, 0.05), rgba(255, 255, 255, 0));
-        opacity: 0;
-        transition: opacity 0.4s ease;
-    }
-
-    .spotlight-card:hover::before {
-        opacity: 1;
-    }
-
-    .icon-wrapper {
-        width: 60px;
-        height: 60px;
-        /* background: linear-gradient(135deg, #4f46e5, #7c3aed); */
-        /* Blue gradient */
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .icon-wrapper:hover {
-        transform: scale(1.1);
-        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-    }
-
-    .icon-wrapper .icon {
-        width: 32px;
-        height: 32px;
-        color: #ffffff;
-        /* White for contrast */
-        transition: transform 0.3s ease;
-    }
-
-    .icon-wrapper:hover .icon {
-        transform: rotate(12deg);
-    }
-
-    .spotlight-card h4 {
-        color: #1a1a1a;
-        font-weight: 700;
-        font-size: 1.4rem;
-        margin-bottom: 1rem;
-    }
-
-    .spotlight-card p {
-        color: #333333;
-        font-size: 0.95rem;
-        line-height: 1.6;
-    }
-
-    /* Responsive Adjustments */
-    @media (max-width: 767px) {
-        .spotlight-card {
-            padding: 1.5rem;
-        }
-
-        .icon-wrapper {
-            width: 50px;
-            height: 50px;
-        }
-
-        .icon-wrapper .icon {
-            width: 28px;
-            height: 28px;
-        }
-
-        .spotlight-card h4 {
-            font-size: 1.2rem;
-        }
-
-        .spotlight-card p {
-            font-size: 0.9rem;
-        }
-    }
-
-    .section-why-choose-us {
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(200, 200, 200, 0.1) 100%);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        padding: 4rem 0;
-        position: relative;
-        overflow: hidden;
-        border-radius: 20px;
-        margin: 2rem 0;
-    }
-
-    .section-why-choose-us .bg-shapes .shape {
-        position: absolute;
-        background: rgba(255, 255, 255, 0.2);
-        border-radius: 50%;
-        opacity: 0.4;
-        transition: all 0.4s ease;
-    }
-
-    .section-why-choose-us .bg-shapes .shape-1 {
-        width: 250px;
-        height: 250px;
-        top: -70px;
-        left: -70px;
-    }
-
-    .section-why-choose-us .bg-shapes .shape-2 {
-        width: 350px;
-        height: 350px;
-        bottom: -120px;
-        right: -120px;
-    }
-
-    .section-why-choose-us .badge {
-        background: #3683CA;
-        /* Indigo blue */
-        color: #ffffff;
-        /* White text for contrast */
-        padding: 0.6rem 1.8rem;
-        border-radius: 50px;
-        font-weight: 700;
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-
-    .section-why-choose-us h2 {
-        color: #1a1a1a;
-        text-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-        font-weight: 800;
-        letter-spacing: -1px;
-    }
-
-    .section-why-choose-us .lead {
-        color: #333333;
-        font-size: 1.3rem;
-        line-height: 1.6;
-    }
-
-    .section-why-choose-us .spotlight-card {
-        background: rgba(255, 255, 255, 0.12);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.25);
-        border-radius: 20px;
-        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
-        transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-
-    .section-why-choose-us .spotlight-card:hover {
-        transform: translateY(-12px);
-        box-shadow: 0 15px 45px rgba(0, 0, 0, 0.35);
-    }
-
-    .section-why-choose-us .icon-wrapper {
-        width: 70px;
-        height: 70px;
-        /* background: rgba(79, 70, 229, 0.3); */
-        /* Indigo blue */
-        border-radius: 15px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .section-why-choose-us .icon-wrapper .icon {
-        width: 36px;
-        height: 36px;
-        stroke: #1a1a1a;
-        stroke-width: 2.5;
-    }
-
-    .section-why-choose-us .spotlight-card h4 {
-        color: #1a1a1a;
-        font-weight: 700;
-        font-size: 1.5rem;
-    }
-
-    .section-why-choose-us .spotlight-card p {
-        color: #333333;
-        font-size: 1rem;
-        line-height: 1.5;
-    }
-
-    .section-why-choose-us .border-primary {
-        border-color: #3683CA !important;
-        /* Indigo blue */
-    }
-
-    .section-why-choose-us .hover-lift {
-        background: rgba(255, 255, 255, 0.08);
-        backdrop-filter: blur(6px);
-        -webkit-backdrop-filter: blur(6px);
-        border-radius: 15px;
-        transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-
-    .section-why-choose-us .hover-lift:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-    }
-
-    .section-why-choose-us .counter-value {
-        color: #1a1a1a !important;
-        font-weight: 800;
-        font-size: 2.5rem;
-    }
-
-    .section-why-choose-us .text-warning {
-        color: #3683CA !important;
-        /* Indigo blue */
-    }
-
-    .section-why-choose-us .text-white-75 {
-        color: #333333;
-    }
-
-    .section-why-choose-us .fs-sm {
-        color: #333333;
-        font-size: 0.9rem;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-    }
-
-    .section-communication-suite {
-        background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
-    }
-
-    .nav-link {
-        transition: all 0.3s ease;
-    }
-
-    .nav-link.active {
-        background: linear-gradient(90deg, rgba(var(--bs-primary-rgb), 0.1), rgba(var(--bs-primary-rgb), 0.05)) !important;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
-        transform: translateY(-2px);
-    }
-
-    .hover-lift:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15) !important;
-    }
-
-    .icon-lg {
-        width: 60px;
-        height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .card {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card:hover {
-        transform: scale(1.02);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    }
-
-    .text-gradient-primary {
-        background: linear-gradient(45deg, #007bff, #00d4ff);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    .tab-pane {
-        transition: opacity 0.5s ease;
-    }
-
-    .tab-pane.show {
-        opacity: 1;
-    }
-
-    .tab-pane {
-        opacity: 0;
-    }
-
     .hover-lift {
         transition: all 0.3s ease;
     }
@@ -608,16 +188,16 @@
     }
 
     .nav-pills .nav-link.active {
-        background: #cce5ff !important;
-        color: #004085;
+        background: linear-gradient(45deg, var(--bs-primary), #2196f3);
+        color: white;
     }
 
     .nav-pills .nav-link.active .text-secondary {
-        color: #004085 !important;
+        color: rgba(255, 255, 255, 0.8) !important;
     }
 
     .nav-pills .nav-link.active .icon-lg {
-        background: #004085 !important;
+        background: rgba(255, 255, 255, 0.2) !important;
     }
 
     .nav-pills .nav-link.active i {
@@ -744,36 +324,11 @@
                                     <img src="assets/images/client-logo/clients-logo-5.svg" alt="logo" />
                                 </figure>
                             </div>
-                            <div class="swiper-slide">
-                                <figure class="text-center">
-                                    <img src="assets/images/client-logo/clients-logo-1.svg" alt="logo" />
-                                </figure>
-                            </div>
-                            <div class="swiper-slide">
-                                <figure class="text-center">
-                                    <img src="assets/images/client-logo/clients-logo-2.svg" alt="logo" />
-                                </figure>
-                            </div>
-                            <div class="swiper-slide">
-                                <figure class="text-center">
-                                    <img src="assets/images/client-logo/clients-logo-3.svg" alt="logo" />
-                                </figure>
-                            </div>
-                            <div class="swiper-slide">
-                                <figure class="text-center">
-                                    <img src="assets/images/client-logo/clients-logo-4.svg" alt="logo" />
-                                </figure>
-                            </div>
-                            <div class="swiper-slide">
-                                <figure class="text-center">
-                                    <img src="assets/images/client-logo/clients-logo-5.svg" alt="logo" />
-                                </figure>
-                            </div>
-
+                            <!-- Add more slides as needed -->
                         </div>
-
+                        <!-- Add Pagination -->
                         <div class="swiper-pagination"></div>
-
+                        <!-- Add Navigation -->
                         <div class="swiper-navigation">
                             <div class="swiper-button-next"></div>
                             <div class="swiper-button-prev"></div>
@@ -809,7 +364,7 @@
                     <div class="card border-0 bg-white shadow-hover h-100 transition-all hover-lift">
                         <div class="card-body p-5">
                             <div class="feature-icon-box mb-4">
-                                <div class="icon-wrapper rounded-4 bg-transparent bg-opacity-10 p-0 d-inline-flex position-relative">
+                                <div class="icon-wrapper rounded-4 bg-primary bg-opacity-10 p-3 d-inline-flex position-relative">
                                     <img src="assets/images/local-language.jpeg" alt="Intelligent AI" class="rounded-3 img-fluid" style="width: 48px; height: 48px; object-fit: cover;">
                                     <div class="position-absolute top-0 end-0 mt-n2 me-n2">
                                         <span class="badge rounded-pill bg-primary"><i class="bi bi-robot"></i></span>
@@ -829,7 +384,7 @@
                     <div class="card border-0 bg-white shadow-hover h-100 transition-all hover-lift">
                         <div class="card-body p-5">
                             <div class="feature-icon-box mb-4">
-                                <div class="icon-wrapper rounded-4 bg-warning bg-opacity-10 p-0 d-inline-flex position-relative">
+                                <div class="icon-wrapper rounded-4 bg-warning bg-opacity-10 p-3 d-inline-flex position-relative">
                                     <img src="assets/images/hero1.jpeg" alt="Messaging Channels" class="rounded-3 img-fluid" style="width: 48px; height: 48px; object-fit: cover;">
                                     <div class="position-absolute top-0 end-0 mt-n2 me-n2">
                                         <span class="badge rounded-pill bg-warning"><i class="bi bi-chat-dots"></i></span>
@@ -849,7 +404,7 @@
                     <div class="card border-0 bg-white shadow-hover h-100 transition-all hover-lift">
                         <div class="card-body p-5">
                             <div class="feature-icon-box mb-4">
-                                <div class="icon-wrapper rounded-4 bg-success bg-opacity-10 p-0 d-inline-flex position-relative">
+                                <div class="icon-wrapper rounded-4 bg-success bg-opacity-10 p-3 d-inline-flex position-relative">
                                     <img src="assets/images/mobile-device2.jpeg" alt="Personalized Interaction" class="rounded-3 img-fluid" style="width: 48px; height: 48px; object-fit: cover;">
                                     <div class="position-absolute top-0 end-0 mt-n2 me-n2">
                                         <span class="badge rounded-pill bg-success"><i class="bi bi-phone"></i></span>
@@ -911,158 +466,347 @@
     </section>
 
 
-    <section class="section-why-choose-us py-5 py-xl-9 position-relative overflow-hidden">
-        <!-- Decorative Background Shapes -->
-        <div class="bg-shapes">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
+    <style>
+.section-why-choose-us {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(200, 200, 200, 0.1) 100%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 4rem 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    margin: 2rem 0;
+}
+
+.section-why-choose-us .bg-shapes .shape {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    opacity: 0.4;
+    transition: all 0.4s ease;
+}
+
+.section-why-choose-us .bg-shapes .shape-1 {
+    width: 250px;
+    height: 250px;
+    top: -70px;
+    left: -70px;
+}
+
+.section-why-choose-us .bg-shapes .shape-2 {
+    width: 350px;
+    height: 350px;
+    bottom: -120px;
+    right: -120px;
+}
+
+.section-why-choose-us .badge {
+    background: rgba(255, 193, 7, 0.95);
+    color: #1a1a1a;
+    padding: 0.6rem 1.8rem;
+    border-radius: 50px;
+    font-weight: 700;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.section-why-choose-us h2 {
+    color: #1a1a1a;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.section-why-choose-us .lead {
+    color: #333333;
+    font-size: 1.3rem;
+    line-height: 1.6;
+}
+
+.section-why-choose-us .spotlight-card {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.section-why-choose-us .spotlight-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.35);
+}
+
+.section-why-choose-us .icon-wrapper {
+    width: 70px;
+    height: 70px;
+    background: rgba(255, 193, 7, 0.3);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-why-choose-us .icon-wrapper .icon {
+    width: 36px;
+    height: 36px;
+    stroke: #1a1a1a;
+    stroke-width: 2.5;
+}
+
+.section-why-choose-us .spotlight-card h4 {
+    color: #1a1a1a;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.section-why-choose-us .spotlight-card p {
+    color: #333333;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.section-why-choose-us .border-primary {
+    border-color: rgba(255, 193, 7, 0.4) !important;
+}
+
+.section-why-choose-us .hover-lift {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-radius: 15px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.section-why-choose-us .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.section-why-choose-us .counter-value {
+    color: #1a1a1a !important;
+    font-weight: 800;
+    font-size: 2.5rem;
+}
+
+.section-why-choose-us .text-warning {
+    color: #ffc107 !important;
+}
+
+.section-why-choose-us .text-white-75 {
+    color: #333333;
+}
+
+.section-why-choose-us .fs-sm {
+    color: #333333;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+</style>
+
+<section class="section-why-choose-us py-5 py-xl-9 position-relative overflow-hidden">
+    <!-- Decorative Background Shapes -->
+    <div class="bg-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+    </div>
+
+    <div class="container position-relative" data-cue="fadeIn">
+        <!-- Header -->
+        <div class="row mb-5 mb-xl-7">
+            <div class="col-xl-8 col-lg-10 mx-auto text-center">
+                <span class="badge bg-warning text-dark mb-3 px-3 py-2">Why We Stand Out</span>
+                <h2 class="display-4 fw-bold mb-3">Elevate Your Customer Connections</h2>
+                <p class="lead text-white-75">Revolutionize engagement with innovative, seamless solutions.</p>
+            </div>
         </div>
 
-        <div class="container position-relative" data-cue="fadeIn">
-            <!-- Header -->
-            <div class="row mb-5 mb-xl-7">
-                <div class="col-xl-8 col-lg-10 mx-auto text-center">
-                    <span class="badge bg-warning text-dark mb-3 px-3 py-2">Why We Stand Out</span>
-                    <h2 class="display-4 fw-bold mb-3">Elevate Your Customer Connections</h2>
-                    <p class="lead text-white-75">Revolutionize engagement with innovative, seamless solutions.</p>
+        <!-- Features -->
+        <div class="row g-4 mb-7">
+            <div class="col-md-4" data-cue="fadeIn" data-delay="100">
+                <div class="spotlight-card p-5 rounded-4 h-100 transition-all">
+                    <div class="icon-wrapper mb-4">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            <path d="M8 12h8" />
+                            <path d="M12 8v8" />
+                        </svg>
+                    </div>
+                    <h4 class="fw-semibold mb-3">Advanced Engagement Suite</h4>
+                    <p class="text-white-75 mb-0">Utilize SMS, email, voice, social platforms, and AI-driven chatbots for effortless customer interaction.</p>
                 </div>
             </div>
-
-            <!-- Features -->
-            <div class="row g-4 mb-7">
-                <div class="col-md-4" data-cue="fadeIn" data-delay="100">
-                    <div class="spotlight-card p-5 rounded-4 h-100 transition-all">
-                        <div class="icon-wrapper bg-transparent mb-4">
-                            <i class="bi bi-robot" style="font-size: 2.5rem;"></i>
-                        </div>
-                        <h4 class="fw-semibold mb-3">Advanced Engagement Suite</h4>
-                        <p class="text-white-75 mb-0">Utilize SMS, email, voice, social platforms, and AI-driven chatbots for effortless customer interaction.</p>
+            <div class="col-md-4" data-cue="fadeIn" data-delay="200">
+                <div class="spotlight-card p-5 rounded-4 h-100 transition-all">
+                    <div class="icon-wrapper mb-4">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 3h18v18H3z" />
+                            <path d="M9 7h6" />
+                            <path d="M9 11h6" />
+                            <path d="M9 15h6" />
+                        </svg>
                     </div>
-                </div>
-                <div class="col-md-4" data-cue="fadeIn" data-delay="200">
-                    <div class="spotlight-card p-5 rounded-4 h-100 transition-all">
-                        <div class="icon-wrapper bg-transparent mb-4">
-                            <i class="bi bi-chat-dots" style="font-size: 2.5rem;"></i>
-                        </div>
-                        <h4 class="fw-semibold mb-3">Global Language Reach</h4>
-                        <p class="text-white-75 mb-0">Connect with customers worldwide using real-time, multilingual communication tools.</p>
-                    </div>
-                </div>
-                <div class="col-md-4" data-cue="fadeIn" data-delay="300">
-                    <div class="spotlight-card p-5 rounded-4 h-100 transition-all">
-                        <div class="icon-wrapper bg-transparent mb-4">
-                            <i class="bi bi-phone" style="font-size: 2.5rem;"></i>
-                        </div>
-                        <h4 class="fw-semibold mb-3">Seamless Mobile Integration</h4>
-                        <p class="text-white-75 mb-0">Sync with CRM systems to optimize customer data and enhance engagement.</p>
-                    </div>
+                    <h4 class="fw-semibold mb-3">Global Language Reach</h4>
+                    <p class="text-white-75 mb-0">Connect with customers worldwide using real-time, multilingual communication tools.</p>
                 </div>
             </div>
-
-
-
-            <!-- Metrics -->
-            <div class="row g-0 border-top border-primary text-center" data-cue="fadeIn">
-                <div class="col-lg-3 col-6 border-end border-primary">
-                    <div class="p-5 hover-lift">
-                        <div class="d-flex align-items-center justify-content-center mb-3">
-                            <h3 class="h1 fw-bold counter-value" data-count="7500000">0</h3>
-                            <span class="text-warning fs-3 ms-2">+</span>
-                        </div>
-                        <span class="text-white-75 text-uppercase fs-sm">Active Users</span>
+            <div class="col-md-4" data-cue="fadeIn" data-delay="300">
+                <div class="spotlight-card p-5 rounded-4 h-100 transition-all">
+                    <div class="icon-wrapper mb-4">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M7 3h10a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" />
+                            <path d="M10 17h4" />
+                        </svg>
                     </div>
-                </div>
-                <div class="col-lg-3 col-6 border-end border-primary">
-                    <div class="p-5 hover-lift">
-                        <div class="d-flex align-items-center justify-content-center mb-3">
-                            <h3 class="h1 fw-bold counter-value" data-count="98">0</h3>
-                            <span class="text-warning fs-3 ms-2">%</span>
-                        </div>
-                        <span class="text-white-75 text-uppercase fs-sm">Client Satisfaction</span>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-6 border-end border-primary">
-                    <div class="p-5 hover-lift">
-                        <div class="d-flex align-items-center justify-content-center mb-3">
-                            <h3 class="h1 fw-bold counter-value" data-count="80">0</h3>
-                            <span class="text-warning fs-3 ms-2">%</span>
-                        </div>
-                        <span class="text-white-75 text-uppercase fs-sm">Annual Growth</span>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-6">
-                    <div class="p-5 hover-lift">
-                        <div class="d-flex align-items-center justify-content-center mb-3">
-                            <h3 class="h1 fw-bold counter-value" data-count="300">0</h3>
-                            <span class="text-warning fs-3 ms-2">B</span>
-                        </div>
-                        <span class="text-white-75 text-uppercase fs-sm">Assets Managed</span>
-                    </div>
+                    <h4 class="fw-semibold mb-3">Seamless Mobile Integration</h4>
+                    <p class="text-white-75 mb-0">Sync with CRM systems to optimize customer data and enhance engagement.</p>
                 </div>
             </div>
         </div>
-    </section>
 
-  
+        <!-- Metrics -->
+        <div class="row g-0 border-top border-primary text-center" data-cue="fadeIn">
+            <div class="col-lg-3 col-6 border-end border-primary">
+                <div class="p-5 hover-lift">
+                    <div class="d-flex align-items-center justify-content-center mb-3">
+                        <h3 class="h1 fw-bold counter-value" data-count="7500000">0</h3>
+                        <span class="text-warning fs-3 ms-2">+</span>
+                    </div>
+                    <span class="text-white-75 text-uppercase fs-sm">Active Users</span>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6 border-end border-primary">
+                <div class="p-5 hover-lift">
+                    <div class="d-flex align-items-center justify-content-center mb-3">
+                        <h3 class="h1 fw-bold counter-value" data-count="98">0</h3>
+                        <span class="text-warning fs-3 ms-2">%</span>
+                    </div>
+                    <span class="text-white-75 text-uppercase fs-sm">Client Satisfaction</span>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6 border-end border-primary">
+                <div class="p-5 hover-lift">
+                    <div class="d-flex align-items-center justify-content-center mb-3">
+                        <h3 class="h1 fw-bold counter-value" data-count="80">0</h3>
+                        <span class="text-warning fs-3 ms-2">%</span>
+                    </div>
+                    <span class="text-white-75 text-uppercase fs-sm">Annual Growth</span>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6">
+                <div class="p-5 hover-lift">
+                    <div class="d-flex align-items-center justify-content-center mb-3">
+                        <h3 class="h1 fw-bold counter-value" data-count="300">0</h3>
+                        <span class="text-warning fs-3 ms-2">B</span>
+                    </div>
+                    <span class="text-white-75 text-uppercase fs-sm">Assets Managed</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Counter Animation
+    document.addEventListener('DOMContentLoaded', () => {
+        const counters = document.querySelectorAll('.counter-value');
+        const animateCounter = (counter) => {
+            const target = +counter.getAttribute('data-count');
+            const duration = 2000;
+            const increment = target / (duration / 16);
+            let current = 0;
+
+            const updateCounter = () => {
+                current += increment;
+                if (current < target) {
+                    counter.textContent = Math.round(current);
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    counter.textContent = target.toLocaleString();
+                }
+            };
+            updateCounter();
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter(entry.target);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.5
+        });
+
+        counters.forEach(counter => observer.observe(counter));
+    });
+</script>
+
+
+
 
     <!--Your finance end-->
-
+    
     <!--5m member end-->
 
     <!--Product designer start-->
     <section class="section-communication-suite py-7 py-xl-9 bg-light position-relative overflow-hidden">
-        <!-- Background decoration with subtle gradient -->
-        <div class="position-absolute top-0 end-0 w-100 h-100" style="background: radial-gradient(circle at 100% 0%, rgba(var(--bs-primary-rgb), 0.05) 0%, transparent 60%); opacity: 0.8;"></div>
+        <!-- Background decoration -->
+        <div class="position-absolute top-0 end-0 w-100 h-100" style="background: radial-gradient(circle at 100% 0%, rgba(var(--bs-primary-rgb), 0.03) 0%, transparent 50%);"></div>
 
         <div class="container position-relative">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
-                    <div class="text-center mb-xl-7 mb-5" data-cue="fadeIn" data-duration="800">
-                        <span class="badge bg-primary-subtle text-primary px-4 py-2 mb-3 fs-6">Communication Suite</span>
+                    <div class="text-center mb-xl-7 mb-5" data-cue="fadeIn">
+                        <span class="badge bg-primary-subtle text-primary px-3 py-2 mb-3">Communication Suite</span>
                         <h2 class="display-4 mb-3 fw-bold">
                             Powerful Solutions for
                             <span class="text-gradient-primary">Every Business Size</span>
                         </h2>
-                        <p class="lead text-dark mb-0">Discover cutting-edge communication tools tailored to scale seamlessly with your business needs.</p>
+                        <p class="lead text-dark mb-0">Discover our comprehensive communication tools designed to scale with your business needs</p>
                     </div>
                 </div>
             </div>
 
             <div class="row align-items-center g-5">
                 <div class="col-xl-5 col-lg-6 col-12">
-                    <div class="nav flex-column nav-pills gap-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <button class="nav-link active bg-white p-4 rounded-4 border-0 shadow hover-lift transition-all" id="v-pills-sms-tab" data-bs-toggle="pill" data-bs-target="#v-pills-small-business" type="button" role="tab" aria-controls="v-pills-small-business" aria-selected="true">
+                    <div class="nav flex-column nav-pills gap-3" id="v-pills-tab" role="tablist">
+                        <button class="nav-link active p-4 rounded-4 border-0 bg-white shadow-sm hover-lift" id="v-pills-sms-tab" data-bs-toggle="pill" data-bs-target="#v-pills-small-business">
                             <div class="d-flex align-items-center">
-                                <div class="icon-lg rounded-3 bg-primary bg-opacity-15 p-3 flex-shrink-0">
-                                    <i class="bi bi-chat-dots fs-3 text-primary"></i>
+                                <div class="icon-lg rounded-3 bg-primary bg-opacity-10 p-3 flex-shrink-0">
+                                    <i class="bi bi-chat-dots fs-4 text-primary"></i>
                                 </div>
                                 <div class="ms-4">
-                                    <h4 class="mb-1 fw-semibold">SMS, Email & Voice</h4>
-                                    <p class="mb-0 text-dark">High-quality, reliable messaging with global reach across multiple channels.</p>
+                                    <h4 class="mb-1">SMS, Email & Voice Calls</h4>
+                                    <p class="mb-0 text-dark">Reliable, high-quality messaging across multiple channels with global reach.</p>
                                 </div>
                             </div>
                         </button>
 
-                        <button class="nav-link bg-white p-4 rounded-4 border-0 shadow hover-lift transition-all" id="v-pills-chatbot-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">
+                        <button class="nav-link p-4 rounded-4 border-0 bg-white shadow-sm hover-lift" id="v-pills-chatbot-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile">
                             <div class="d-flex align-items-center">
-                                <div class="icon-lg rounded-3 bg-warning bg-opacity-15 p-3 flex-shrink-0">
-                                    <i class="bi bi-robot fs-3 text-warning"></i>
+                                <div class="icon-lg rounded-3 bg-warning bg-opacity-10 p-3 flex-shrink-0">
+                                    <i class="bi bi-robot fs-4 text-warning"></i>
                                 </div>
                                 <div class="ms-4">
-                                    <h4 class="mb-1 fw-semibold">AI-Powered Chatbots</h4>
-                                    <p class="mb-0 text-dark">24/7 intelligent customer support with advanced learning capabilities.</p>
+                                    <h4 class="mb-1">AI-powered Chatbots</h4>
+                                    <p class="mb-0 text-dark">Intelligent customer support with 24/7 automated responses and learning capabilities.</p>
                                 </div>
                             </div>
                         </button>
 
-                        <button class="nav-link bg-white p-4 rounded-4 border-0 shadow hover-lift transition-all" id="v-pills-social-tab" data-bs-toggle="pill" data-bs-target="#v-pills-enterprises" type="button" role="tab" aria-controls="v-pills-enterprises" aria-selected="false">
+                        <button class="nav-link p-4 rounded-4 border-0 bg-white shadow-sm hover-lift" id="v-pills-social-tab" data-bs-toggle="pill" data-bs-target="#v-pills-enterprises">
                             <div class="d-flex align-items-center">
-                                <div class="icon-lg rounded-3 bg-success bg-opacity-15 p-3 flex-shrink-0">
-                                    <i class="bi bi-share fs-3 text-success"></i>
+                                <div class="icon-lg rounded-3 bg-success bg-opacity-10 p-3 flex-shrink-0">
+                                    <i class="bi bi-share fs-4 text-success"></i>
                                 </div>
                                 <div class="ms-4">
-                                    <h4 class="mb-1 fw-semibold">Social Media Integration</h4>
-                                    <p class="mb-0 text-dark">Unified platform for seamless social media interaction management.</p>
+                                    <h4 class="mb-1">Social Media Integration</h4>
+                                    <p class="mb-0 text-dark">Seamlessly manage all your social media interactions from one unified platform.</p>
                                 </div>
                             </div>
                         </button>
@@ -1071,10 +815,10 @@
 
                 <div class="col-xl-6 offset-xl-1 col-lg-6 col-12">
                     <div class="tab-content" id="v-pills-tabContent">
-                        <div class="tab-pane fade show active" id="v-pills-small-business" role="tabpanel" aria-labelledby="v-pills-sms-tab">
+                        <div class="tab-pane fade show active" id="v-pills-small-business" role="tabpanel">
                             <div class="position-relative">
-                                <div class="card border-0 shadow-lg rounded-4 p-3 mb-4 overflow-hidden">
-                                    <img src="assets/images/mobile-device-sms.jpeg" alt="SMS & Voice Solutions" class="img-fluid rounded-4" data-cue="fadeIn" data-duration="600">
+                                <div class="card border-0 shadow-lg rounded-4 p-2 mb-4">
+                                    <img src="assets/images/mobile-device-sms.jpeg" alt="SMS & Voice Solutions" class="img-fluid rounded-4" data-cue="fadeIn">
                                     <div class="position-absolute top-0 end-0 mt-3 me-3">
                                         <span class="badge bg-primary rounded-pill px-3 py-2">
                                             <i class="bi bi-check2-circle me-1"></i>Enterprise Ready
@@ -1083,13 +827,13 @@
                                 </div>
                                 <div class="row g-4 mt-2">
                                     <div class="col-6">
-                                        <div class="d-flex align-items-center p-3 rounded-3 bg-white shadow-sm transition-all">
+                                        <div class="d-flex align-items-center p-3 rounded-3 bg-white shadow-sm">
                                             <i class="bi bi-shield-check text-primary me-3 fs-4"></i>
                                             <span class="fw-medium">Secure Delivery</span>
                                         </div>
                                     </div>
                                     <div class="col-6">
-                                        <div class="d-flex align-items-center p-3 rounded-3 bg-white shadow-sm transition-all">
+                                        <div class="d-flex align-items-center p-3 rounded-3 bg-white shadow-sm">
                                             <i class="bi bi-graph-up text-success me-3 fs-4"></i>
                                             <span class="fw-medium">99.9% Uptime</span>
                                         </div>
@@ -1098,10 +842,10 @@
                             </div>
                         </div>
 
-                        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-chatbot-tab">
+                        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel">
                             <div class="position-relative">
-                                <div class="card border-0 shadow-lg rounded-4 p-3 mb-4 overflow-hidden">
-                                    <img src="assets/images/robot.jpeg" alt="AI Chatbot" class="img-fluid rounded-4" data-cue="fadeIn" data-duration="600">
+                                <div class="card border-0 shadow-lg rounded-4 p-2 mb-4">
+                                    <img src="assets/images/robot.jpeg" alt="AI Chatbot" class="img-fluid rounded-4" data-cue="fadeIn">
                                     <div class="position-absolute top-0 end-0 mt-3 me-3">
                                         <span class="badge bg-warning text-dark rounded-pill px-3 py-2">
                                             <i class="bi bi-stars me-1"></i>AI Powered
@@ -1111,10 +855,10 @@
                             </div>
                         </div>
 
-                        <div class="tab-pane fade" id="v-pills-enterprises" role="tabpanel" aria-labelledby="v-pills-social-tab">
+                        <div class="tab-pane fade" id="v-pills-enterprises" role="tabpanel">
                             <div class="position-relative">
-                                <div class="card border-0 shadow-lg rounded-4 p-3 mb-4 overflow-hidden">
-                                    <img src="assets/images/social-media.jpeg" alt="Social Media" class="img-fluid rounded-4" data-cue="fadeIn" data-duration="600">
+                                <div class="card border-0 shadow-lg rounded-4 p-2 mb-4">
+                                    <img src="assets/images/social-media.jpeg" alt="Social Media" class="img-fluid rounded-4">
                                     <div class="position-absolute top-0 end-0 mt-3 me-3">
                                         <span class="badge bg-success rounded-pill px-3 py-2">
                                             <i class="bi bi-lightning-charge me-1"></i>Real-time
@@ -1127,13 +871,7 @@
                 </div>
             </div>
         </div>
-
-        <!-- JavaScript for automatic tab switching -->
-      
     </section>
-
-    <!-- Custom CSS for improved styling -->
-
 
 
     <!--Product designer end-->
@@ -1213,21 +951,20 @@
     <!--Get block card end-->
 
     <!--Customer stories start-->
-
-
-    <section class="testimonials-section py-xl-9 py-5 position-relative overflow-hidden">
+    <section class="testimonials-section py-xl-9 py-5 position-relative overflow-hidden" style="background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%);">
         <!-- Background decoration -->
-        <div class="bg-decoration"></div>
+        <div class="position-absolute top-0 start-0 w-100 h-100" style="background: radial-gradient(circle at 0% 100%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);"></div>
 
         <div class="container position-relative" data-cue="fadeIn">
             <div class="row mb-7">
                 <div class="col-xl-8 offset-xl-2 col-md-8 offset-md-2">
                     <div class="text-center mb-5">
                         <span class="badge bg-warning text-dark px-3 py-2 mb-3">Success Stories</span>
-                        <h2 class="display-4 mb-3 fw-bold">
-                            Real Stories from Real Customers
-
+                        <h2 class="display-4 mb-3 text-white fw-bold">
+                            Real Stories from
+                            <span class="text-warning">Real Customers</span>
                         </h2>
+                        <p class="lead text-white-75 mb-0">Discover how businesses are transforming their communication with Headtrax Solutions</p>
                     </div>
                 </div>
             </div>
@@ -1235,21 +972,21 @@
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6" data-cue="slideInUp" data-delay="100">
                     <div class="card bg-white bg-opacity-10 border-0 h-100 transition-all hover-lift">
-                        <div class="card-body">
+                        <div class="card-body p-5">
                             <div class="mb-4">
                                 <span class="text-warning fs-1">
                                     <i class="bi bi-quote"></i>
                                 </span>
                             </div>
-                            <p class="mb-4 lead">
+                            <p class="text-white mb-4 lead">
                                 "The team at Headtrax Solutions made integration effortless. Their platform has streamlined our processes and allowed us to focus on core business tasks. Highly recommended!"
                             </p>
-                            <div class="d-flex align-items-center mt-4 pt-3 border-top border-white">
+                            <div class="d-flex align-items-center mt-4 pt-3 border-top border-white border-opacity-10">
                                 <div class="avatar avatar-lg rounded-circle bg-primary">
-                                    <span class="fw-bold">FO</span>
+                                    <span class="text-white fw-bold">FO</span>
                                 </div>
                                 <div class="ms-3">
-                                    <h5 class="mb-1">Fasanya Oluwapelumi</h5>
+                                    <h5 class="text-white mb-1">Fasanya Oluwapelumi</h5>
                                     <p class="text-white-75 mb-0 small">Content Producer</p>
                                 </div>
                             </div>
@@ -1259,21 +996,21 @@
 
                 <div class="col-lg-4 col-md-6" data-cue="slideInUp" data-delay="200">
                     <div class="card bg-white bg-opacity-10 border-0 h-100 transition-all hover-lift">
-                        <div class="card-body">
+                        <div class="card-body p-5">
                             <div class="mb-4">
                                 <span class="text-warning fs-1">
                                     <i class="bi bi-quote"></i>
                                 </span>
                             </div>
-                            <p class="mb-4 lead">
+                            <p class="text-white mb-4 lead">
                                 "The language options are perfect for reaching our diverse client base. Headtrax Solutions has been a game-changer for our customer engagement strategies"
                             </p>
-                            <div class="d-flex align-items-center mt-4 pt-3 border-top border-white">
+                            <div class="d-flex align-items-center mt-4 pt-3 border-top border-white border-opacity-10">
                                 <div class="avatar avatar-lg rounded-circle bg-success">
-                                    <span class="fw-bold">AA</span>
+                                    <span class="text-white fw-bold">AA</span>
                                 </div>
                                 <div class="ms-3">
-                                    <h5 class="mb-1">Awe Alexander</h5>
+                                    <h5 class="text-white mb-1">Awe Alexander</h5>
                                     <p class="text-white-75 mb-0 small">Social Media Manager</p>
                                 </div>
                             </div>
@@ -1283,21 +1020,21 @@
 
                 <div class="col-lg-4 col-md-6" data-cue="slideInUp" data-delay="300">
                     <div class="card bg-white bg-opacity-10 border-0 h-100 transition-all hover-lift">
-                        <div class="card-body">
+                        <div class="card-body p-5">
                             <div class="mb-4">
                                 <span class="text-warning fs-1">
                                     <i class="bi bi-quote"></i>
                                 </span>
                             </div>
-                            <p class="mb-4 lead">
+                            <p class="text-white mb-4 lead">
                                 "Headtrax Solutions transformed our communication approach. Their platform is robust, easy to use, and has significantly increased our operational efficiency."
                             </p>
-                            <div class="d-flex align-items-center mt-4 pt-3 border-top border-white">
+                            <div class="d-flex align-items-center mt-4 pt-3 border-top border-white border-opacity-10">
                                 <div class="avatar avatar-lg rounded-circle bg-warning">
-                                    <span class="fw-bold">RS</span>
+                                    <span class="text-dark fw-bold">SA</span>
                                 </div>
                                 <div class="ms-3">
-                                    <h5 class="mb-1">Robert Steven</h5>
+                                    <h5 class="text-white mb-1">Soleye Alexander</h5>
                                     <p class="text-white-75 mb-0 small">Senior Research Program Manager</p>
                                 </div>
                             </div>
@@ -1572,62 +1309,4 @@
 
 
 @section('script')
-<script>
-        // Counter Animation
-        document.addEventListener('DOMContentLoaded', () => {
-            const counters = document.querySelectorAll('.counter-value');
-            const animateCounter = (counter) => {
-                const target = +counter.getAttribute('data-count');
-                const duration = 2000;
-                const increment = target / (duration / 16);
-                let current = 0;
-
-                const updateCounter = () => {
-                    current += increment;
-                    if (current < target) {
-                        counter.textContent = Math.round(current);
-                        requestAnimationFrame(updateCounter);
-                    } else {
-                        counter.textContent = target.toLocaleString();
-                    }
-                };
-                updateCounter();
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        animateCounter(entry.target);
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.5
-            });
-
-            counters.forEach(counter => observer.observe(counter));
-        });
-    </script>
-      <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                const tabs = document.querySelectorAll('#v-pills-tab .nav-link');
-                let currentTabIndex = 0;
-
-                function switchTab() {
-                    // Remove active class from current tab and pane
-                    tabs[currentTabIndex].classList.remove('active');
-                    document.querySelector(tabs[currentTabIndex].dataset.bsTarget).classList.remove('show', 'active');
-
-                    // Move to next tab
-                    currentTabIndex = (currentTabIndex + 1) % tabs.length;
-
-                    // Add active class to next tab and pane
-                    tabs[currentTabIndex].classList.add('active');
-                    document.querySelector(tabs[currentTabIndex].dataset.bsTarget).classList.add('show', 'active');
-                }
-
-                // Switch tabs every 2 seconds
-                setInterval(switchTab, 4000);
-            });
-        </script>
 @endsection

@@ -1,426 +1,70 @@
-@extends('frontend.master')
-@section('header')
-<style>
-    .testimonials-section {
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(200, 200, 200, 0.1) 100%);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        padding: 4rem 0;
-        position: relative;
-        overflow: hidden;
-        border-radius: 20px;
-        margin: 2rem 0;
-    }
 
-    .testimonials-section .bg-decoration {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: radial-gradient(circle at 0% 100%, rgba(255, 255, 255, 0.2) 0%, transparent 50%);
-    }
+<!doctype html>
+<html lang="en" data-theme="light">
 
-    .testimonials-section .badge {
-        background: rgba(255, 193, 7, 0.95);
-        color: #1a1a1a;
-        padding: 0.6rem 1.8rem;
-        border-radius: 50px;
-        font-weight: 700;
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    .testimonials-section h2 {
-        color: #1a1a1a;
-        text-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-        font-weight: 800;
-        letter-spacing: -1px;
-    }
+    <link rel="stylesheet" href="assets/libs/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/libs/glightbox/dist/css/glightbox.min.css" />
+    <!-- Favicon icon-->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://headtraxsolutions.com/headtrax_files/public/assets/images/logo3.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="https://headtraxsolutions.com/headtrax_files/public/assets/images/logo3.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="https://headtraxsolutions.com/headtrax_files/public/assets/images/logo3.png" />
+    <link rel="manifest" href="assets/images/favicon/site.html" />
+    <link rel="mask-icon" href="assets/images/favicon/block-safari-pinned-tab.svg" color="#8b3dff" />
+    <link rel="shortcut icon" href="https://headtraxsolutions.com/headtrax_files/public/assets/images/logo3.png" />
+    <meta name="msapplication-TileColor" content="#8b3dff" />
+    <meta name="msapplication-config" content="assets/images/favicon/tile.xml" />
 
-    .testimonials-section .text-warning {
-        color: #ffc107 !important;
-    }
+    <!-- Color modes -->
+    <script src="https://headtraxsolutions.com/assets/js/vendors/color-modes.js"></script>
+    <link href="https://headtraxsolutions.com/assets/libs/simplebar/dist/simplebar.min.css" rel="stylesheet" />
+    <link href="https://headtraxsolutions.com/assets/libs/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://headtraxsolutions.com/assets/libs/scrollcue/scrollCue.css" />
+    <link rel="stylesheet" href="https://headtraxsolutions.com/assets/fonts/css/boxicons.min.css" />
+    <link rel="stylesheet" href="https://headtraxsolutions.com/assets/css/theme.min.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8S4MT3EYG"></script>
 
-    .testimonials-section .lead {
-        color: #333333;
-        font-size: 1.3rem;
-        line-height: 1.6;
-    }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-    .testimonials-section .card {
-        background: rgba(255, 255, 255, 0.12);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.25);
-        border-radius: 20px;
-        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
-        transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-
-    .testimonials-section .card:hover {
-        transform: translateY(-12px);
-        box-shadow: 0 15px 45px rgba(0, 0, 0, 0.35);
-    }
-
-    .testimonials-section .card-body {
-        padding: 2.5rem;
-    }
-
-    .testimonials-section .bi-quote {
-        font-size: 2.5rem;
-        color: #ffc107;
-    }
-
-    .testimonials-section .card p.lead {
-        color: #333333;
-        font-size: 1.1rem;
-        line-height: 1.5;
-    }
-
-    .testimonials-section .border-white {
-        border-color: rgba(255, 193, 7, 0.4) !important;
-    }
-
-    .testimonials-section .avatar {
-        width: 60px;
-        height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-    }
-
-    .testimonials-section .avatar.bg-primary {
-        background: rgba(66, 133, 244, 0.3);
-    }
-
-    .testimonials-section .avatar.bg-success {
-        background: rgba(40, 167, 69, 0.3);
-    }
-
-    .testimonials-section .avatar.bg-warning {
-        background: rgba(255, 193, 7, 0.3);
-    }
-
-    .testimonials-section .avatar span {
-        color: #1a1a1a;
-        font-weight: 700;
-    }
-
-    .testimonials-section h5 {
-        color: #1a1a1a;
-        font-weight: 600;
-        font-size: 1.2rem;
-    }
-
-    .testimonials-section .text-white-75 {
-        color: #333333;
-        font-size: 0.9rem;
-    }
-
-    /* Spotlight Card Styles */
-    .spotlight-card {
-        background: radial-gradient(circle at center, rgba(79, 70, 229, 0.15) 0%, rgba(255, 255, 255, 0.1) 100%);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 16px;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-        transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .spotlight-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
-        border-color: rgba(79, 70, 229, 0.5);
-    }
-
-    .spotlight-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(45deg, rgba(79, 70, 229, 0.05), rgba(255, 255, 255, 0));
-        opacity: 0;
-        transition: opacity 0.4s ease;
-    }
-
-    .spotlight-card:hover::before {
-        opacity: 1;
-    }
-
-    .icon-wrapper {
-        width: 60px;
-        height: 60px;
-        /* background: linear-gradient(135deg, #4f46e5, #7c3aed); */
-        /* Blue gradient */
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .icon-wrapper:hover {
-        transform: scale(1.1);
-        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-    }
-
-    .icon-wrapper .icon {
-        width: 32px;
-        height: 32px;
-        color: #ffffff;
-        /* White for contrast */
-        transition: transform 0.3s ease;
-    }
-
-    .icon-wrapper:hover .icon {
-        transform: rotate(12deg);
-    }
-
-    .spotlight-card h4 {
-        color: #1a1a1a;
-        font-weight: 700;
-        font-size: 1.4rem;
-        margin-bottom: 1rem;
-    }
-
-    .spotlight-card p {
-        color: #333333;
-        font-size: 0.95rem;
-        line-height: 1.6;
-    }
-
-    /* Responsive Adjustments */
-    @media (max-width: 767px) {
-        .spotlight-card {
-            padding: 1.5rem;
+        function gtag() {
+            dataLayer.push(arguments);
         }
+        gtag("js", new Date());
 
-        .icon-wrapper {
-            width: 50px;
-            height: 50px;
+        gtag("config", "G-M8S4MT3EYG");
+    </script>
+    <script type="text/javascript">
+        (function(c, l, a, r, i, t, y) {
+            c[a] =
+                c[a] ||
+                function() {
+                    (c[a].q = c[a].q || []).push(arguments);
+                };
+            t = l.createElement(r);
+            t.async = 1;
+            t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0];
+            y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "kss8za9j58");
+    </script>
+
+    <title>Headtrax Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+            font-weight: 400;
+            font-style: normal;
         }
-
-        .icon-wrapper .icon {
-            width: 28px;
-            height: 28px;
-        }
-
-        .spotlight-card h4 {
-            font-size: 1.2rem;
-        }
-
-        .spotlight-card p {
-            font-size: 0.9rem;
-        }
-    }
-
-    .section-why-choose-us {
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(200, 200, 200, 0.1) 100%);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        padding: 4rem 0;
-        position: relative;
-        overflow: hidden;
-        border-radius: 20px;
-        margin: 2rem 0;
-    }
-
-    .section-why-choose-us .bg-shapes .shape {
-        position: absolute;
-        background: rgba(255, 255, 255, 0.2);
-        border-radius: 50%;
-        opacity: 0.4;
-        transition: all 0.4s ease;
-    }
-
-    .section-why-choose-us .bg-shapes .shape-1 {
-        width: 250px;
-        height: 250px;
-        top: -70px;
-        left: -70px;
-    }
-
-    .section-why-choose-us .bg-shapes .shape-2 {
-        width: 350px;
-        height: 350px;
-        bottom: -120px;
-        right: -120px;
-    }
-
-    .section-why-choose-us .badge {
-        background: #3683CA;
-        /* Indigo blue */
-        color: #ffffff;
-        /* White text for contrast */
-        padding: 0.6rem 1.8rem;
-        border-radius: 50px;
-        font-weight: 700;
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-
-    .section-why-choose-us h2 {
-        color: #1a1a1a;
-        text-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-        font-weight: 800;
-        letter-spacing: -1px;
-    }
-
-    .section-why-choose-us .lead {
-        color: #333333;
-        font-size: 1.3rem;
-        line-height: 1.6;
-    }
-
-    .section-why-choose-us .spotlight-card {
-        background: rgba(255, 255, 255, 0.12);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.25);
-        border-radius: 20px;
-        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
-        transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-
-    .section-why-choose-us .spotlight-card:hover {
-        transform: translateY(-12px);
-        box-shadow: 0 15px 45px rgba(0, 0, 0, 0.35);
-    }
-
-    .section-why-choose-us .icon-wrapper {
-        width: 70px;
-        height: 70px;
-        /* background: rgba(79, 70, 229, 0.3); */
-        /* Indigo blue */
-        border-radius: 15px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .section-why-choose-us .icon-wrapper .icon {
-        width: 36px;
-        height: 36px;
-        stroke: #1a1a1a;
-        stroke-width: 2.5;
-    }
-
-    .section-why-choose-us .spotlight-card h4 {
-        color: #1a1a1a;
-        font-weight: 700;
-        font-size: 1.5rem;
-    }
-
-    .section-why-choose-us .spotlight-card p {
-        color: #333333;
-        font-size: 1rem;
-        line-height: 1.5;
-    }
-
-    .section-why-choose-us .border-primary {
-        border-color: #3683CA !important;
-        /* Indigo blue */
-    }
-
-    .section-why-choose-us .hover-lift {
-        background: rgba(255, 255, 255, 0.08);
-        backdrop-filter: blur(6px);
-        -webkit-backdrop-filter: blur(6px);
-        border-radius: 15px;
-        transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-
-    .section-why-choose-us .hover-lift:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-    }
-
-    .section-why-choose-us .counter-value {
-        color: #1a1a1a !important;
-        font-weight: 800;
-        font-size: 2.5rem;
-    }
-
-    .section-why-choose-us .text-warning {
-        color: #3683CA !important;
-        /* Indigo blue */
-    }
-
-    .section-why-choose-us .text-white-75 {
-        color: #333333;
-    }
-
-    .section-why-choose-us .fs-sm {
-        color: #333333;
-        font-size: 0.9rem;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-    }
-
-    .section-communication-suite {
-        background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
-    }
-
-    .nav-link {
-        transition: all 0.3s ease;
-    }
-
-    .nav-link.active {
-        background: linear-gradient(90deg, rgba(var(--bs-primary-rgb), 0.1), rgba(var(--bs-primary-rgb), 0.05)) !important;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
-        transform: translateY(-2px);
-    }
-
-    .hover-lift:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15) !important;
-    }
-
-    .icon-lg {
-        width: 60px;
-        height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .card {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card:hover {
-        transform: scale(1.02);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    }
-
-    .text-gradient-primary {
-        background: linear-gradient(45deg, #007bff, #00d4ff);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    .tab-pane {
-        transition: opacity 0.5s ease;
-    }
-
-    .tab-pane.show {
-        opacity: 1;
-    }
-
-    .tab-pane {
-        opacity: 0;
-    }
-
+    </style>
+    <style>
     .hover-lift {
         transition: all 0.3s ease;
     }
@@ -510,7 +154,7 @@
         opacity: 0.2;
     }
 
-    @keyframes float {
+    @keyframes  float {
         0% {
             transform: translateY(0);
         }
@@ -608,16 +252,16 @@
     }
 
     .nav-pills .nav-link.active {
-        background: #cce5ff !important;
-        color: #004085;
+        background: linear-gradient(45deg, var(--bs-primary), #2196f3);
+        color: white;
     }
 
     .nav-pills .nav-link.active .text-secondary {
-        color: #004085 !important;
+        color: rgba(255, 255, 255, 0.8) !important;
     }
 
     .nav-pills .nav-link.active .icon-lg {
-        background: #004085 !important;
+        background: rgba(255, 255, 255, 0.2) !important;
     }
 
     .nav-pills .nav-link.active i {
@@ -654,10 +298,167 @@
         justify-content: center;
     }
 </style>
-@endsection
+</head>
 
-@section('content')
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar navbar-expand-lg  transparent navbar-transparent navbar-dark">
+            <div class="container px-3">
+                <a class="navbar-brandii d-flex" href="/">
+                    <img src="https://headtraxsolutions.com/headtrax_files/public/assets/images/oldlogo3.png" style='width:70px;height:50px;border-radius:20px' alt />
+                    <h2>Head<span style='color:#ebab21'>trax</span></h2>
+                    <!-- <h2 class='text-dark'>Headtrax Solutions</h2> -->
+                </a>
+                <button class="navbar-toggler offcanvas-nav-btn" type="button">
+                    <i class="bi bi-list"></i>
+                </button>
+                <div class="offcanvas offcanvas-start offcanvas-nav" style="width: 20rem">
+                    <div class="offcanvas-header">
+                        <a href="/" class="text-inverse">
+                            <h1>Headtrax</h1>
+                        </a>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body pt-0 align-items-center">
+                        <ul class="navbar-nav mx-auto align-items-lg-center">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="/" role="button">Home</a>
 
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="/about-us" role="button">About Us</a>
+
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Our Solutions</a>
+                                <div class="dropdown-menu dropdown-menu-xxl">
+                                    <div class="row row-cols-lg-4 row-cols-1 g-0">
+                                        <div class="col">
+                                            <div>
+                                                <div>
+                                                    <div class="dropdown-header">Our <br> Solutions</div>
+                                                    <a class="dropdown-item" href="/our-solutions">Conversational <br> Solutions</a>
+                                                    <a class="dropdown-item" href="/our-solutions">B2B Platforms</a>
+                                                    <a class="dropdown-item" href="/our-solutions">B2C Platforms</a>
+
+                                                </div>
+                                                <div class="mt-3">
+                                                    <div class="dropdown-header">Departments</div>
+                                                    <a class="dropdown-item" href="/our-solutions">Conversional <br> Marketing</a>
+                                                    <a class="dropdown-item" href="/our-solutions">Conversional <br> Commerce</a>
+                                                    <a class="dropdown-item" href="/our-solutions">Conversional <br> Support</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="mt-3 mt-lg-0">
+                                                <div>
+                                                    <div class="dropdown-header">Industry <br> Verticals</div>
+                                                    <a class="dropdown-item" href="/services/bfsi">BFSI</a>
+                                                    <a class="dropdown-item" href="/services/food_and_beverages">Food & <br> Beverages</a>
+                                                    <a class="dropdown-item" href="/services/retail">Retail</a>
+                                                    <a class="dropdown-item" href="/services/healthcare">Healthcare</a>
+                                                    <a class="dropdown-item" href="/services/advertising">Advertising</a>
+                                                    <a class="dropdown-item" href="/services/real_estate">Real Estate</a>
+                                                    <a class="dropdown-item" href="/services/travel_and_hospitality">Travel & <br> Hosptality</a>
+                                                    <a class="dropdown-item" href="/services/education">Education</a>
+                                                    <a class="dropdown-item" href="/services/media">Media</a>
+                                                    <a class="dropdown-item" href="/services/government">Government</a>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="mt-3 mt-lg-0">
+                                                <div class="mt-3">
+                                                    <div class="dropdown-header">Why Choose Us?</div>
+
+                                                    <a class="dropdown-item" href="/">Why Choose Us?</a>
+
+                                                </div>
+                                                <div class="mt-3">
+                                                    <div class="dropdown-header">Contact</div>
+
+                                                    <a class="dropdown-item" href="/contact-us">Contact Us</a>
+
+                                                </div>
+
+                                                <div class="mt-3">
+                                                    <div class="dropdown-header">Pricing</div>
+                                                    <a class="dropdown-item" href="/">Our Pricing</a>
+
+                                                </div>
+                                                <div class="mt-3">
+                                                    <div class="dropdown-header">Career</div>
+                                                    <a class="dropdown-item" href="/">Join Us<br> At Headtrax</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="mt-3 mt-lg-0">
+                                                <div>
+                                                    <div class="dropdown-header">Integration</div>
+                                                    <a class="dropdown-item" href="/">Mobile App <br> Integration</a>
+
+                                                </div>
+                                                <div class="mt-3">
+                                                    <div>
+                                                        <div class="dropdown-header">Private Policy</div>
+                                                        <a class="dropdown-item" href="/">Our Policy</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="/blogs" role="button">Blogs</a>
+
+                            </li>
+
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Docs</a>
+                                <div class="dropdown-menu dropdown-menu-md" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item mb-3 text-body" href="#">
+                                        <div class="d-flex align-items-center">
+                                            <i class="bi bi-file-text fs-4 text-primary"></i>
+                                            <div class="ms-3 lh-1">
+                                                <h5 class="mb-1">Documentations</h5>
+                                                <p class="mb-0 fs-6">Browse the all documentation</p>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <a class="dropdown-item text-body" href="#">
+                                        <div class="d-flex align-items-center">
+                                            <i class="bi bi-clipboard fs-4 text-primary"></i>
+                                            <div class="ms-3 lh-1">
+                                                <h5 class="mb-1">
+                                                    Changelog
+                                                    <span class="text-primary ms-1"></span>
+                                                </h5>
+                                                <p class="mb-0 fs-6">See what's new</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="mt-3 mt-lg-0 d-flex align-items-center">
+                            <a href="/contact-us" class="btn btn-primary">Contact Us</a>
+                            <a href="/login" class="btn btn-light mx-2">Login</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
 <main>
     <!--Hero start-->
     <section class="bg-primary pt-9 right-slant-shape" data-cue="fadeIn">
@@ -744,36 +545,11 @@
                                     <img src="assets/images/client-logo/clients-logo-5.svg" alt="logo" />
                                 </figure>
                             </div>
-                            <div class="swiper-slide">
-                                <figure class="text-center">
-                                    <img src="assets/images/client-logo/clients-logo-1.svg" alt="logo" />
-                                </figure>
-                            </div>
-                            <div class="swiper-slide">
-                                <figure class="text-center">
-                                    <img src="assets/images/client-logo/clients-logo-2.svg" alt="logo" />
-                                </figure>
-                            </div>
-                            <div class="swiper-slide">
-                                <figure class="text-center">
-                                    <img src="assets/images/client-logo/clients-logo-3.svg" alt="logo" />
-                                </figure>
-                            </div>
-                            <div class="swiper-slide">
-                                <figure class="text-center">
-                                    <img src="assets/images/client-logo/clients-logo-4.svg" alt="logo" />
-                                </figure>
-                            </div>
-                            <div class="swiper-slide">
-                                <figure class="text-center">
-                                    <img src="assets/images/client-logo/clients-logo-5.svg" alt="logo" />
-                                </figure>
-                            </div>
-
+                            <!-- Add more slides as needed -->
                         </div>
-
+                        <!-- Add Pagination -->
                         <div class="swiper-pagination"></div>
-
+                        <!-- Add Navigation -->
                         <div class="swiper-navigation">
                             <div class="swiper-button-next"></div>
                             <div class="swiper-button-prev"></div>
@@ -790,7 +566,7 @@
         <!-- Background decoration -->
         <div class="position-absolute top-0 start-0 w-100 h-100" style="background: radial-gradient(circle at 0% 0%, rgba(var(--bs-primary-rgb), 0.03) 0%, transparent 50%);"></div>
 
-        <div class="container  position-relative" data-cue="fadeIn">
+        <div  class="container  position-relative" data-cue="fadeIn">
             <!-- Header -->
             <div class="row mb-7">
                 <div class="col-xl-8 col-lg-10 mx-auto text-center">
@@ -809,7 +585,7 @@
                     <div class="card border-0 bg-white shadow-hover h-100 transition-all hover-lift">
                         <div class="card-body p-5">
                             <div class="feature-icon-box mb-4">
-                                <div class="icon-wrapper rounded-4 bg-transparent bg-opacity-10 p-0 d-inline-flex position-relative">
+                                <div class="icon-wrapper rounded-4 bg-primary bg-opacity-10 p-3 d-inline-flex position-relative">
                                     <img src="assets/images/local-language.jpeg" alt="Intelligent AI" class="rounded-3 img-fluid" style="width: 48px; height: 48px; object-fit: cover;">
                                     <div class="position-absolute top-0 end-0 mt-n2 me-n2">
                                         <span class="badge rounded-pill bg-primary"><i class="bi bi-robot"></i></span>
@@ -829,7 +605,7 @@
                     <div class="card border-0 bg-white shadow-hover h-100 transition-all hover-lift">
                         <div class="card-body p-5">
                             <div class="feature-icon-box mb-4">
-                                <div class="icon-wrapper rounded-4 bg-warning bg-opacity-10 p-0 d-inline-flex position-relative">
+                                <div class="icon-wrapper rounded-4 bg-warning bg-opacity-10 p-3 d-inline-flex position-relative">
                                     <img src="assets/images/hero1.jpeg" alt="Messaging Channels" class="rounded-3 img-fluid" style="width: 48px; height: 48px; object-fit: cover;">
                                     <div class="position-absolute top-0 end-0 mt-n2 me-n2">
                                         <span class="badge rounded-pill bg-warning"><i class="bi bi-chat-dots"></i></span>
@@ -849,7 +625,7 @@
                     <div class="card border-0 bg-white shadow-hover h-100 transition-all hover-lift">
                         <div class="card-body p-5">
                             <div class="feature-icon-box mb-4">
-                                <div class="icon-wrapper rounded-4 bg-success bg-opacity-10 p-0 d-inline-flex position-relative">
+                                <div class="icon-wrapper rounded-4 bg-success bg-opacity-10 p-3 d-inline-flex position-relative">
                                     <img src="assets/images/mobile-device2.jpeg" alt="Personalized Interaction" class="rounded-3 img-fluid" style="width: 48px; height: 48px; object-fit: cover;">
                                     <div class="position-absolute top-0 end-0 mt-n2 me-n2">
                                         <span class="badge rounded-pill bg-success"><i class="bi bi-phone"></i></span>
@@ -911,7 +687,15 @@
     </section>
 
 
-    <section class="section-why-choose-us py-5 py-xl-9 position-relative overflow-hidden">
+
+
+
+
+
+    <!--Your finance end-->
+
+    <!--5m member start-->
+    <section class="section-why-choose-us py-5 py-xl-9 position-relative overflow-hidden text-white" style="background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%);">
         <!-- Decorative Background Shapes -->
         <div class="bg-shapes">
             <div class="shape shape-1"></div>
@@ -922,9 +706,9 @@
             <!-- Header -->
             <div class="row mb-5 mb-xl-7">
                 <div class="col-xl-8 col-lg-10 mx-auto text-center">
-                    <span class="badge bg-warning text-dark mb-3 px-3 py-2">Why We Stand Out</span>
-                    <h2 class="display-4 fw-bold mb-3">Elevate Your Customer Connections</h2>
-                    <p class="lead text-white-75">Revolutionize engagement with innovative, seamless solutions.</p>
+                    <span class="badge bg-warning text-dark mb-3 px-3 py-2">Why Choose Us?</span>
+                    <h2 style="color:black" class="display-4 fw-bold mb-3">Empower Your Business Communication</h2>
+                    <p class="lead text-white-75">Transform your customer interactions with our cutting-edge solutions.</p>
                 </div>
             </div>
 
@@ -932,137 +716,181 @@
             <div class="row g-4 mb-7">
                 <div class="col-md-4" data-cue="fadeIn" data-delay="100">
                     <div class="spotlight-card p-5 rounded-4 h-100 transition-all">
-                        <div class="icon-wrapper bg-transparent mb-4">
-                            <i class="bi bi-robot" style="font-size: 2.5rem;"></i>
+                        <div class="icon-wrapper mb-4">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                <path d="M8 12h8" />
+                                <path d="M12 8v8" />
+                            </svg>
                         </div>
-                        <h4 class="fw-semibold mb-3">Advanced Engagement Suite</h4>
-                        <p class="text-white-75 mb-0">Utilize SMS, email, voice, social platforms, and AI-driven chatbots for effortless customer interaction.</p>
+                        <h4 style="color:#fff" class="fw-semibold mb-3">Premium Communication Tools</h4>
+                        <p class="text-white-75 mb-0">Leverage SMS, email, voice, social media, and AI-powered chatbots for seamless customer engagement.</p>
                     </div>
                 </div>
                 <div class="col-md-4" data-cue="fadeIn" data-delay="200">
                     <div class="spotlight-card p-5 rounded-4 h-100 transition-all">
-                        <div class="icon-wrapper bg-transparent mb-4">
-                            <i class="bi bi-chat-dots" style="font-size: 2.5rem;"></i>
+                        <div class="icon-wrapper mb-4">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 3h18v18H3z" />
+                                <path d="M9 7h6" />
+                                <path d="M9 11h6" />
+                                <path d="M9 15h6" />
+                            </svg>
                         </div>
-                        <h4 class="fw-semibold mb-3">Global Language Reach</h4>
-                        <p class="text-white-75 mb-0">Connect with customers worldwide using real-time, multilingual communication tools.</p>
+                        <h4 style="color:#fff" class="fw-semibold mb-3">Multi-Language Support</h4>
+                        <p class="text-white-75 mb-0">Engage customers globally with real-time, multi-language communication capabilities.</p>
                     </div>
                 </div>
                 <div class="col-md-4" data-cue="fadeIn" data-delay="300">
                     <div class="spotlight-card p-5 rounded-4 h-100 transition-all">
-                        <div class="icon-wrapper bg-transparent mb-4">
-                            <i class="bi bi-phone" style="font-size: 2.5rem;"></i>
+                        <div class="icon-wrapper mb-4">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M7 3h10a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" />
+                                <path d="M10 17h4" />
+                            </svg>
                         </div>
-                        <h4 class="fw-semibold mb-3">Seamless Mobile Integration</h4>
-                        <p class="text-white-75 mb-0">Sync with CRM systems to optimize customer data and enhance engagement.</p>
+                        <h4 style="color:#fff" class="fw-semibold mb-3">Mobile App Integration</h4>
+                        <p class="text-white-75 mb-0">Integrate with native CRM systems to streamline customer data and enhance interactions.</p>
                     </div>
                 </div>
             </div>
-
-
 
             <!-- Metrics -->
             <div class="row g-0 border-top border-primary text-center" data-cue="fadeIn">
                 <div class="col-lg-3 col-6 border-end border-primary">
                     <div class="p-5 hover-lift">
                         <div class="d-flex align-items-center justify-content-center mb-3">
-                            <h3 class="h1 fw-bold counter-value" data-count="7500000">0</h3>
+                            <h3 class="h1 fw-bold text-white mb-0 counter-value" data-count="5000000">0</h3>
                             <span class="text-warning fs-3 ms-2">+</span>
                         </div>
-                        <span class="text-white-75 text-uppercase fs-sm">Active Users</span>
+                        <span class="text-white-75 text-uppercase fs-sm">Members</span>
                     </div>
                 </div>
                 <div class="col-lg-3 col-6 border-end border-primary">
                     <div class="p-5 hover-lift">
                         <div class="d-flex align-items-center justify-content-center mb-3">
-                            <h3 class="h1 fw-bold counter-value" data-count="98">0</h3>
+                            <h3 class="h1 fw-bold text-white mb-0 counter-value" data-count="95">0</h3>
                             <span class="text-warning fs-3 ms-2">%</span>
                         </div>
-                        <span class="text-white-75 text-uppercase fs-sm">Client Satisfaction</span>
+                        <span class="text-white-75 text-uppercase fs-sm">Customer Satisfaction</span>
                     </div>
                 </div>
                 <div class="col-lg-3 col-6 border-end border-primary">
                     <div class="p-5 hover-lift">
                         <div class="d-flex align-items-center justify-content-center mb-3">
-                            <h3 class="h1 fw-bold counter-value" data-count="80">0</h3>
+                            <h3 class="h1 fw-bold text-white mb-0 counter-value" data-count="73">0</h3>
                             <span class="text-warning fs-3 ms-2">%</span>
                         </div>
-                        <span class="text-white-75 text-uppercase fs-sm">Annual Growth</span>
+                        <span class="text-white-75 text-uppercase fs-sm">Yearly Growth</span>
                     </div>
                 </div>
                 <div class="col-lg-3 col-6">
                     <div class="p-5 hover-lift">
                         <div class="d-flex align-items-center justify-content-center mb-3">
-                            <h3 class="h1 fw-bold counter-value" data-count="300">0</h3>
+                            <h3 class="h1 fw-bold text-white mb-0 counter-value" data-count="250">0</h3>
                             <span class="text-warning fs-3 ms-2">B</span>
                         </div>
-                        <span class="text-white-75 text-uppercase fs-sm">Assets Managed</span>
+                        <span class="text-white-75 text-uppercase fs-sm">Money Managed</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-  
 
-    <!--Your finance end-->
 
+    <script>
+        // Counter Animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const counters = document.querySelectorAll('.counter-value');
+            const animateCounter = (counter) => {
+                const target = +counter.getAttribute('data-count');
+                const duration = 2000;
+                const increment = target / (duration / 16);
+                let current = 0;
+
+                const updateCounter = () => {
+                    current += increment;
+                    if (current < target) {
+                        counter.textContent = Math.round(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target.toLocaleString();
+                    }
+                };
+                updateCounter();
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounter(entry.target);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.5
+            });
+
+            counters.forEach(counter => observer.observe(counter));
+        });
+    </script>
     <!--5m member end-->
 
     <!--Product designer start-->
     <section class="section-communication-suite py-7 py-xl-9 bg-light position-relative overflow-hidden">
-        <!-- Background decoration with subtle gradient -->
-        <div class="position-absolute top-0 end-0 w-100 h-100" style="background: radial-gradient(circle at 100% 0%, rgba(var(--bs-primary-rgb), 0.05) 0%, transparent 60%); opacity: 0.8;"></div>
+        <!-- Background decoration -->
+        <div class="position-absolute top-0 end-0 w-100 h-100" style="background: radial-gradient(circle at 100% 0%, rgba(var(--bs-primary-rgb), 0.03) 0%, transparent 50%);"></div>
 
         <div class="container position-relative">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
-                    <div class="text-center mb-xl-7 mb-5" data-cue="fadeIn" data-duration="800">
-                        <span class="badge bg-primary-subtle text-primary px-4 py-2 mb-3 fs-6">Communication Suite</span>
+                    <div class="text-center mb-xl-7 mb-5" data-cue="fadeIn">
+                        <span class="badge bg-primary-subtle text-primary px-3 py-2 mb-3">Communication Suite</span>
                         <h2 class="display-4 mb-3 fw-bold">
                             Powerful Solutions for
                             <span class="text-gradient-primary">Every Business Size</span>
                         </h2>
-                        <p class="lead text-dark mb-0">Discover cutting-edge communication tools tailored to scale seamlessly with your business needs.</p>
+                        <p class="lead text-dark mb-0">Discover our comprehensive communication tools designed to scale with your business needs</p>
                     </div>
                 </div>
             </div>
 
             <div class="row align-items-center g-5">
                 <div class="col-xl-5 col-lg-6 col-12">
-                    <div class="nav flex-column nav-pills gap-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <button class="nav-link active bg-white p-4 rounded-4 border-0 shadow hover-lift transition-all" id="v-pills-sms-tab" data-bs-toggle="pill" data-bs-target="#v-pills-small-business" type="button" role="tab" aria-controls="v-pills-small-business" aria-selected="true">
+                    <div class="nav flex-column nav-pills gap-3" id="v-pills-tab" role="tablist">
+                        <button class="nav-link active p-4 rounded-4 border-0 bg-white shadow-sm hover-lift" id="v-pills-sms-tab" data-bs-toggle="pill" data-bs-target="#v-pills-small-business">
                             <div class="d-flex align-items-center">
-                                <div class="icon-lg rounded-3 bg-primary bg-opacity-15 p-3 flex-shrink-0">
-                                    <i class="bi bi-chat-dots fs-3 text-primary"></i>
+                                <div class="icon-lg rounded-3 bg-primary bg-opacity-10 p-3 flex-shrink-0">
+                                    <i class="bi bi-chat-dots fs-4 text-primary"></i>
                                 </div>
                                 <div class="ms-4">
-                                    <h4 class="mb-1 fw-semibold">SMS, Email & Voice</h4>
-                                    <p class="mb-0 text-dark">High-quality, reliable messaging with global reach across multiple channels.</p>
+                                    <h4 class="mb-1">SMS, Email & Voice Calls</h4>
+                                    <p class="mb-0 text-dark">Reliable, high-quality messaging across multiple channels with global reach.</p>
                                 </div>
                             </div>
                         </button>
 
-                        <button class="nav-link bg-white p-4 rounded-4 border-0 shadow hover-lift transition-all" id="v-pills-chatbot-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">
+                        <button class="nav-link p-4 rounded-4 border-0 bg-white shadow-sm hover-lift" id="v-pills-chatbot-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile">
                             <div class="d-flex align-items-center">
-                                <div class="icon-lg rounded-3 bg-warning bg-opacity-15 p-3 flex-shrink-0">
-                                    <i class="bi bi-robot fs-3 text-warning"></i>
+                                <div class="icon-lg rounded-3 bg-warning bg-opacity-10 p-3 flex-shrink-0">
+                                    <i class="bi bi-robot fs-4 text-warning"></i>
                                 </div>
                                 <div class="ms-4">
-                                    <h4 class="mb-1 fw-semibold">AI-Powered Chatbots</h4>
-                                    <p class="mb-0 text-dark">24/7 intelligent customer support with advanced learning capabilities.</p>
+                                    <h4 class="mb-1">AI-powered Chatbots</h4>
+                                    <p class="mb-0 text-dark">Intelligent customer support with 24/7 automated responses and learning capabilities.</p>
                                 </div>
                             </div>
                         </button>
 
-                        <button class="nav-link bg-white p-4 rounded-4 border-0 shadow hover-lift transition-all" id="v-pills-social-tab" data-bs-toggle="pill" data-bs-target="#v-pills-enterprises" type="button" role="tab" aria-controls="v-pills-enterprises" aria-selected="false">
+                        <button class="nav-link p-4 rounded-4 border-0 bg-white shadow-sm hover-lift" id="v-pills-social-tab" data-bs-toggle="pill" data-bs-target="#v-pills-enterprises">
                             <div class="d-flex align-items-center">
-                                <div class="icon-lg rounded-3 bg-success bg-opacity-15 p-3 flex-shrink-0">
-                                    <i class="bi bi-share fs-3 text-success"></i>
+                                <div class="icon-lg rounded-3 bg-success bg-opacity-10 p-3 flex-shrink-0">
+                                    <i class="bi bi-share fs-4 text-success"></i>
                                 </div>
                                 <div class="ms-4">
-                                    <h4 class="mb-1 fw-semibold">Social Media Integration</h4>
-                                    <p class="mb-0 text-dark">Unified platform for seamless social media interaction management.</p>
+                                    <h4 class="mb-1">Social Media Integration</h4>
+                                    <p class="mb-0 text-dark">Seamlessly manage all your social media interactions from one unified platform.</p>
                                 </div>
                             </div>
                         </button>
@@ -1071,10 +899,10 @@
 
                 <div class="col-xl-6 offset-xl-1 col-lg-6 col-12">
                     <div class="tab-content" id="v-pills-tabContent">
-                        <div class="tab-pane fade show active" id="v-pills-small-business" role="tabpanel" aria-labelledby="v-pills-sms-tab">
+                        <div class="tab-pane fade show active" id="v-pills-small-business" role="tabpanel">
                             <div class="position-relative">
-                                <div class="card border-0 shadow-lg rounded-4 p-3 mb-4 overflow-hidden">
-                                    <img src="assets/images/mobile-device-sms.jpeg" alt="SMS & Voice Solutions" class="img-fluid rounded-4" data-cue="fadeIn" data-duration="600">
+                                <div class="card border-0 shadow-lg rounded-4 p-2 mb-4">
+                                    <img src="assets/images/mobile-device-sms.jpeg" alt="SMS & Voice Solutions" class="img-fluid rounded-4" data-cue="fadeIn">
                                     <div class="position-absolute top-0 end-0 mt-3 me-3">
                                         <span class="badge bg-primary rounded-pill px-3 py-2">
                                             <i class="bi bi-check2-circle me-1"></i>Enterprise Ready
@@ -1083,13 +911,13 @@
                                 </div>
                                 <div class="row g-4 mt-2">
                                     <div class="col-6">
-                                        <div class="d-flex align-items-center p-3 rounded-3 bg-white shadow-sm transition-all">
+                                        <div class="d-flex align-items-center p-3 rounded-3 bg-white shadow-sm">
                                             <i class="bi bi-shield-check text-primary me-3 fs-4"></i>
                                             <span class="fw-medium">Secure Delivery</span>
                                         </div>
                                     </div>
                                     <div class="col-6">
-                                        <div class="d-flex align-items-center p-3 rounded-3 bg-white shadow-sm transition-all">
+                                        <div class="d-flex align-items-center p-3 rounded-3 bg-white shadow-sm">
                                             <i class="bi bi-graph-up text-success me-3 fs-4"></i>
                                             <span class="fw-medium">99.9% Uptime</span>
                                         </div>
@@ -1098,10 +926,10 @@
                             </div>
                         </div>
 
-                        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-chatbot-tab">
+                        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel">
                             <div class="position-relative">
-                                <div class="card border-0 shadow-lg rounded-4 p-3 mb-4 overflow-hidden">
-                                    <img src="assets/images/robot.jpeg" alt="AI Chatbot" class="img-fluid rounded-4" data-cue="fadeIn" data-duration="600">
+                                <div class="card border-0 shadow-lg rounded-4 p-2 mb-4">
+                                    <img src="assets/images/robot.jpeg" alt="AI Chatbot" class="img-fluid rounded-4" data-cue="fadeIn">
                                     <div class="position-absolute top-0 end-0 mt-3 me-3">
                                         <span class="badge bg-warning text-dark rounded-pill px-3 py-2">
                                             <i class="bi bi-stars me-1"></i>AI Powered
@@ -1111,10 +939,10 @@
                             </div>
                         </div>
 
-                        <div class="tab-pane fade" id="v-pills-enterprises" role="tabpanel" aria-labelledby="v-pills-social-tab">
+                        <div class="tab-pane fade" id="v-pills-enterprises" role="tabpanel">
                             <div class="position-relative">
-                                <div class="card border-0 shadow-lg rounded-4 p-3 mb-4 overflow-hidden">
-                                    <img src="assets/images/social-media.jpeg" alt="Social Media" class="img-fluid rounded-4" data-cue="fadeIn" data-duration="600">
+                                <div class="card border-0 shadow-lg rounded-4 p-2 mb-4">
+                                    <img src="assets/images/social-media.jpeg" alt="Social Media" class="img-fluid rounded-4">
                                     <div class="position-absolute top-0 end-0 mt-3 me-3">
                                         <span class="badge bg-success rounded-pill px-3 py-2">
                                             <i class="bi bi-lightning-charge me-1"></i>Real-time
@@ -1127,13 +955,7 @@
                 </div>
             </div>
         </div>
-
-        <!-- JavaScript for automatic tab switching -->
-      
     </section>
-
-    <!-- Custom CSS for improved styling -->
-
 
 
     <!--Product designer end-->
@@ -1213,21 +1035,20 @@
     <!--Get block card end-->
 
     <!--Customer stories start-->
-
-
-    <section class="testimonials-section py-xl-9 py-5 position-relative overflow-hidden">
+    <section class="testimonials-section py-xl-9 py-5 position-relative overflow-hidden" style="background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%);">
         <!-- Background decoration -->
-        <div class="bg-decoration"></div>
+        <div class="position-absolute top-0 start-0 w-100 h-100" style="background: radial-gradient(circle at 0% 100%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);"></div>
 
         <div class="container position-relative" data-cue="fadeIn">
             <div class="row mb-7">
                 <div class="col-xl-8 offset-xl-2 col-md-8 offset-md-2">
                     <div class="text-center mb-5">
                         <span class="badge bg-warning text-dark px-3 py-2 mb-3">Success Stories</span>
-                        <h2 class="display-4 mb-3 fw-bold">
-                            Real Stories from Real Customers
-
+                        <h2 class="display-4 mb-3 text-white fw-bold">
+                            Real Stories from
+                            <span class="text-warning">Real Customers</span>
                         </h2>
+                        <p class="lead text-white-75 mb-0">Discover how businesses are transforming their communication with Headtrax Solutions</p>
                     </div>
                 </div>
             </div>
@@ -1235,21 +1056,21 @@
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6" data-cue="slideInUp" data-delay="100">
                     <div class="card bg-white bg-opacity-10 border-0 h-100 transition-all hover-lift">
-                        <div class="card-body">
+                        <div class="card-body p-5">
                             <div class="mb-4">
                                 <span class="text-warning fs-1">
                                     <i class="bi bi-quote"></i>
                                 </span>
                             </div>
-                            <p class="mb-4 lead">
+                            <p class="text-white mb-4 lead">
                                 "The team at Headtrax Solutions made integration effortless. Their platform has streamlined our processes and allowed us to focus on core business tasks. Highly recommended!"
                             </p>
-                            <div class="d-flex align-items-center mt-4 pt-3 border-top border-white">
+                            <div class="d-flex align-items-center mt-4 pt-3 border-top border-white border-opacity-10">
                                 <div class="avatar avatar-lg rounded-circle bg-primary">
-                                    <span class="fw-bold">FO</span>
+                                    <span class="text-white fw-bold">FO</span>
                                 </div>
                                 <div class="ms-3">
-                                    <h5 class="mb-1">Fasanya Oluwapelumi</h5>
+                                    <h5 class="text-white mb-1">Fasanya Oluwapelumi</h5>
                                     <p class="text-white-75 mb-0 small">Content Producer</p>
                                 </div>
                             </div>
@@ -1259,21 +1080,21 @@
 
                 <div class="col-lg-4 col-md-6" data-cue="slideInUp" data-delay="200">
                     <div class="card bg-white bg-opacity-10 border-0 h-100 transition-all hover-lift">
-                        <div class="card-body">
+                        <div class="card-body p-5">
                             <div class="mb-4">
                                 <span class="text-warning fs-1">
                                     <i class="bi bi-quote"></i>
                                 </span>
                             </div>
-                            <p class="mb-4 lead">
+                            <p class="text-white mb-4 lead">
                                 "The language options are perfect for reaching our diverse client base. Headtrax Solutions has been a game-changer for our customer engagement strategies"
                             </p>
-                            <div class="d-flex align-items-center mt-4 pt-3 border-top border-white">
+                            <div class="d-flex align-items-center mt-4 pt-3 border-top border-white border-opacity-10">
                                 <div class="avatar avatar-lg rounded-circle bg-success">
-                                    <span class="fw-bold">AA</span>
+                                    <span class="text-white fw-bold">AA</span>
                                 </div>
                                 <div class="ms-3">
-                                    <h5 class="mb-1">Awe Alexander</h5>
+                                    <h5 class="text-white mb-1">Awe Alexander</h5>
                                     <p class="text-white-75 mb-0 small">Social Media Manager</p>
                                 </div>
                             </div>
@@ -1283,21 +1104,21 @@
 
                 <div class="col-lg-4 col-md-6" data-cue="slideInUp" data-delay="300">
                     <div class="card bg-white bg-opacity-10 border-0 h-100 transition-all hover-lift">
-                        <div class="card-body">
+                        <div class="card-body p-5">
                             <div class="mb-4">
                                 <span class="text-warning fs-1">
                                     <i class="bi bi-quote"></i>
                                 </span>
                             </div>
-                            <p class="mb-4 lead">
+                            <p class="text-white mb-4 lead">
                                 "Headtrax Solutions transformed our communication approach. Their platform is robust, easy to use, and has significantly increased our operational efficiency."
                             </p>
-                            <div class="d-flex align-items-center mt-4 pt-3 border-top border-white">
+                            <div class="d-flex align-items-center mt-4 pt-3 border-top border-white border-opacity-10">
                                 <div class="avatar avatar-lg rounded-circle bg-warning">
-                                    <span class="fw-bold">RS</span>
+                                    <span class="text-dark fw-bold">SA</span>
                                 </div>
                                 <div class="ms-3">
-                                    <h5 class="mb-1">Robert Steven</h5>
+                                    <h5 class="text-white mb-1">Soleye Alexander</h5>
                                     <p class="text-white-75 mb-0 small">Senior Research Program Manager</p>
                                 </div>
                             </div>
@@ -1568,66 +1389,174 @@
     </section>
     <!--Call to action end-->
 </main>
-@endsection
+    <footer class="pt-7">
+        <!-- <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-12">
+                    <div class="row" id="ft-links">
+                        <div class="col-lg-3 col-12">
+                            <div class="position-relative">
+                                <div class="mb-3 pb-2 d-flex justify-content-between border-bottom border-bottom-lg-0">
+                                    <h4>Our Solutions</h4>
+                                    <a class="d-block d-lg-none stretched-link text-body" data-bs-toggle="collapse" href="#collapseLanding" role="button" aria-expanded="true" aria-controls="collapseLanding">
+                                        <i class="bi bi-chevron-down"></i>
+                                    </a>
+                                </div>
+                                <div class="d-lg-block collapse show" id="collapseLanding" data-bs-parent="#ft-links" style="">
+                                    <ul class="list-unstyled mb-0 py-3 py-lg-0">
+                                        <li class="mb-2">
+                                            <a href="#" class="text-decoration-none text-reset">Customer Support Solutions</a>
+                                        </li>
+                                        <li class="mb-2">
+                                            <a href="#!" class="text-decoration-none text-reset">Localized Communication Support</a>
+                                        </li>
+                                        <li class="mb-2">
+                                            <a href="#!" class="text-decoration-none text-reset">Affordable Pricing for SMEs</a>
+                                        </li>
+                                        <li class="mb-2">
+                                            <a href="#!" class="text-decoration-none text-reset">Mobile Integration for Nigeria’s Mobile-Centric Market</a>
+                                        </li>
 
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-12">
+                            <div>
+                                <div class="mb-3 pb-2 d-flex justify-content-between border-bottom border-bottom-lg-0 position-relative">
+                                    <h4>Quick Links</h4>
+                                    <a
+                                        class="d-block d-lg-none stretched-link text-body collapsed"
+                                        data-bs-toggle="collapse"
+                                        href="#collapseAccounts"
+                                        role="button"
+                                        aria-expanded="false"
+                                        aria-controls="collapseAccounts">
+                                        <i class="bi bi-chevron-down"></i>
+                                    </a>
+                                </div>
+                                <div class="collapse d-lg-block" id="collapseAccounts" data-bs-parent="#ft-links">
+                                    <ul class="list-unstyled mb-0 py-3 py-lg-0">
+                                        <li class="mb-2">
+                                            <a href="/about-us" class="text-decoration-none text-reset">About Us</a>
+                                        </li>
+                                        <li class="mb-2">
+                                            <a href="/blogs" class="text-decoration-none text-reset">Blog</a>
+                                        </li>
+                                        <li class="mb-2">
+                                            <a href="/our-solutions" class="text-decoration-none text-reset">Our Solutions</a>
+                                        </li>
 
-@section('script')
-<script>
-        // Counter Animation
-        document.addEventListener('DOMContentLoaded', () => {
-            const counters = document.querySelectorAll('.counter-value');
-            const animateCounter = (counter) => {
-                const target = +counter.getAttribute('data-count');
-                const duration = 2000;
-                const increment = target / (duration / 16);
-                let current = 0;
+                                        <li class="mb-2">
+                                            <a href="/contact-us" class="text-decoration-none text-reset">Contact Us</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
 
-                const updateCounter = () => {
-                    current += increment;
-                    if (current < target) {
-                        counter.textContent = Math.round(current);
-                        requestAnimationFrame(updateCounter);
-                    } else {
-                        counter.textContent = target.toLocaleString();
-                    }
-                };
-                updateCounter();
-            };
+                        <div class="col-lg-6 col-12">
+                            <div class="me-7">
+                                <h4 class="mb-4">Office Address</h4>
+                                <p>Our operations extend across Nigeria and the United Kingdom, reflecting our commitment to serving diverse markets.</p>
+                            </div>
+                        </div>
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        animateCounter(entry.target);
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.5
-            });
+                    </div>
+                </div>
 
-            counters.forEach(counter => observer.observe(counter));
-        });
-    </script>
-      <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                const tabs = document.querySelectorAll('#v-pills-tab .nav-link');
-                let currentTabIndex = 0;
+            </div>
+        </div> -->
+        <div class="container mt-7 pt-lg-7 pb-4">
+            <div class="row align-items-center">
+                <div class="col-md-3">
+                    <a class="mb-4 mb-lg-0 d-block text-inverse" href="/">
+                        <img src="https://headtraxsolutions.com/headtrax_files/public/assets/images/oldlogo3.png" style='width:70px;height:50px' alt="" />
+                    </a>
+                </div>
+                <div class="col-md-9 col-lg-6">
+                    <div class="small mb-3 mb-lg-0 text-lg-center">
+                        Copyright © 2025
+                        <span class="text-primary"><a href="#">Headtrax Solutions</a></span>
+                        <!-- | Developed by
+                        <span class="text-primary"><a href="/">CareTech</a></span> -->
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="text-lg-end d-flex align-items-center justify-content-lg-end">
+                        <div class="dropdown">
+                            <button class="btn btn-light btn-icon rounded-circle d-flex align-items-center" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+                                <i class="bi theme-icon-active lh-1"><i class="bi theme-icon bi-sun-fill"></i></i>
+                                <span class="visually-hidden bs-theme-text">Toggle theme</span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bs-theme-text">
+                                <li>
+                                    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="light" aria-pressed="true">
+                                        <i class="bi theme-icon bi-sun-fill"></i>
+                                        <span class="ms-2">Light</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+                                        <i class="bi theme-icon bi-moon-stars-fill"></i>
+                                        <span class="ms-2">Dark</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="false">
+                                        <i class="bi theme-icon bi-circle-half"></i>
+                                        <span class="ms-2">Auto</span>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ms-3 d-flex gap-2">
+                            <a href="#!" class="btn btn-instagram btn-light btn-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path>
+                                </svg>
+                            </a>
+                            <a href="#!" class="btn btn-facebook btn-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                                    <path
+                                        d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"></path>
+                                </svg>
+                            </a>
+                            <a href="#!" class="btn btn-twitter btn-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+                                    <path
+                                        d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Scroll top -->
+    <div class="btn-scroll-top">
+        <svg class="progress-square svg-content" width="100%" height="100%" viewBox="0 0 40 40">
+            <path d="M8 1H32C35.866 1 39 4.13401 39 8V32C39 35.866 35.866 39 32 39H8C4.13401 39 1 35.866 1 32V8C1 4.13401 4.13401 1 8 1Z" />
+        </svg>
+    </div>
+    <script src="https://headtraxsolutions.com/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://headtraxsolutions.com/assets/libs/simplebar/dist/simplebar.min.js"></script>
+    <script src="https://headtraxsolutions.com/assets/libs/headhesive/dist/headhesive.min.js"></script>
+    <script src="https://headtraxsolutions.com/assets/js/theme.min.js"></script>
+    <script src="https://headtraxsolutions.com/assets/js/jquery.min.js"></script>
+    <script src="https://headtraxsolutions.com/assets/js/sweetalert.js"></script>
+    <script src="https://headtraxsolutions.com/assets/libs/jarallax/dist/jarallax.min.js"></script>
+    <script src="https://headtraxsolutions.com/assets/js/vendors/jarallax.js"></script>
+    <script src="https://headtraxsolutions.com/assets/libs/parallax-js/dist/parallax.min.js"></script>
+    <script src="https://headtraxsolutions.com/assets/js/vendors/parallax.js"></script>
+    <script src="https://headtraxsolutions.com/assets/libs/swiper/swiper-bundle.min.js"></script>
+    <script src="https://headtraxsolutions.com/assets/js/vendors/swiper.js"></script>
+    <script src="https://headtraxsolutions.com/assets/libs/glightbox/dist/js/glightbox.min.js"></script>
+    <script src="https://headtraxsolutions.com/assets/js/vendors/glight.js"></script>
+    <script src="https://headtraxsolutions.com/assets/libs/scrollcue/scrollCue.min.js"></script>
+    <script src="https://headtraxsolutions.com/assets/js/vendors/scrollcue.js"></script>
+    </body>
 
-                function switchTab() {
-                    // Remove active class from current tab and pane
-                    tabs[currentTabIndex].classList.remove('active');
-                    document.querySelector(tabs[currentTabIndex].dataset.bsTarget).classList.remove('show', 'active');
-
-                    // Move to next tab
-                    currentTabIndex = (currentTabIndex + 1) % tabs.length;
-
-                    // Add active class to next tab and pane
-                    tabs[currentTabIndex].classList.add('active');
-                    document.querySelector(tabs[currentTabIndex].dataset.bsTarget).classList.add('show', 'active');
-                }
-
-                // Switch tabs every 2 seconds
-                setInterval(switchTab, 4000);
-            });
-        </script>
-@endsection
+</html>

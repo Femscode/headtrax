@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="assets/libs/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="assets/libs/glightbox/dist/css/glightbox.min.css" />
     <!-- Favicon icon-->
-    <link rel="apple-touch-icon" sizes="180x180" href="https://headtraxsolutions.com/headtrax_files/public/assets/images/logo3.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="https://headtraxsolutions.com/headtrax_files/public/assets/images/logo3.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="https://headtraxsolutions.com/headtrax_files/public/assets/images/logo3.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://headtraxsolutions.com/headtrax_files/public/assets/images/logo3.jpeg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="https://headtraxsolutions.com/headtrax_files/public/assets/images/logo3.jpeg" />
+    <link rel="icon" type="image/png" sizes="16x16" href="https://headtraxsolutions.com/headtrax_files/public/assets/images/logo3.jpeg" />
     <link rel="manifest" href="assets/images/favicon/site.html" />
     <link rel="mask-icon" href="assets/images/favicon/block-safari-pinned-tab.svg" color="#8b3dff" />
-    <link rel="shortcut icon" href="https://headtraxsolutions.com/headtrax_files/public/assets/images/logo3.png" />
+    <link rel="shortcut icon" href="https://headtraxsolutions.com/headtrax_files/public/assets/images/logo3.jpeg" />
     <meta name="msapplication-TileColor" content="#8b3dff" />
     <meta name="msapplication-config" content="assets/images/favicon/tile.xml" />
 
